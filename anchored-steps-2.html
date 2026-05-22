@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anchored Steps Year 2 | Go Deeper. Stay the Course.</title>
+  <meta name="description" content="Anchored Steps Year 2 — continue your daily Scripture devotional journey. Deeper themes, richer reflection, a faith that doesn't quit. Pick up where Year 1 left off."/>
+  <meta name="keywords" content="daily devotional app year 2, Bible devotional continuation, Christian devotional deep dive, daily scripture year 2, Anchored Steps Year 2, Elora Radiance, Christian growth app"/>
+  <meta property="og:title" content="Anchored Steps Year 2 | Go Deeper. Stay the Course."/>
+  <meta property="og:description" content="Year 2 of the Anchored Steps daily devotional. Deeper Scripture, richer reflection, and a faith that doesn't quit when the road gets long."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:      #0C1A10;
+      --bg-m:    #0F2014;
+      --gold:    #B08A4E;
+      --gold-l:  #C9A96E;
+      --gold-f:  rgba(176,138,78,0.12);
+      --gold-b:  rgba(176,138,78,0.28);
+      --sage:    #3A5C42;
+      --sage-l:  rgba(58,92,66,0.3);
+      --crimson: #9E2828;
+      --cream:   #EDE6D6;
+      --text:    #C8BEAA;
+      --muted:   #8A9CAE;
+      --dim:     #4E6070;
+      --border:  rgba(255,255,255,0.07);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 18px; line-height: 1.75; overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      background: rgba(12,26,16,0.94); backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(176,138,78,0.12);
+      padding: 14px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-home { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.18em; color: var(--muted); text-decoration: none; text-transform: uppercase; transition: color .2s; }
+    .nav-home::before { content: '← '; }
+    .nav-home:hover { color: var(--gold-l); }
+    .nav-cta { background: var(--gold-f); border: 1px solid var(--gold-b); color: var(--gold-l); padding: 9px 22px; border-radius: 5px; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.1em; text-decoration: none; text-transform: uppercase; transition: all .25s; }
+    .nav-cta:hover { background: rgba(176,138,78,0.2); color: var(--cream); }
+    @media(max-width:768px){ nav{padding:14px 20px;} }
+
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 120px 24px 100px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 25% 15%, rgba(176,138,78,0.13) 0%, transparent 52%),
+        radial-gradient(ellipse at 75% 85%, rgba(58,92,66,0.25) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-icon { width: min(150px,38vw); height: min(150px,38vw); border-radius: 30px; object-fit: cover; margin-bottom: 30px; border: 2px solid var(--gold-b); box-shadow: 0 0 50px rgba(176,138,78,0.18); opacity: 0; animation: fadeUp .8s ease .1s forwards; }
+    .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.28em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; opacity: 0; animation: fadeUp .8s ease .25s forwards; }
+    .hero-title { font-family: 'Cinzel', serif; font-size: clamp(34px,6vw,68px); font-weight: 700; color: var(--cream); letter-spacing: 0.04em; line-height: 1.1; margin-bottom: 8px; opacity: 0; animation: fadeUp .9s ease .4s forwards; }
+    .hero-year { font-family: 'Cinzel', serif; font-size: clamp(14px,2vw,20px); letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 22px; opacity: 0; animation: fadeUp .9s ease .5s forwards; }
+    .hero-desc { font-size: clamp(16px,1.9vw,20px); color: var(--text); max-width: 560px; line-height: 1.8; margin-bottom: 48px; opacity: 0; animation: fadeUp .9s ease .62s forwards; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; opacity: 0; animation: fadeUp .9s ease .74s forwards; }
+    .btn-gold { background: var(--gold-f); border: 1px solid var(--gold-b); color: var(--gold-l); padding: 14px 36px; border-radius: 6px; font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all .25s; display: inline-block; cursor: pointer; }
+    .btn-gold:hover { background: rgba(176,138,78,0.22); color: var(--cream); }
+    .btn-red { background: linear-gradient(135deg,rgba(158,40,40,0.38),rgba(158,40,40,0.16)); border: 1px solid rgba(158,40,40,0.38); color: var(--cream); padding: 14px 36px; border-radius: 6px; font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all .25s; display: inline-block; cursor: pointer; }
+    .btn-red:hover { border-color: rgba(158,40,40,0.6); color: #F5EED8; }
+    .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 14px 36px; border-radius: 6px; font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all .25s; display: inline-block; cursor: pointer; }
+    .btn-ghost:hover { border-color: var(--gold-b); color: var(--gold-l); }
+
+    .stat-bar { background: var(--bg-m); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 32px 48px; }
+    .stat-grid { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 0; }
+    .stat-item { text-align: center; padding: 0 20px; border-right: 1px solid var(--border); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: 'Cinzel', serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: var(--gold-l); line-height: 1; margin-bottom: 6px; }
+    .stat-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
+    @media(max-width:600px){ .stat-bar{padding:28px 20px;} .stat-grid{grid-template-columns:1fr;gap:20px;} .stat-item{border:none;border-bottom:1px solid var(--border);padding-bottom:20px;} .stat-item:last-child{border:none;} }
+
+    .section { padding: 90px 48px; max-width: 1100px; margin: 0 auto; }
+    @media(max-width:768px){ .section{padding:64px 20px;} }
+    .eyebrow { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.26em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+    .section-h { font-family: 'Cinzel', serif; font-size: clamp(26px,3.5vw,42px); font-weight: 600; color: var(--cream); letter-spacing: 0.04em; margin-bottom: 16px; }
+    .section-p { font-size: clamp(16px,1.8vw,19px); color: var(--text); max-width: 560px; line-height: 1.8; }
+
+    .video-section { background: var(--bg-m); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px 48px; }
+    .video-inner { max-width: 860px; margin: 0 auto; }
+    .video-header { text-align: center; margin-bottom: 38px; }
+    .video-frame { position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 16px; overflow: hidden; border: 1px solid var(--gold-b); box-shadow: 0 24px 60px rgba(0,0,0,0.5); background: #050c14; }
+    .video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .video-caption { text-align: center; margin-top: 16px; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
+    @media(max-width:768px){ .video-section{padding:60px 20px;} }
+
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(270px,1fr)); gap: 18px; margin-top: 52px; }
+    .feature-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 26px 26px 30px; transition: border-color .25s, background .25s; }
+    .feature-card:hover { border-color: var(--gold-b); background: var(--gold-f); }
+    .feature-icon { font-size: 26px; margin-bottom: 14px; display: block; }
+    .feature-title { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; color: var(--cream); letter-spacing: 0.06em; margin-bottom: 9px; }
+    .feature-desc { font-size: 15px; color: var(--muted); line-height: 1.7; }
+
+    /* Y1 crosslink */
+    .crosslink {
+      background: var(--bg-m); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 52px 48px; text-align: center;
+    }
+    .crosslink-inner { max-width: 580px; margin: 0 auto; }
+    .crosslink p { font-size: 17px; color: var(--text); line-height: 1.75; margin-bottom: 20px; }
+
+    .scripture-band { padding: 72px 48px; text-align: center; }
+    .scripture-text { font-family: 'EB Garamond', serif; font-size: clamp(22px,3vw,36px); font-style: italic; color: var(--cream); max-width: 760px; margin: 0 auto 16px; line-height: 1.5; }
+    .scripture-ref { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+
+    .cta-section { background: var(--bg-m); border-top: 1px solid var(--border); padding: 80px 48px; text-align: center; }
+    .cta-card { max-width: 540px; margin: 0 auto; background: rgba(255,255,255,0.03); border: 1px solid var(--gold-b); border-radius: 20px; padding: 44px 40px; position: relative; overflow: hidden; }
+    .cta-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--sage), var(--gold)); }
+    .cta-title { font-family: 'Cinzel', serif; font-size: clamp(22px,3vw,32px); font-weight: 700; color: var(--cream); letter-spacing: 0.04em; margin-bottom: 14px; }
+    .cta-desc { font-size: 17px; color: var(--text); line-height: 1.75; margin-bottom: 28px; }
+    .cta-btn { display: block; padding: 15px; border-radius: 10px; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all .25s; cursor: pointer; margin-bottom: 12px; }
+    .cta-btn-gold { background: var(--gold-f); border: 1px solid var(--gold-b); color: var(--gold-l); }
+    .cta-btn-gold:hover { background: rgba(176,138,78,0.22); color: var(--cream); }
+    .cta-btn-red { background: linear-gradient(135deg,rgba(158,40,40,0.4),rgba(158,40,40,0.18)); border: 1px solid rgba(158,40,40,0.4); color: var(--cream); }
+    .cta-btn-red:hover { border-color: rgba(158,40,40,0.65); }
+    .cta-note { font-size: 13px; color: var(--dim); }
+    @media(max-width:768px){ .cta-section{padding:60px 20px;} .cta-card{padding:32px 22px;} }
+
+    footer { background: rgba(5,10,18,1); border-top: 1px solid var(--border); padding: 52px 48px 36px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 36px; margin-bottom: 36px; }
+    .footer-brand { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.2em; color: var(--cream); text-transform: uppercase; margin-bottom: 8px; }
+    .footer-tagline { font-size: 15px; font-style: italic; color: var(--gold); }
+    .footer-col-title { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em; color: rgba(176,138,78,0.75); text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 9px; }
+    .footer-links a { font-size: 15px; color: rgba(200,190,170,0.78); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--gold-l); }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-copy { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.14em; color: rgba(200,190,170,0.45); text-transform: uppercase; }
+    .footer-seo { font-size: 11px; color: rgba(200,190,170,0.22); }
+    @media(max-width:768px){ footer{padding:48px 20px 28px;} }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:none} }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d1{transition-delay:.1s} .d2{transition-delay:.22s} .d3{transition-delay:.34s}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-home">Elora Radiance Co.</a>
+    <a href="https://anchored-steps-year2.vercel.app" class="nav-cta">⚓ Open Year 2</a>
+  </nav>
+
+  <section class="hero">
+    <img src="assets/anchored-steps-2.png" alt="Anchored Steps Year 2" class="hero-icon"/>
+    <p class="hero-eyebrow">Elora Radiance Co. · Daily Devotional</p>
+    <h1 class="hero-title">Anchored Steps</h1>
+    <p class="hero-year">Year Two</p>
+    <p class="hero-desc">Continue the journey. Year 2 of the Anchored Steps devotional series — deeper Scripture, richer reflection, and a faith that doesn't quit when the road gets long.</p>
+    <div class="hero-btns">
+      <a href="https://anchored-steps-year2.vercel.app" class="btn-gold">⚓ Open Year 2</a>
+      <!-- Add your Stripe link below if Year 2 has paid access -->
+      <a href="YOUR_STRIPE_LINK_Y2" onclick="window.location.href=this.href;return false;" class="btn-red">✦ Get Full Access</a>
+      <a href="#demo" class="btn-ghost">Watch Demo</a>
+    </div>
+  </section>
+
+  <div class="stat-bar">
+    <div class="stat-grid">
+      <div class="stat-item reveal"><div class="stat-num">365</div><div class="stat-label">Daily Readings</div></div>
+      <div class="stat-item reveal d1"><div class="stat-num">Year 2</div><div class="stat-label">Deeper Themes</div></div>
+      <div class="stat-item reveal d2"><div class="stat-num">∞</div><div class="stat-label">Keep Going</div></div>
+    </div>
+  </div>
+
+  <!-- DEMO VIDEO -->
+  <div class="video-section" id="demo">
+    <div class="video-inner">
+      <div class="video-header reveal">
+        <p class="eyebrow">See It in Action</p>
+        <h2 class="section-h">Watch the App</h2>
+        <p class="section-p" style="margin:0 auto;">A walkthrough of Anchored Steps Year 2 — the daily verse, deeper themes, and share card experience.</p>
+      </div>
+      <div class="video-frame reveal d1">
+        <!-- Replace with: https://www.youtube.com/embed/YOUR_VIDEO_ID -->
+        <iframe src="YOUR_YOUTUBE_EMBED_URL" title="Anchored Steps Year 2 Demo" allowfullscreen></iframe>
+      </div>
+      <p class="video-caption reveal d2">Anchored Steps Year 2 — Full App Walkthrough</p>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="reveal">
+      <p class="eyebrow">What's Inside</p>
+      <h2 class="section-h">Go Deeper.<br>Stay the Course.</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal d1">
+        <span class="feature-icon">📖</span>
+        <div class="feature-title">Deeper Daily Scripture</div>
+        <p class="feature-desc">Year 2 goes further into the Word — more challenging texts, richer context, and Scripture that stretches your faith in new directions.</p>
+      </div>
+      <div class="feature-card reveal d2">
+        <span class="feature-icon">✍️</span>
+        <div class="feature-title">Richer Reflections</div>
+        <p class="feature-desc">Building on the foundation of Year 1, the reflections go deeper — more theological depth, more personal challenge, more transformative truth.</p>
+      </div>
+      <div class="feature-card reveal d3">
+        <span class="feature-icon">🙏</span>
+        <div class="feature-title">Continued Daily Prayer</div>
+        <p class="feature-desc">The same daily prayer practice — one focused prayer to close each reading, turning Scripture into a lived posture, not just information.</p>
+      </div>
+      <div class="feature-card reveal d1">
+        <span class="feature-icon">🔗</span>
+        <div class="feature-title">Scripture Share Cards</div>
+        <p class="feature-desc">Every verse in Year 2 can be shared as a beautiful card — spreading the Word with one tap on any social platform.</p>
+      </div>
+      <div class="feature-card reveal d2">
+        <span class="feature-icon">📱</span>
+        <div class="feature-title">Picks Up Where You Left Off</div>
+        <p class="feature-desc">Opens directly to today's date in Year 2. No login required. No setup. Just continue the walk.</p>
+      </div>
+      <div class="feature-card reveal d3">
+        <span class="feature-icon">✦</span>
+        <div class="feature-title">Long Obedience</div>
+        <p class="feature-desc">The Christian life is not a sprint. Year 2 rewards the believer who shows up day after day — building the kind of deep roots that only come from time in the Word.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Y1 CROSSLINK -->
+  <div class="crosslink">
+    <div class="crosslink-inner reveal">
+      <p class="eyebrow" style="text-align:center;">Haven't Done Year 1?</p>
+      <p>Anchored Steps Year 1 is where the journey begins — 365 days of foundational Scripture and daily reflection. Free, always.</p>
+      <a href="anchored-steps.html" class="btn-gold" style="display:inline-block;">⚓ Start with Year 1 First</a>
+    </div>
+  </div>
+
+  <!-- SCRIPTURE BAND -->
+  <div class="scripture-band" style="background:var(--bg-m);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <p class="scripture-text reveal">"Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up."</p>
+    <p class="scripture-ref reveal d1">Galatians 6:9 &nbsp;—&nbsp; Keep going. Year 2 is for the ones who stayed.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-card reveal">
+      <div class="cta-title">Continue Year 2</div>
+      <p class="cta-desc">Another 365 days of Scripture, reflection, and prayer. For the believer who showed up for Year 1 and knows the journey isn't over.</p>
+      <a href="https://anchored-steps-year2.vercel.app" class="cta-btn cta-btn-gold">⚓ Open Anchored Steps Year 2</a>
+      <a href="YOUR_STRIPE_LINK_Y2" onclick="window.location.href=this.href;return false;" class="cta-btn cta-btn-red">✦ Get Full Access</a>
+      <p class="cta-note">Also explore <a href="armed-anchored.html" style="color:var(--gold);text-decoration:none;">Armed &amp; Anchored</a> — the spiritual warfare training journal.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Elora Radiance Co.</div>
+        <p class="footer-tagline">Inspired by faith, created to shine.</p>
+      </div>
+      <div style="display:flex;gap:48px;flex-wrap:wrap;">
+        <div>
+          <div class="footer-col-title">Apps</div>
+          <ul class="footer-links">
+            <li><a href="https://armedandanchored.vercel.app">⚔️ Armed &amp; Anchored</a></li>
+            <li><a href="https://anchored-steps.vercel.app">⚓ Anchored Steps Year 1</a></li>
+            <li><a href="https://anchored-steps-year2.vercel.app">⚓ Anchored Steps Year 2</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Site</div>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="armed-anchored.html">Armed &amp; Anchored</a></li>
+            <li><a href="anchored-steps.html">Anchored Steps Year 1</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Elora Radiance Co. All rights reserved.</p>
+      <p class="footer-seo">Daily devotional app year 2 · Bible scripture · Christian growth · anchored-steps-year2.vercel.app</p>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(
+      e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible') }),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
