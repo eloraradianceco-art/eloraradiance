@@ -81,7 +81,7 @@
     .hero {
       min-height: 100vh; display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      text-align: center; padding: 120px 24px 80px;
+      text-align: center; padding: 120px 24px 110px;
       position: relative; overflow: hidden;
     }
     .hero::before {
@@ -124,11 +124,12 @@
       opacity: 0; animation: fadeUp 1s ease .95s forwards;
     }
     .scroll-hint {
-      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
       font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.22em;
       color: var(--taupe); text-transform: uppercase;
       opacity: 0; animation: fadeIn 1.2s ease 1.6s forwards;
       display: flex; flex-direction: column; align-items: center; gap: 10px;
+      pointer-events: none;
     }
     .scroll-hint::after {
       content: ''; width: 1px; height: 44px;
@@ -315,7 +316,7 @@
 
     /* FOOTER */
     footer {
-      background: var(--navy); color: rgba(200,190,170,0.65);
+      background: var(--navy); color: rgba(220,210,195,0.85);
       padding: 70px 48px 40px;
     }
     .footer-grid {
@@ -330,17 +331,17 @@
     }
     .footer-tagline {
       font-size: 15px; font-style: italic;
-      color: rgba(176,138,78,0.65); line-height: 1.65; margin-bottom: 18px;
+      color: rgba(201,169,110,0.88); line-height: 1.65; margin-bottom: 18px;
     }
     .footer-col-title {
       font-family: 'Cinzel', serif; font-size: 9px;
-      letter-spacing: 0.2em; color: rgba(176,138,78,0.55);
+      letter-spacing: 0.2em; color: rgba(201,169,110,0.8);
       text-transform: uppercase; margin-bottom: 16px;
     }
     .footer-links { list-style: none; }
     .footer-links li { margin-bottom: 10px; }
     .footer-links a {
-      font-size: 15px; color: rgba(200,190,170,0.55);
+      font-size: 15px; color: rgba(220,210,195,0.82);
       text-decoration: none; transition: color .2s;
     }
     .footer-links a:hover { color: rgba(176,138,78,0.85); }
@@ -353,10 +354,10 @@
     }
     .footer-copy {
       font-family: 'Cinzel', serif; font-size: 9px;
-      letter-spacing: 0.14em; color: rgba(200,190,170,0.3);
+      letter-spacing: 0.14em; color: rgba(220,210,195,0.55);
       text-transform: uppercase;
     }
-    .footer-seo { font-size: 11px; color: rgba(200,190,170,0.18); }
+    .footer-seo { font-size: 11px; color: rgba(220,210,195,0.38); }
     @media(max-width:768px){
       footer { padding: 60px 20px 32px; }
       .footer-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -380,6 +381,11 @@
     .d1 { transition-delay: .1s; }
     .d2 { transition-delay: .2s; }
     .d3 { transition-delay: .32s; }
+    .video-label {
+      font-family: 'Cinzel', serif; font-size: 9px;
+      letter-spacing: 0.18em; color: rgba(176,138,78,0.6);
+      text-transform: uppercase; margin-bottom: 8px;
+    }
   </style>
 </head>
 <body>
@@ -439,6 +445,12 @@
               <li>Progress dashboard &amp; battle journal</li>
               <li>Premium share cards for social media</li>
             </ul>
+            <div class="video-wrap" style="margin-bottom:20px;">
+              <div class="video-label">📱 App Demo</div>
+              <div class="video-placeholder" id="video-armed">
+                <iframe width="100%" height="200" src="YOUR_YOUTUBE_EMBED_URL" title="Armed & Anchored Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;display:block;"></iframe>
+              </div>
+            </div>
             <a href="https://armedandanchored.vercel.app" class="card-btn card-btn-red">⚔️ Enter the War Room</a>
           </div>
         </div>
@@ -458,6 +470,10 @@
               <li>Scripture share cards</li>
               <li>Walk steadily. Stay anchored.</li>
             </ul>
+            <div class="video-wrap" style="margin-bottom:20px;">
+              <div class="video-label">📱 App Demo</div>
+              <iframe width="100%" height="200" src="YOUR_YOUTUBE_EMBED_URL" title="Anchored Steps Year 1 Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;display:block;"></iframe>
+            </div>
             <a href="https://anchored-steps.vercel.app" class="card-btn card-btn-gold">⚓ Start Year 1 — Free</a>
           </div>
         </div>
@@ -477,7 +493,12 @@
               <li>Scripture share cards</li>
               <li>Go deeper. Stay the course.</li>
             </ul>
-            <a href="https://anchored-steps-year2.vercel.app" class="card-btn card-btn-gold">⚓ Continue Year 2 — Free</a>
+            <div class="video-wrap" style="margin-bottom:20px;">
+              <div class="video-label">📱 App Demo</div>
+              <iframe width="100%" height="200" src="YOUR_YOUTUBE_EMBED_URL" title="Anchored Steps Year 2 Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;display:block;"></iframe>
+            </div>
+            <a href="https://anchored-steps-year2.vercel.app" class="card-btn card-btn-gold" style="margin-bottom:10px;">⚓ Open Year 2</a>
+            <a href="YOUR_STRIPE_LINK_Y2" class="card-btn card-btn-red" style="margin-top:8px;">✦ Get Full Access</a>
           </div>
         </div>
 
