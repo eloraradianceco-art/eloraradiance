@@ -148,6 +148,138 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
     .reveal.visible { opacity: 1; transform: none; }
     .d1{transition-delay:.1s} .d2{transition-delay:.22s} .d3{transition-delay:.34s}
+
+    /* HAMBURGER / MOBILE MENU */
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--ink, #1C150A); border-radius: 2px; transition: all .3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: rgba(242,237,228,0.98); backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--parchment-dd, #D8CCBA);
+      padding: 8px 0 20px; flex-direction: column; z-index: 899; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--ink-ll, #6B5A45); text-decoration: none;
+      padding: 14px 24px; border-bottom: 1px solid var(--parchment-dd, #D8CCBA); transition: color .2s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--gold, #B08A4E); }
+    .mobile-menu .menu-label {
+      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--taupe, #8B7A5E);
+      padding: 14px 24px 4px; display: block;
+    }
+    @media(max-width:768px) { .nav-hamburger { display: flex !important; } }
+
+    /* FAQ */
+    .faq-section { padding: 90px 48px; }
+    .faq-inner { max-width: 760px; margin: 0 auto; }
+    .faq-list { margin-top: 40px; }
+    .faq-item { border-bottom: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
+    .faq-q {
+      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+      padding: 22px 0; display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.04em;
+      color: var(--ink, #1C150A); transition: color .2s;
+    }
+    .faq-q:hover { color: var(--gold, #B08A4E); }
+    .faq-q::after { content: '+'; font-size: 22px; color: var(--taupe, #8B7A5E); flex-shrink: 0; margin-left: 16px; transition: transform .3s; line-height: 1; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; font-size: 17px; color: var(--ink-ll, #6B5A45); line-height: 1.85; }
+    .faq-item.open .faq-a { max-height: 600px; padding-bottom: 22px; }
+    @media(max-width:768px){ .faq-section { padding: 70px 20px; } }
+
+    /* CROSS-SELL */
+    .crosssell-section { padding: 90px 48px; border-top: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
+    .crosssell-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; margin-top: 36px; }
+    .crosssell-card {
+      display: flex; align-items: center; gap: 16px; padding: 20px 22px;
+      border: 1px solid var(--parchment-dd, rgba(0,0,0,0.1));
+      border-radius: 16px; text-decoration: none; transition: all .2s; background: var(--parchment, #F2EDE4);
+    }
+    .crosssell-card:hover { border-color: var(--gold-b, rgba(176,138,78,0.3)); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .crosssell-icon { font-size: 26px; flex-shrink: 0; }
+    .crosssell-name { font-family: 'Cinzel', serif; font-size: 13px; color: var(--ink, #1C150A); letter-spacing: 0.05em; margin-bottom: 3px; }
+    .crosssell-desc { font-size: 13px; color: var(--ink-ll, #6B5A45); line-height: 1.5; }
+    .crosssell-arrow { margin-left: auto; font-size: 14px; color: var(--taupe, #8B7A5E); flex-shrink: 0; }
+    @media(max-width:768px){ .crosssell-section { padding: 70px 20px; } }
+
+    /* HAMBURGER / MOBILE MENU */
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--ink, #1C150A); border-radius: 2px; transition: all .3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: rgba(242,237,228,0.98); backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--parchment-dd, #D8CCBA);
+      padding: 8px 0 20px; flex-direction: column; z-index: 899; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--ink-ll, #6B5A45); text-decoration: none;
+      padding: 14px 24px; border-bottom: 1px solid var(--parchment-dd, #D8CCBA); transition: color .2s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--gold, #B08A4E); }
+    .mobile-menu .menu-label {
+      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--taupe, #8B7A5E);
+      padding: 14px 24px 4px; display: block;
+    }
+    @media(max-width:768px) { .nav-hamburger { display: flex !important; } }
+
+    /* FAQ */
+    .faq-section { padding: 90px 48px; }
+    .faq-inner { max-width: 760px; margin: 0 auto; }
+    .faq-list { margin-top: 40px; }
+    .faq-item { border-bottom: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
+    .faq-q {
+      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+      padding: 22px 0; display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.04em;
+      color: var(--ink, #1C150A); transition: color .2s;
+    }
+    .faq-q:hover { color: var(--gold, #B08A4E); }
+    .faq-q::after { content: '+'; font-size: 22px; color: var(--taupe, #8B7A5E); flex-shrink: 0; margin-left: 16px; transition: transform .3s; line-height: 1; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; font-size: 17px; color: var(--ink-ll, #6B5A45); line-height: 1.85; }
+    .faq-item.open .faq-a { max-height: 600px; padding-bottom: 22px; }
+    @media(max-width:768px){ .faq-section { padding: 70px 20px; } }
+
+    /* CROSS-SELL */
+    .crosssell-section { padding: 90px 48px; border-top: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
+    .crosssell-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; margin-top: 36px; }
+    .crosssell-card {
+      display: flex; align-items: center; gap: 16px; padding: 20px 22px;
+      border: 1px solid var(--parchment-dd, rgba(0,0,0,0.1));
+      border-radius: 16px; text-decoration: none; transition: all .2s; background: var(--parchment, #F2EDE4);
+    }
+    .crosssell-card:hover { border-color: var(--gold-b, rgba(176,138,78,0.3)); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .crosssell-icon { font-size: 26px; flex-shrink: 0; }
+    .crosssell-name { font-family: 'Cinzel', serif; font-size: 13px; color: var(--ink, #1C150A); letter-spacing: 0.05em; margin-bottom: 3px; }
+    .crosssell-desc { font-size: 13px; color: var(--ink-ll, #6B5A45); line-height: 1.5; }
+    .crosssell-arrow { margin-left: auto; font-size: 14px; color: var(--taupe, #8B7A5E); flex-shrink: 0; }
+    @media(max-width:768px){ .crosssell-section { padding: 70px 20px; } }
   </style>
 </head>
 <body>
@@ -300,9 +432,88 @@
     </div>
   </footer>
 
+  
+  <!-- FAQ -->
+  <section class="faq-section" style="background:var(--bg, #0D1820);">
+    <div class="faq-inner">
+      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Questions</p>
+      <h2 style="font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,40px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:0;">Frequently Asked</h2>
+      <div class="faq-list">
+    <div class="faq-item"><button class="faq-q">Do I need to complete Year 1 first?</button><div class="faq-a">Strongly recommended — not required. Year 2 is built for people who have already established the Anchored Steps rhythm. If you're new, start with Year 1. If you completed Year 1 or have a solid devotional foundation, Year 2 will meet you where you are.</div></div>
+    <div class="faq-item"><button class="faq-q">What's different about Year 2 vs Year 1?</button><div class="faq-a">Year 2 is longer, harder, and deeper. The passages are more complex, the study sections are more demanding, and the 'Don't Miss This' feature surfaces things most readers skip entirely. Year 2 rewards the person who stayed.</div></div>
+    <div class="faq-item"><button class="faq-q">Is it the same price as Year 1?</button><div class="faq-a">Yes — $5.50/month or $39/year. Same subscription model as Year 1. If you completed Year 1 and want to continue, the transition is seamless.</div></div>
+    <div class="faq-item"><button class="faq-q">Can I access Year 1 and Year 2 at the same time?</button><div class="faq-a">They're separate apps with separate subscriptions. You don't need Year 1 active to use Year 2 — but your Year 1 journal entries remain accessible if you keep that subscription.</div></div>
+    <div class="faq-item"><button class="faq-q">What is the 'Don't Miss This' section?</button><div class="faq-a">It's a feature unique to Year 2. Each week, it highlights a single line or phrase in the passage that most readers skim over — often the most important thing Jesus or a biblical author said in that text. It's designed to stop you and make you sit with what you almost missed.</div></div>
+    <div class="faq-item"><button class="faq-q">Can I cancel anytime?</button><div class="faq-a">Yes. Cancel through your account settings and retain access through the end of your billing period.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-SELL -->
+  <section class="crosssell-section" style="background:var(--parchment-d,#E8E0D0);">
+    <div style="max-width:900px;margin:0 auto;">
+      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Elora Radiance Co.</p>
+      <h2 style="font-family:'Cinzel',serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:14px;">Also from Elora Radiance Co.</h2>
+      <p style="font-size:17px;color:var(--ink-ll);line-height:1.8;max-width:540px;margin-bottom:0;">Scripture-based tools for the believer who is serious about their faith.</p>
+      <div class="crosssell-grid">
+      <a href="armed-anchored.html" class="crosssell-card"><span class="crosssell-icon">⚔️</span><span><div class="crosssell-name">Armed &amp; Anchored</div><div class="crosssell-desc">Spiritual warfare training — 23 weapons</div></span><span class="crosssell-arrow">→</span></a>
+      <a href="anchored-steps.html" class="crosssell-card"><span class="crosssell-icon">⚓</span><span><div class="crosssell-name">Anchored Steps · Year 1</div><div class="crosssell-desc">52 weeks of daily study and prayer</div></span><span class="crosssell-arrow">→</span></a>
+      <a href="red-letters.html" class="crosssell-card"><span class="crosssell-icon">✦</span><span><div class="crosssell-name">The Red Letters</div><div class="crosssell-desc">Complete words of Jesus — free</div></span><span class="crosssell-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- FAQ -->
+  <section class="faq-section" style="background:var(--bg, #0D1820);">
+    <div class="faq-inner">
+      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Questions</p>
+      <h2 style="font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,40px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:0;">Frequently Asked</h2>
+      <div class="faq-list">
+    <div class="faq-item"><button class="faq-q">Do I need to complete Year 1 first?</button><div class="faq-a">Strongly recommended — not required. Year 2 is built for people who have already established the Anchored Steps rhythm. If you're new, start with Year 1. If you completed Year 1 or have a solid devotional foundation, Year 2 will meet you where you are.</div></div>
+    <div class="faq-item"><button class="faq-q">What's different about Year 2 vs Year 1?</button><div class="faq-a">Year 2 is longer, harder, and deeper. The passages are more complex, the study sections are more demanding, and the 'Don't Miss This' feature surfaces things most readers skip entirely. Year 2 rewards the person who stayed.</div></div>
+    <div class="faq-item"><button class="faq-q">Is it the same price as Year 1?</button><div class="faq-a">Yes — $5.50/month or $39/year. Same subscription model as Year 1. If you completed Year 1 and want to continue, the transition is seamless.</div></div>
+    <div class="faq-item"><button class="faq-q">Can I access Year 1 and Year 2 at the same time?</button><div class="faq-a">They're separate apps with separate subscriptions. You don't need Year 1 active to use Year 2 — but your Year 1 journal entries remain accessible if you keep that subscription.</div></div>
+    <div class="faq-item"><button class="faq-q">What is the 'Don't Miss This' section?</button><div class="faq-a">It's a feature unique to Year 2. Each week, it highlights a single line or phrase in the passage that most readers skim over — often the most important thing Jesus or a biblical author said in that text. It's designed to stop you and make you sit with what you almost missed.</div></div>
+    <div class="faq-item"><button class="faq-q">Can I cancel anytime?</button><div class="faq-a">Yes. Cancel through your account settings and retain access through the end of your billing period.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-SELL -->
+  <section class="crosssell-section" style="background:var(--parchment-d,#E8E0D0);">
+    <div style="max-width:900px;margin:0 auto;">
+      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Elora Radiance Co.</p>
+      <h2 style="font-family:'Cinzel',serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:14px;">Also from Elora Radiance Co.</h2>
+      <p style="font-size:17px;color:var(--ink-ll);line-height:1.8;max-width:540px;margin-bottom:0;">Scripture-based tools for the believer who is serious about their faith.</p>
+      <div class="crosssell-grid">
+      <a href="armed-anchored.html" class="crosssell-card"><span class="crosssell-icon">⚔️</span><span><div class="crosssell-name">Armed &amp; Anchored</div><div class="crosssell-desc">Spiritual warfare training — 23 weapons</div></span><span class="crosssell-arrow">→</span></a>
+      <a href="anchored-steps.html" class="crosssell-card"><span class="crosssell-icon">⚓</span><span><div class="crosssell-name">Anchored Steps · Year 1</div><div class="crosssell-desc">52 weeks of daily study and prayer</div></span><span class="crosssell-arrow">→</span></a>
+      <a href="red-letters.html" class="crosssell-card"><span class="crosssell-icon">✦</span><span><div class="crosssell-name">The Red Letters</div><div class="crosssell-desc">Complete words of Jesus — free</div></span><span class="crosssell-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
   <script>
+    // Hamburger
+    const ham = document.querySelector('.nav-hamburger');
+    const menu = document.querySelector('.mobile-menu');
+    if (ham && menu) {
+      ham.addEventListener('click', (e) => { e.stopPropagation(); ham.classList.toggle('open'); menu.classList.toggle('open'); });
+      document.addEventListener('click', (e) => { if (!ham.contains(e.target) && !menu.contains(e.target)) { ham.classList.remove('open'); menu.classList.remove('open'); } });
+    }
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+    // Scroll reveal
     const obs = new IntersectionObserver(
-      e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible') }),
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
       { threshold: 0.08 }
     );
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
