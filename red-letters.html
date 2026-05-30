@@ -3,436 +3,250 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Red Letters | The Complete Words of Jesus</title>
+  <title>The Red Letters | The Complete Words of Jesus — Free App</title>
   <meta name="description" content="Study the complete words of Jesus — every red-letter passage organized by theme, with context, meaning, application, prayer, and journal. Completely free."/>
-  <meta name="keywords" content="words of Jesus app, red letter Bible app, Jesus teachings app, Bible study app, free Christian app, scripture study, Jesus passages, sermon on the mount app, Elora Radiance"/>
   <meta property="og:title" content="The Red Letters | The Complete Words of Jesus"/>
-  <meta property="og:description" content="Every red-letter passage Jesus ever spoke — organized by theme, studied in depth. Free."/>
-  <meta property="og:url" content="https://redletters.vercel.app"/>
+  <meta property="og:url" content="https://eloraradiance.com/red-letters"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --bg:#0F1A24;--bg2:#1A2A38;--bg3:#0A1018;
-      --gold:#B08A4E;--goldF:rgba(176,138,78,0.12);--goldB:rgba(176,138,78,0.3);
-      --red:#8B1A1A;--redL:#C04040;--redF:rgba(139,26,26,0.15);--redB:rgba(139,26,26,0.35);
-      --cream:#EDE6D6;--text:#C8BEAA;--muted:#7C90A2;--dim:#4E6070;
-      --border:rgba(255,255,255,0.06);
+      --bg:#F7F2EA;--bg2:#EDE8DC;--bg3:#E4DDD0;
+      --red:#8B1A1A;--redL:#A52020;--redF:rgba(139,26,26,0.08);--redB:rgba(139,26,26,0.22);
+      --gold:#8B6A2E;--goldF:rgba(139,106,46,0.1);--goldB:rgba(139,106,46,0.28);
+      --ink:#1C150A;--text:#3D2E1A;--muted:#7A6248;--dim:#B09A80;
+      --border:rgba(139,26,26,0.1);
     }
     html{scroll-behavior:smooth}
-    body{font-family:'EB Garamond',Georgia,serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
-
-    /* ── NAV ── */
-    nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 32px;border-bottom:1px solid var(--border);
-      background:rgba(15,26,36,0.95);backdrop-filter:blur(12px);
-      position:sticky;top:0;z-index:100;
-    }
-    .nav-home{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);text-decoration:none;letter-spacing:0.12em;text-transform:uppercase;opacity:0.8;transition:opacity .2s}
-    .nav-home:hover{opacity:1}
-    .nav-cta{
-      font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
-      background:linear-gradient(135deg,rgba(139,26,26,0.5),rgba(139,26,26,0.25));
-      border:1px solid var(--redB);color:var(--cream);padding:9px 20px;border-radius:50px;
-      text-decoration:none;transition:all .25s;
-    }
-    .nav-cta:hover{background:linear-gradient(135deg,rgba(139,26,26,0.65),rgba(139,26,26,0.4))}
-
-    /* ── HERO ── */
-    .hero{
-      text-align:center;padding:90px 24px 70px;
-      background:radial-gradient(ellipse at 50% 0%,rgba(139,26,26,0.18) 0%,transparent 60%);
-      border-bottom:1px solid var(--border);
-    }
-    .hero-icon{width:72px;height:72px;border-radius:18px;margin:0 auto 20px;display:block;box-shadow:0 8px 32px rgba(139,26,26,0.3)}
-    .hero-eyebrow{font-family:'Cinzel',serif;font-size:9px;color:var(--redL);letter-spacing:0.24em;text-transform:uppercase;margin-bottom:14px}
-    .hero h1{font-family:'Cinzel',serif;font-size:clamp(32px,6vw,56px);font-weight:700;color:var(--cream);letter-spacing:0.04em;line-height:1.15;margin-bottom:8px}
-    .hero-sub-label{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);letter-spacing:0.08em;margin-bottom:20px}
-    .hero-desc{font-size:clamp(16px,2vw,20px);color:var(--text);line-height:1.85;max-width:560px;margin:0 auto 36px;font-style:italic}
-    .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
-    .btn-primary{
-      font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;
-      background:linear-gradient(135deg,rgba(139,26,26,0.5),rgba(139,26,26,0.25));
-      border:1px solid var(--redB);color:var(--cream);padding:16px 36px;border-radius:50px;
-      text-decoration:none;transition:all .25s;display:inline-block;
-    }
-    .btn-primary:hover{background:linear-gradient(135deg,rgba(139,26,26,0.65),rgba(139,26,26,0.4))}
-    .free-note{font-family:'Cinzel',serif;font-size:10px;color:var(--dim);letter-spacing:0.12em;text-transform:uppercase;padding:6px 16px;background:var(--redF);border:1px solid var(--redB);border-radius:20px;display:inline-block}
-    .stats{display:flex;justify-content:center;gap:40px;margin-top:40px;flex-wrap:wrap}
-    .stat-num{font-family:'Cinzel',serif;font-size:32px;font-weight:700;color:var(--gold);display:block;line-height:1}
-    .stat-label{font-size:12px;color:var(--muted);font-style:italic;margin-top:4px;display:block}
-
-    /* ── PASSAGE PREVIEW ── */
-    .passage-section{padding:64px 24px;max-width:720px;margin:0 auto}
-    .passage-card{
-      background:linear-gradient(145deg,rgba(139,26,26,0.14),rgba(139,26,26,0.05));
-      border:1px solid var(--redB);border-radius:20px;padding:40px 44px;position:relative;overflow:hidden;
-    }
-    .passage-card::before{content:'"';position:absolute;top:8px;left:18px;font-family:Georgia,serif;font-size:100px;color:var(--red);opacity:0.08;line-height:1}
-    .passage-text{font-size:clamp(17px,2.2vw,21px);line-height:2;color:var(--cream);font-style:italic;margin-bottom:20px;position:relative;z-index:1}
-    .passage-ref{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase}
-
-    /* ── SECTIONS ── */
-    section{padding:80px 24px}
+    body{font-family:'EB Garamond',Georgia,serif;background:var(--bg);color:var(--text);line-height:1.75;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(247,242,234,0.96);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .nav-home{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.18em;color:var(--muted);text-decoration:none;text-transform:uppercase;transition:color .2s}
+    .nav-home:hover{color:var(--red)}
+    .nav-cta{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:9px 22px;border-radius:5px;text-decoration:none;background:linear-gradient(135deg,rgba(139,26,26,0.25),rgba(139,26,26,0.1));border:1px solid var(--redB);color:var(--ink);transition:all .2s}
+    .nav-cta:hover{background:linear-gradient(135deg,rgba(139,26,26,0.38),rgba(139,26,26,0.18))}
+    .nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+    .nav-ham span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s}
+    .nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-ham.open span:nth-child(2){opacity:0}
+    .nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav-menu{display:none;position:fixed;top:53px;left:0;right:0;background:rgba(247,242,234,0.98);border-bottom:1px solid var(--border);padding:8px 0 20px;flex-direction:column;z-index:899;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+    .nav-menu.open{display:flex}
+    .nav-menu a{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:14px 24px;border-bottom:1px solid var(--border);transition:color .2s}
+    .nav-menu a:last-child{border-bottom:none}
+    .nav-menu a:hover{color:var(--red)}
+    .m-lbl{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim);padding:14px 24px 4px;display:block}
+    @media(max-width:768px){nav{padding:14px 20px}.nav-ham{display:flex !important}}
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 90px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,rgba(139,26,26,0.1) 0%,transparent 55%)}
+    .hero-icon{width:80px;height:80px;border-radius:20px;margin-bottom:20px;box-shadow:0 8px 32px rgba(139,26,26,0.2)}
+    .hero-eyebrow{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.26em;color:var(--redL);text-transform:uppercase;margin-bottom:14px;opacity:0;animation:fadeUp .8s ease .1s forwards}
+    .hero-title{font-family:'Cinzel',serif;font-size:clamp(34px,6vw,60px);font-weight:700;color:var(--ink);letter-spacing:0.04em;line-height:1.1;margin-bottom:10px;opacity:0;animation:fadeUp .9s ease .25s forwards}
+    .hero-sub-label{font-family:'Cinzel',serif;font-size:15px;color:var(--gold);letter-spacing:0.1em;margin-bottom:20px;opacity:0;animation:fadeUp .9s ease .35s forwards}
+    .hero-desc{font-size:clamp(16px,2vw,20px);color:var(--text);line-height:1.85;max-width:540px;margin:0 auto 40px;font-style:italic;opacity:0;animation:fadeUp 1s ease .5s forwards}
+    .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;opacity:0;animation:fadeUp 1s ease .65s forwards}
+    .free-badge{font-family:'Cinzel',serif;font-size:10px;color:var(--red);letter-spacing:0.12em;text-transform:uppercase;background:var(--redF);border:1px solid var(--redB);padding:6px 18px;border-radius:20px;display:inline-block;opacity:0;animation:fadeIn 1s ease .9s forwards}
+    .hero-stats{display:flex;justify-content:center;gap:48px;margin-top:48px;flex-wrap:wrap;opacity:0;animation:fadeIn 1s ease 1s forwards}
+    .stat-num{font-family:'Cinzel',serif;font-size:34px;font-weight:700;color:var(--red);display:block;line-height:1}
+    .stat-lbl{font-size:12px;color:var(--muted);font-style:italic;margin-top:5px;display:block}
+    .btn-p{background:linear-gradient(135deg,rgba(139,26,26,0.25),rgba(139,26,26,0.1));border:1px solid var(--redB);color:var(--ink);padding:14px 34px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:5px;transition:all .25s;display:inline-block}
+    .btn-p:hover{background:linear-gradient(135deg,rgba(139,26,26,0.38),rgba(139,26,26,0.18))}
+    .btn-s{background:transparent;border:1px solid rgba(0,0,0,0.12);color:var(--muted);padding:14px 34px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:5px;transition:all .25s;display:inline-block}
+    .btn-s:hover{border-color:var(--redB);color:var(--red)}
+    .section{padding:90px 48px}
     .section-inner{max-width:1040px;margin:0 auto}
-    .section-label{font-family:'Cinzel',serif;font-size:9px;color:var(--redL);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px}
-    .section-title{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,42px);font-weight:700;color:var(--cream);letter-spacing:0.03em;line-height:1.2;margin-bottom:16px}
-    .section-body{font-size:18px;color:var(--text);line-height:1.85;max-width:640px}
-    .alt-bg{background:var(--bg2)}
-
-    /* ── THEMES GRID ── */
-    .themes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:36px}
-    .theme-card{
-      background:var(--redF);border:1px solid rgba(139,26,26,0.18);border-radius:14px;
-      padding:20px 16px;text-align:center;text-decoration:none;color:inherit;display:block;transition:all .2s;
-    }
-    .theme-card:hover{border-color:var(--redB);background:rgba(139,26,26,0.2)}
-    .theme-icon{font-size:28px;margin-bottom:8px;display:block}
-    .theme-name{font-family:'Cinzel',serif;font-size:12px;color:var(--cream);letter-spacing:0.06em;margin-bottom:3px}
-    .theme-sub{font-size:12px;color:var(--muted);font-style:italic}
-
-    /* ── LAYERS ── */
+    .eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.24em;color:var(--redL);text-transform:uppercase;margin-bottom:12px}
+    .s-title{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,42px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:14px;line-height:1.2}
+    .s-body{font-size:18px;color:var(--text);line-height:1.85;max-width:600px}
+    .alt{background:var(--bg2)}
+    @media(max-width:768px){.section{padding:70px 20px}}
+    /* PASSAGE PREVIEW */
+    .passage-card{background:linear-gradient(145deg,var(--redF),rgba(139,26,26,0.02));border:1px solid var(--redB);border-radius:20px;padding:40px 44px;position:relative;overflow:hidden;max-width:700px;margin:0 auto}
+    .passage-card::before{content:'"';position:absolute;top:8px;left:18px;font-family:Georgia,serif;font-size:100px;color:var(--red);opacity:0.07;line-height:1}
+    .passage-text{font-size:clamp(17px,2.2vw,21px);line-height:2;color:var(--ink);font-style:italic;margin-bottom:20px;position:relative;z-index:1}
+    .passage-ref{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase}
+    .themes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:36px}
+    .theme-card{background:var(--redF);border:1px solid rgba(139,26,26,0.12);border-radius:14px;padding:20px 16px;text-align:center;transition:all .2s}
+    .theme-card:hover{border-color:var(--redB);background:rgba(139,26,26,0.12)}
+    .t-icon{font-size:26px;margin-bottom:8px;display:block}
+    .t-name{font-family:'Cinzel',serif;font-size:12px;color:var(--ink);letter-spacing:0.06em;margin-bottom:3px}
+    .t-sub{font-size:12px;color:var(--muted);font-style:italic}
     .layers-list{display:flex;flex-direction:column;gap:10px;margin-top:36px}
-    .layer-item{display:flex;align-items:flex-start;gap:18px;background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:20px 24px;transition:border-color .2s}
-    .layer-item:hover{border-color:rgba(176,138,78,0.25)}
-    .layer-icon{font-size:24px;flex-shrink:0;margin-top:2px;width:32px;text-align:center}
-    .layer-title{font-family:'Cinzel',serif;font-size:13px;color:var(--cream);letter-spacing:0.06em;margin-bottom:4px}
+    .layer{display:flex;align-items:flex-start;gap:18px;background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:20px 24px;transition:border-color .2s}
+    .layer:hover{border-color:var(--redB)}
+    .layer-icon{font-size:24px;flex-shrink:0;margin-top:2px;width:30px;text-align:center}
+    .layer-name{font-family:'Cinzel',serif;font-size:13px;color:var(--ink);letter-spacing:0.06em;margin-bottom:4px}
     .layer-desc{font-size:15px;color:var(--muted);line-height:1.7}
-
-    /* ── FEATURES ── */
-    .features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin-top:36px}
-    .feature-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:24px}
-    .feature-icon{font-size:26px;margin-bottom:12px}
-    .feature-title{font-family:'Cinzel',serif;font-size:13px;color:var(--cream);letter-spacing:0.06em;margin-bottom:8px}
-    .feature-desc{font-size:15px;color:var(--muted);line-height:1.75}
-
-    /* ── STEPS ── */
-    .steps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:36px}
-    .step-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:28px 24px}
-    .step-num{font-family:'Cinzel',serif;font-size:11px;color:var(--redL);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:12px}
-    .step-title{font-family:'Cinzel',serif;font-size:14px;color:var(--cream);letter-spacing:0.04em;margin-bottom:8px}
-    .step-desc{font-size:15px;color:var(--muted);line-height:1.7}
-
-    /* ── QUOTE ── */
-    .quote-section{padding:80px 24px;text-align:center;background:radial-gradient(ellipse at 50% 100%,rgba(139,26,26,0.15) 0%,transparent 65%)}
-    .quote-mark{font-family:'Cinzel',serif;font-size:60px;color:var(--red);opacity:0.3;line-height:1;margin-bottom:8px}
-    .quote-text{font-size:clamp(18px,2.5vw,26px);color:var(--cream);font-style:italic;line-height:1.75;max-width:680px;margin:0 auto 20px}
-    .quote-ref{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase}
-
-    /* ── CTA ── */
-    .cta-section{padding:100px 24px;text-align:center;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    .cta-title{font-family:'Cinzel',serif;font-size:clamp(28px,5vw,46px);font-weight:700;color:var(--cream);letter-spacing:0.04em;line-height:1.2;margin-bottom:16px}
-    .cta-sub{font-size:18px;color:var(--text);line-height:1.85;max-width:500px;margin:0 auto 36px;font-style:italic}
-
-    /* ── FOOTER ── */
-    footer{padding:48px 32px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:32px}
-    .footer-brand{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:0.1em;margin-bottom:8px}
-    .footer-tagline{font-size:13px;color:var(--dim);font-style:italic;line-height:1.6}
-    .footer-col-title{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:12px}
-    .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
-    .footer-links a{font-size:14px;color:var(--muted);text-decoration:none;transition:color .2s}
-    .footer-links a:hover{color:var(--cream)}
-    .footer-copy{grid-column:1/-1;border-top:1px solid var(--border);padding-top:24px;font-size:12px;color:var(--dim);font-style:italic}
-
-    @media(max-width:640px){
-      nav{padding:12px 18px}
-      .hero{padding:70px 18px 55px}
-      .passage-section{padding:48px 18px}
-      .passage-card{padding:28px 24px}
-      section{padding:60px 18px}
-      footer{padding:36px 18px}
-    }
-
-    /* HAMBURGER / MOBILE MENU */
-    .nav-hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none;
-    }
-    .nav-hamburger span {
-      display: block; width: 22px; height: 2px;
-      background: var(--ink, #1C150A); border-radius: 2px; transition: all .3s;
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu {
-      display: none; position: absolute; top: 100%; left: 0; right: 0;
-      background: rgba(242,237,228,0.98); backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--parchment-dd, #D8CCBA);
-      padding: 8px 0 20px; flex-direction: column; z-index: 899; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--ink-ll, #6B5A45); text-decoration: none;
-      padding: 14px 24px; border-bottom: 1px solid var(--parchment-dd, #D8CCBA); transition: color .2s;
-    }
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a:hover { color: var(--gold, #B08A4E); }
-    .mobile-menu .menu-label {
-      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--taupe, #8B7A5E);
-      padding: 14px 24px 4px; display: block;
-    }
-    @media(max-width:768px) { .nav-hamburger { display: flex !important; } }
-
-    /* FAQ */
-    .faq-section { padding: 90px 48px; }
-    .faq-inner { max-width: 760px; margin: 0 auto; }
-    .faq-list { margin-top: 40px; }
-    .faq-item { border-bottom: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
-    .faq-q {
-      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
-      padding: 22px 0; display: flex; justify-content: space-between; align-items: center;
-      font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.04em;
-      color: var(--ink, #1C150A); transition: color .2s;
-    }
-    .faq-q:hover { color: var(--gold, #B08A4E); }
-    .faq-q::after { content: '+'; font-size: 22px; color: var(--taupe, #8B7A5E); flex-shrink: 0; margin-left: 16px; transition: transform .3s; line-height: 1; }
-    .faq-item.open .faq-q::after { transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; font-size: 17px; color: var(--ink-ll, #6B5A45); line-height: 1.85; }
-    .faq-item.open .faq-a { max-height: 600px; padding-bottom: 22px; }
-    @media(max-width:768px){ .faq-section { padding: 70px 20px; } }
-
-    /* CROSS-SELL */
-    .crosssell-section { padding: 90px 48px; border-top: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
-    .crosssell-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; margin-top: 36px; }
-    .crosssell-card {
-      display: flex; align-items: center; gap: 16px; padding: 20px 22px;
-      border: 1px solid var(--parchment-dd, rgba(0,0,0,0.1));
-      border-radius: 16px; text-decoration: none; transition: all .2s; background: var(--parchment, #F2EDE4);
-    }
-    .crosssell-card:hover { border-color: var(--gold-b, rgba(176,138,78,0.3)); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-    .crosssell-icon { font-size: 26px; flex-shrink: 0; }
-    .crosssell-name { font-family: 'Cinzel', serif; font-size: 13px; color: var(--ink, #1C150A); letter-spacing: 0.05em; margin-bottom: 3px; }
-    .crosssell-desc { font-size: 13px; color: var(--ink-ll, #6B5A45); line-height: 1.5; }
-    .crosssell-arrow { margin-left: auto; font-size: 14px; color: var(--taupe, #8B7A5E); flex-shrink: 0; }
-    @media(max-width:768px){ .crosssell-section { padding: 70px 20px; } }
+    .quote-band{padding:80px 40px;text-align:center;background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .q-text{font-family:'EB Garamond',serif;font-size:clamp(20px,2.8vw,34px);font-style:italic;color:var(--ink);max-width:780px;margin:0 auto 18px;line-height:1.55}
+    .q-ref{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase}
+    .cta-section{padding:100px 24px;text-align:center;background:radial-gradient(ellipse at 50% 100%,rgba(139,26,26,0.1) 0%,transparent 60%)}
+    .faq-wrap{padding:90px 48px;background:var(--bg2)}
+    .faq-inner{max-width:760px;margin:0 auto}
+    .faq-list{margin-top:40px}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;font-family:'Cinzel',serif;font-size:14px;letter-spacing:0.04em;color:var(--ink);transition:color .2s}
+    .faq-q:hover{color:var(--red)}
+    .faq-plus{font-size:22px;color:var(--red);flex-shrink:0;line-height:1;transition:transform .3s;margin-top:2px}
+    .faq-item.open .faq-plus{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;font-size:17px;color:var(--text);line-height:1.85}
+    .faq-item.open .faq-a{max-height:400px;padding-bottom:22px}
+    @media(max-width:768px){.faq-wrap{padding:70px 20px}}
+    .cs-wrap{padding:90px 48px;background:var(--bg3);border-top:1px solid var(--border)}
+    .cs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:36px}
+    .cs-card{display:flex;align-items:center;gap:16px;padding:20px 22px;border:1px solid var(--border);border-radius:16px;text-decoration:none;transition:all .2s;background:var(--bg)}
+    .cs-card:hover{border-color:var(--redB);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+    .cs-icon{font-size:26px;flex-shrink:0}
+    .cs-name{font-family:'Cinzel',serif;font-size:13px;color:var(--ink);letter-spacing:0.05em;margin-bottom:3px}
+    .cs-desc{font-size:13px;color:var(--muted);line-height:1.5}
+    .cs-arr{margin-left:auto;font-size:14px;color:var(--gold);flex-shrink:0}
+    @media(max-width:768px){.cs-wrap{padding:70px 20px}}
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-brand{font-family:'Cinzel',serif;font-size:11px;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase}
+    .footer-links{display:flex;gap:20px}
+    .footer-links a{font-family:'Cinzel',serif;font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--red)}
+    @media(max-width:768px){footer{padding:30px 20px;flex-direction:column;align-items:flex-start}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+  <nav>
     <a href="index.html" class="nav-home">Elora Radiance Co.</a>
-    <a href="https://redletters.vercel.app" class="nav-cta" style="background:linear-gradient(135deg,rgba(139,26,26,0.45),rgba(139,26,26,0.25));">✦ Open App — Free</a>
-    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="mobile-menu">
-      <span class="menu-label">More Apps</span>
+    <a href="https://redletters.vercel.app" class="nav-cta">✦ Open App — Free</a>
+    <button class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav-menu">
+      <span class="m-lbl">More Apps</span>
       <a href="armed-anchored.html">⚔️ Armed &amp; Anchored</a>
       <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
       <a href="anchored-steps-2.html">⚓ Anchored Steps Year 2</a>
-      <span class="menu-label">Site</span>
+      <span class="m-lbl">Site</span>
       <a href="index.html">← Elora Radiance Co.</a>
-    </div>
+    </nav>
   </nav>
 
-  <!-- HERO -->
-  <div class="hero">
-    <img class="hero-icon" src="https://eloraradianceco-art.github.io/eloraradiance/assets/red-letters-icon.png"
-         onerror="this.style.background='#8B1A1A';this.style.display='inline-flex';this.style.alignItems='center';this.style.justifyContent='center';this.innerHTML='✦'"
-         alt="The Red Letters"/>
-    <p class="hero-eyebrow">Elora Radiance Co. · Free App</p>
-    <h1>The Red Letters</h1>
+  <section class="hero">
+    <img src="assets/red-letters-icon.png" alt="The Red Letters" class="hero-icon" onerror="this.style.background='#8B1A1A';this.style.display='inline-block'"/>
+    <p class="hero-eyebrow">Elora Radiance Co. · Free</p>
+    <h1 class="hero-title">The Red Letters</h1>
     <p class="hero-sub-label">The Complete Words of Jesus</p>
-    <p class="hero-desc">Every passage He spoke — not isolated verses, but the complete text — organized by theme and studied in full depth.</p>
+    <p class="hero-desc">Every passage He ever spoke — organized by theme, studied in depth, carried into life. Not isolated verses. Complete passages.</p>
     <div class="hero-btns">
-      <a class="btn-primary" href="https://redletters.vercel.app">✦ Open The Red Letters</a>
+      <a href="https://redletters.vercel.app" class="btn-p">✦ Start Reading — Free</a>
+      <a href="#themes" class="btn-s">See the Themes</a>
     </div>
-    <div class="free-note">✦ Completely Free · No Subscription · No Credit Card</div>
-    <div class="stats">
-      <div><span class="stat-num">10</span><span class="stat-label">Themes</span></div>
-      <div><span class="stat-num">24</span><span class="stat-label">Complete Passages</span></div>
-      <div><span class="stat-num">6</span><span class="stat-label">Study Layers</span></div>
-      <div><span class="stat-num">Free</span><span class="stat-label">Always</span></div>
+    <div class="free-badge">✦ Completely Free · No Credit Card · No Subscription</div>
+    <div class="hero-stats">
+      <div><span class="stat-num">10</span><span class="stat-lbl">Themes</span></div>
+      <div><span class="stat-num">24</span><span class="stat-lbl">Complete Passages</span></div>
+      <div><span class="stat-num">Free</span><span class="stat-lbl">Always</span></div>
     </div>
-  </div>
+  </section>
 
-  <!-- PASSAGE PREVIEW -->
-  <div class="passage-section">
-    <div class="passage-card">
+  <div style="max-width:700px;margin:0 auto;padding:0 24px 80px;">
+    <div class="passage-card reveal">
       <p class="passage-text">Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls. For my yoke is easy, and my burden is light.</p>
-      <p class="passage-ref">Matthew 11:28–30 · ESV · Theme: Peace & Rest</p>
+      <p class="passage-ref">Matthew 11:28–30 · ESV · Theme: Peace &amp; Rest</p>
     </div>
   </div>
 
-  <!-- VIDEO -->
-  <section id="video" style="padding:80px 24px;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <div style="max-width:860px;margin:0 auto;text-align:center;">
-      <p class="section-label" style="margin-bottom:12px;">See It in Action</p>
-      <h2 class="section-title" style="margin-bottom:14px;">Watch the Walkthrough</h2>
-      <p style="font-size:18px;color:var(--text);line-height:1.8;max-width:500px;margin:0 auto 36px;font-style:italic;">A quick look at how The Red Letters works — from choosing a theme to studying a complete passage.</p>
-      <!-- Replace YOUTUBE_VIDEO_ID with your actual YouTube video ID -->
-      <!-- e.g. if your URL is youtube.com/watch?v=dQw4w9WgXcQ then use dQw4w9WgXcQ -->
-      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,0.4);">
-        <iframe
-          id="rl-video"
-          src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID"
-          title="The Red Letters — App Walkthrough"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;">
-        </iframe>
-      </div>
-      <p style="margin-top:20px;font-family:'Cinzel',Georgia,serif;font-size:10px;color:var(--dim);letter-spacing:0.14em;text-transform:uppercase;">Replace YOUTUBE_VIDEO_ID in the HTML with your video ID to activate</p>
-    </div>
-  </section>
-
-  <!-- THEMES -->
-  <section id="themes">
+  <section class="section alt" id="themes">
     <div class="section-inner">
-      <p class="section-label">What's Inside</p>
-      <h2 class="section-title">10 Themes.<br>24 Complete Passages.</h2>
-      <p class="section-body">Not a verse-a-day devotional. Not individual quotes taken out of context. The <em>full passages</em> Jesus spoke — so you see what He actually taught, not a fragment of it.</p>
+      <p class="eyebrow reveal">What's Inside</p>
+      <h2 class="s-title reveal">10 Themes. 24 Complete Passages.</h2>
+      <p class="s-body reveal">Not a verse-a-day devotional. The full passages Jesus spoke — every word, in context, organized by what He was actually teaching.</p>
       <div class="themes-grid">
-        <a class="theme-card" href="https://redletters.vercel.app"><span class="theme-icon">🙏</span><div class="theme-name">Prayer</div><div class="theme-sub">How Jesus taught us to pray</div></a>
-        <a class="theme-card" href="https://redletters.vercel.app"><span class="theme-icon">❤️</span><div class="theme-name">Love</div><div class="theme-sub">The command that contains all others</div></a>
-        <a class="theme-card" href="https://redletters.vercel.app"><span class="theme-icon">👑</span><div class="theme-name">The Kingdom</div><div class="theme-sub">Already here, not yet complete</div></a>
-        <a class="theme-card" href="https://redletters.vercel.app"><span class="theme-icon">✝️</span><div class="theme-name">The Cross</div><div class="theme-sub">The center of everything</div></a>
-        <a class="theme-card" href="https://redletters.vercel.app"><span class="theme-icon">🌱</span><div class="theme-name">Discipleship</div><div class="theme-sub">What it actually costs to follow</div></a>
-        <a class="theme-card" href="https://redletters.vercel.app"><span class="theme-icon">🕊️</span><div class="theme-name">Peace & Rest</div><div class="theme-sub">The gift the world cannot give</div></a>
-        <a class="theme-card" href="https://redletters.vercel.app"><span class="theme-icon">🌿</span><div class="theme-name">Anxiety & Worry</div><div class="theme-sub">What to do with tomorrow</div></a>
-        <a class="theme-card" href="https://redletters.vercel.app"><span class="theme-icon">💡</span><div class="theme-name">Truth & Freedom</div><div class="theme-sub">The truth that sets you free</div></a>
-        <a class="theme-card" href="https://redletters.vercel.app"><span class="theme-icon">⚡</span><div class="theme-name">The Holy Spirit</div><div class="theme-sub">The promise of His presence</div></a>
-        <a class="theme-card" href="https://redletters.vercel.app"><span class="theme-icon">🌅</span><div class="theme-name">Resurrection & Life</div><div class="theme-sub">The life death cannot interrupt</div></a>
+        <div class="theme-card reveal d1"><span class="t-icon">🙏</span><div class="t-name">Prayer</div><div class="t-sub">How Jesus taught us to pray</div></div>
+        <div class="theme-card reveal d1"><span class="t-icon">❤️</span><div class="t-name">Love</div><div class="t-sub">The command that contains all others</div></div>
+        <div class="theme-card reveal d2"><span class="t-icon">👑</span><div class="t-name">The Kingdom</div><div class="t-sub">Already here, not yet complete</div></div>
+        <div class="theme-card reveal d2"><span class="t-icon">✝️</span><div class="t-name">The Cross</div><div class="t-sub">The center of everything</div></div>
+        <div class="theme-card reveal d3"><span class="t-icon">🌱</span><div class="t-name">Discipleship</div><div class="t-sub">What it actually costs to follow</div></div>
+        <div class="theme-card reveal d3"><span class="t-icon">🕊️</span><div class="t-name">Peace &amp; Rest</div><div class="t-sub">The gift the world cannot give</div></div>
+        <div class="theme-card reveal"><span class="t-icon">🌿</span><div class="t-name">Anxiety &amp; Worry</div><div class="t-sub">What to do with tomorrow</div></div>
+        <div class="theme-card reveal"><span class="t-icon">💡</span><div class="t-name">Truth &amp; Freedom</div><div class="t-sub">The truth that sets you free</div></div>
+        <div class="theme-card reveal"><span class="t-icon">⚡</span><div class="t-name">The Holy Spirit</div><div class="t-sub">The promise of His presence</div></div>
+        <div class="theme-card reveal"><span class="t-icon">🌅</span><div class="t-name">Resurrection &amp; Life</div><div class="t-sub">The life death cannot interrupt</div></div>
       </div>
     </div>
   </section>
 
-  <!-- STUDY LAYERS -->
-  <section id="study" class="alt-bg">
+  <section class="section">
     <div class="section-inner">
-      <p class="section-label">How It Works</p>
-      <h2 class="section-title">Six Layers of Study<br>on Every Passage</h2>
-      <p class="section-body">Each passage opens into a complete study experience — not a devotional that skims the surface, but a full encounter with what Jesus said and meant.</p>
+      <p class="eyebrow reveal">How It Works</p>
+      <h2 class="s-title reveal">Six Study Layers on Every Passage</h2>
+      <p class="s-body reveal">Each passage opens into a complete study experience — not a devotional that skims the surface, but a full encounter with what Jesus said and meant.</p>
       <div class="layers-list">
-        <div class="layer-item"><span class="layer-icon">📖</span><div><div class="layer-title">The Passage</div><div class="layer-desc">The full red-letter text — every word Jesus spoke in that passage, exactly as recorded, with nothing cut for brevity.</div></div></div>
-        <div class="layer-item"><span class="layer-icon">🧭</span><div><div class="layer-title">Context</div><div class="layer-desc">Where He was, who He was talking to, and what had just happened. The setting shapes the meaning. You get the full picture.</div></div></div>
-        <div class="layer-item"><span class="layer-icon">💡</span><div><div class="layer-title">Meaning</div><div class="layer-desc">What Jesus meant — unpacking the theology, the original context, and what was at stake in what He said.</div></div></div>
-        <div class="layer-item"><span class="layer-icon">⚡</span><div><div class="layer-title">Live It</div><div class="layer-desc">Specific, honest application — not generic encouragement, but a real question about what this passage demands of you today.</div></div></div>
-        <div class="layer-item"><span class="layer-icon">🙏</span><div><div class="layer-title">Pray It</div><div class="layer-desc">A prayer written directly from the text — the content of what Jesus taught, spoken back to the Father in your own name.</div></div></div>
-        <div class="layer-item"><span class="layer-icon">📝</span><div><div class="layer-title">Journal</div><div class="layer-desc">Write your responses, questions, and reflections. Saved to your account — private, persistent, accessible on any device.</div></div></div>
+        <div class="layer reveal d1"><span class="layer-icon">📖</span><div><div class="layer-name">The Passage</div><div class="layer-desc">The full red-letter text — every word Jesus spoke in that passage, exactly as recorded, nothing cut for brevity.</div></div></div>
+        <div class="layer reveal d1"><span class="layer-icon">🧭</span><div><div class="layer-name">Context</div><div class="layer-desc">Where He was, who He was talking to, and what had just happened. Setting shapes meaning — you get the full picture.</div></div></div>
+        <div class="layer reveal d2"><span class="layer-icon">💡</span><div><div class="layer-name">Meaning</div><div class="layer-desc">What Jesus meant — unpacking the theology, the original context, and what was at stake in what He said.</div></div></div>
+        <div class="layer reveal d2"><span class="layer-icon">⚡</span><div><div class="layer-name">Live It</div><div class="layer-desc">Specific, honest application — not generic encouragement, but a real question about what this passage demands of you today.</div></div></div>
+        <div class="layer reveal d3"><span class="layer-icon">🙏</span><div><div class="layer-name">Pray It</div><div class="layer-desc">A prayer written directly from the text — the content of what Jesus taught, spoken back to the Father in your own name.</div></div></div>
+        <div class="layer reveal d3"><span class="layer-icon">📝</span><div><div class="layer-name">Journal</div><div class="layer-desc">Write your responses, questions, and reflections. Saved to your account — private, persistent, accessible on any device.</div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- MORE FEATURES -->
-  <section>
-    <div class="section-inner">
-      <p class="section-label">Also Included</p>
-      <h2 class="section-title">Everything You Need<br>to Go Deeper</h2>
-      <div class="features-grid">
-        <div class="feature-card"><div class="feature-icon">🧠</div><div class="feature-title">Memorization Tools</div><div class="feature-desc">Three modes — Read & Recall, Fill the Gaps, Write it Out — for every passage. The Word hidden in the heart is the sword always in your hand.</div></div>
-        <div class="feature-card"><div class="feature-icon">↗</div><div class="feature-title">Share Cards</div><div class="feature-desc">Generate a beautiful image card from any passage or study section. Share the full passage, the prayer, or the meaning. Light and dark modes.</div></div>
-        <div class="feature-card"><div class="feature-icon">🔍</div><div class="feature-title">Search</div><div class="feature-desc">Search across all 24 passages by keyword — find the exact teaching you're looking for across all 10 themes instantly.</div></div>
-        <div class="feature-card"><div class="feature-icon">☆</div><div class="feature-title">Save Passages</div><div class="feature-desc">Star any passage for quick access. Your saved library is always available from the top navigation.</div></div>
-        <div class="feature-card"><div class="feature-icon">📥</div><div class="feature-title">Export Your Journal</div><div class="feature-desc">Download all your journal entries as a text file or print as a formatted PDF — your record of walking with the Word.</div></div>
-        <div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">Track Progress</div><div class="feature-desc">See what you've read, what you've memorized, and what you've saved — your progress recorded in Settings.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="alt-bg">
-    <div class="section-inner">
-      <p class="section-label">Getting Started</p>
-      <h2 class="section-title">Simple to Begin</h2>
-      <div class="steps-grid">
-        <div class="step-card"><div class="step-num">01 — Create Account</div><div class="step-title">Sign Up Free</div><div class="step-desc">Create a free account with your email. No credit card, no subscription, no paywall. Completely free.</div></div>
-        <div class="step-card"><div class="step-num">02 — Choose a Theme</div><div class="step-title">Pick What You Need</div><div class="step-desc">Ten themes covering the full range of what Jesus taught. Start with what's most relevant to where you are right now.</div></div>
-        <div class="step-card"><div class="step-num">03 — Open a Passage</div><div class="step-title">Read the Full Text</div><div class="step-desc">Read the complete passage He spoke, then work through Context, Meaning, Live It, and Pray It at your own pace.</div></div>
-        <div class="step-card"><div class="step-num">04 — Journal & Return</div><div class="step-title">Make It Personal</div><div class="step-desc">Write your reflections in the Journal tab. Memorize the passage. Come back. The words of Jesus don't exhaust themselves in one reading.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUOTE -->
-  <div class="quote-section">
-    <div class="quote-mark">"</div>
-    <p class="quote-text">If you abide in my word, you are truly my disciples, and you will know the truth, and the truth will set you free.</p>
-    <p class="quote-ref">John 8:31–32 · ESV — This is what The Red Letters is for.</p>
+  <div class="quote-band">
+    <p class="q-text">"If you abide in my word, you are truly my disciples, and you will know the truth, and the truth will set you free."</p>
+    <p class="q-ref">John 8:31–32 · ESV — This is what The Red Letters is for.</p>
   </div>
 
-  <!-- CTA -->
-  <div class="cta-section">
-    <p class="section-label" style="text-align:center">Begin Today</p>
-    <h2 class="cta-title">The Words of Jesus<br>Are for You</h2>
-    <p class="cta-sub">Not ancient history. Not a theological reference. Addressed to you, right now, in your actual life.</p>
-    <a class="btn-primary" href="https://redletters.vercel.app">Open The Red Letters — Free</a>
-  </div>
+  <section class="cta-section">
+    <p class="eyebrow reveal">Begin Today</p>
+    <h2 style="font-family:'Cinzel',serif;font-size:clamp(28px,5vw,46px);font-weight:700;color:var(--ink);letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;" class="reveal">The Words of Jesus Are for You</h2>
+    <p style="font-size:18px;color:var(--text);line-height:1.85;max-width:500px;margin:0 auto 36px;font-style:italic;" class="reveal">Not ancient history. Not a theological reference. Addressed to you, right now, in your actual life.</p>
+    <a href="https://redletters.vercel.app" class="btn-p reveal" style="font-size:13px;padding:16px 40px;">✦ Open The Red Letters — Free</a>
+    <div class="free-badge reveal" style="margin-top:20px;">No account required to read · Sign up free to save journal &amp; progress</div>
+  </section>
 
-  <!-- FOOTER -->
+  <section class="faq-wrap">
+    <div class="faq-inner">
+      <p class="eyebrow">Questions</p>
+      <h2 style="font-family:'Cinzel',serif;font-size:clamp(26px,4vw,40px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:0;">Frequently Asked</h2>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-q">Is it really completely free?<span class="faq-plus">+</span></button><div class="faq-a">Yes — no credit card, no subscription, no paywall. Create a free account with your email and you have full access to every passage, every study tab, and every tool immediately.</div></div>
+        <div class="faq-item"><button class="faq-q">Why is it free?<span class="faq-plus">+</span></button><div class="faq-a">The Red Letters contains the complete words of Jesus. That content should be as accessible as possible. Elora Radiance Co. makes it free as a matter of principle, not strategy.</div></div>
+        <div class="faq-item"><button class="faq-q">What Bible translation is used?<span class="faq-plus">+</span></button><div class="faq-a">Passages are drawn primarily from the ESV with some NIV. Each passage shows its translation label. The focus is completeness — showing the full passage as Jesus spoke it, not isolated fragments.</div></div>
+        <div class="faq-item"><button class="faq-q">Do I need an account?<span class="faq-plus">+</span></button><div class="faq-a">Yes, a free account is required to save your journal entries, memorization progress, and bookmarks across devices. Sign up with just your email — nothing else required.</div></div>
+        <div class="faq-item"><button class="faq-q">How many passages are there?<span class="faq-plus">+</span></button><div class="faq-a">24 complete passages across 10 themes — Prayer, Love, The Kingdom, The Cross, Discipleship, Peace &amp; Rest, Anxiety, Truth &amp; Freedom, The Holy Spirit, and Resurrection &amp; Life. More are added over time.</div></div>
+        <div class="faq-item"><button class="faq-q">Does it work on mobile?<span class="faq-plus">+</span></button><div class="faq-a">Yes — any browser on iPhone, Android, iPad, or desktop. No app store download needed. Your journal syncs to the cloud so your work is always saved.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-wrap">
+    <div style="max-width:900px;margin:0 auto;">
+      <p class="eyebrow">Elora Radiance Co.</p>
+      <h2 style="font-family:'Cinzel',serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:12px;">More from Elora Radiance Co.</h2>
+      <p style="font-size:17px;color:var(--text);line-height:1.8;max-width:500px;margin-bottom:0;">Scripture-based tools for every dimension of the Christian life.</p>
+      <div class="cs-grid">
+        <a href="armed-anchored.html" class="cs-card"><span class="cs-icon">⚔️</span><span><div class="cs-name">Armed &amp; Anchored</div><div class="cs-desc">Spiritual warfare training — 23 weapons</div></span><span class="cs-arr">→</span></a>
+        <a href="anchored-steps.html" class="cs-card"><span class="cs-icon">⚓</span><span><div class="cs-name">Anchored Steps · Year 1</div><div class="cs-desc">52 weeks of daily study and prayer</div></span><span class="cs-arr">→</span></a>
+        <a href="anchored-steps-2.html" class="cs-card"><span class="cs-icon">⚓</span><span><div class="cs-name">Anchored Steps · Year 2</div><div class="cs-desc">Deeper study for those who kept going</div></span><span class="cs-arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <div>
-      <div class="footer-brand">The Red Letters</div>
-      <div class="footer-tagline">The complete words of Jesus.<br>Completely free.</div>
+    <span class="footer-brand">The Red Letters · Elora Radiance Co.</span>
+    <div class="footer-links">
+      <a href="https://redletters.vercel.app">Open App</a>
+      <a href="index.html">← Home</a>
     </div>
-    <div>
-      <div class="footer-col-title">Apps</div>
-      <ul class="footer-links">
-        <li><a href="https://redletters.vercel.app">✦ The Red Letters</a></li>
-        <li><a href="https://armedandanchored.vercel.app">⚔️ Armed & Anchored</a></li>
-        <li><a href="https://anchored-steps.vercel.app">⚓ Anchored Steps Year 1</a></li>
-        <li><a href="https://anchored-steps-y2.vercel.app">⚓ Anchored Steps Year 2</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Site</div>
-      <ul class="footer-links">
-        <li><a href="https://eloraradianceco-art.github.io/eloraradiance/index.html">Home</a></li>
-        <li><a href="https://eloraradianceco-art.github.io/eloraradiance/armed-anchored.html">Armed & Anchored</a></li>
-        <li><a href="https://eloraradianceco-art.github.io/eloraradiance/anchored-steps.html">Anchored Steps Y1</a></li>
-        <li><a href="https://eloraradianceco-art.github.io/eloraradiance/anchored-steps-2.html">Anchored Steps Y2</a></li>
-      </ul>
-    </div>
-    <div class="footer-copy">© 2025 Elora Radiance Co. All rights reserved. · Words of Jesus app · Free Bible study app · redletters.vercel.app</div>
   </footer>
 
-</body>
-</html>
-  <!-- FAQ -->
-  <section class="faq-section" style="background:var(--bg, #F7F2EA);">
-    <div class="faq-inner">
-      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Questions</p>
-      <h2 style="font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,40px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:0;">Frequently Asked</h2>
-      <div class="faq-list">
-    <div class="faq-item"><button class="faq-q">Is it really completely free?</button><div class="faq-a">Yes — no credit card, no subscription, no paywall. Create a free account with your email and you have full access to every passage, every study tab, and every tool immediately.</div></div>
-    <div class="faq-item"><button class="faq-q">Why is it free?</button><div class="faq-a">The Red Letters contains the complete words of Jesus. That content should be as accessible as possible. Elora Radiance Co. makes it free as a matter of principle, not strategy.</div></div>
-    <div class="faq-item"><button class="faq-q">What Bible translation is used?</button><div class="faq-a">Passages are primarily drawn from the ESV (English Standard Version) with some NIV. Each passage shows its translation label. The focus is on completeness and accuracy — showing the full passage as Jesus spoke it, not isolated fragments.</div></div>
-    <div class="faq-item"><button class="faq-q">Do I need an account?</button><div class="faq-a">Yes, a free account is required to save your journal entries, memorization progress, and bookmarks across devices. Sign up with just your email — no other information needed.</div></div>
-    <div class="faq-item"><button class="faq-q">How many passages are there?</button><div class="faq-a">24 complete passages across 10 themes — Prayer, Love, The Kingdom, The Cross, Discipleship, Peace &amp; Rest, Anxiety, Truth &amp; Freedom, The Holy Spirit, and Resurrection. More themes and passages are added over time.</div></div>
-    <div class="faq-item"><button class="faq-q">Can I use it offline?</button><div class="faq-a">The app works in any browser with an internet connection. Journal entries sync to the cloud, so your work is never lost if your connection drops mid-session.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CROSS-SELL -->
-  <section class="crosssell-section" style="background:var(--parchment-d,#E8E0D0);">
-    <div style="max-width:900px;margin:0 auto;">
-      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Elora Radiance Co.</p>
-      <h2 style="font-family:'Cinzel',serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:14px;">More from Elora Radiance Co.</h2>
-      <p style="font-size:17px;color:var(--ink-ll);line-height:1.8;max-width:540px;margin-bottom:0;">Scripture-based tools for the believer who is serious about their faith.</p>
-      <div class="crosssell-grid">
-      <a href="armed-anchored.html" class="crosssell-card"><span class="crosssell-icon">⚔️</span><span><div class="crosssell-name">Armed &amp; Anchored</div><div class="crosssell-desc">Spiritual warfare training — 23 weapons</div></span><span class="crosssell-arrow">→</span></a>
-      <a href="anchored-steps.html" class="crosssell-card"><span class="crosssell-icon">⚓</span><span><div class="crosssell-name">Anchored Steps · Year 1</div><div class="crosssell-desc">52 weeks of daily study and prayer</div></span><span class="crosssell-arrow">→</span></a>
-      <a href="anchored-steps-2.html" class="crosssell-card"><span class="crosssell-icon">⚓</span><span><div class="crosssell-name">Anchored Steps · Year 2</div><div class="crosssell-desc">Deeper study for those who kept going</div></span><span class="crosssell-arrow">→</span></a>
-      </div>
-    </div>
-  </section>
-
   <script>
-    // Hamburger
-    const ham = document.querySelector('.nav-hamburger');
-    const menu = document.querySelector('.mobile-menu');
+    const ham = document.querySelector('.nav-ham');
+    const menu = document.querySelector('.nav-menu');
     if (ham && menu) {
-      ham.addEventListener('click', (e) => { e.stopPropagation(); ham.classList.toggle('open'); menu.classList.toggle('open'); });
-      document.addEventListener('click', (e) => { if (!ham.contains(e.target) && !menu.contains(e.target)) { ham.classList.remove('open'); menu.classList.remove('open'); } });
+      ham.addEventListener('click', e => { e.stopPropagation(); ham.classList.toggle('open'); menu.classList.toggle('open'); });
+      document.addEventListener('click', e => { if (!ham.contains(e.target) && !menu.contains(e.target)) { ham.classList.remove('open'); menu.classList.remove('open'); } });
     }
-    // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
@@ -441,11 +255,7 @@
         if (!wasOpen) item.classList.add('open');
       });
     });
-    // Scroll reveal
-    const obs = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-      { threshold: 0.08 }
-    );
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   </script>
 </body>
