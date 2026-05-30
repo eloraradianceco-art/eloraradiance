@@ -3,12 +3,576 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Elora Radiance Co. | Spiritual Warfare Journals &amp; Devotional Apps</title>
+  <title>Elora Radiance Co. | Spiritual Warfare Journals & Devotional Apps</title>
   <meta name="description" content="Equip yourself for the battle. Elora Radiance Co. creates Scripture-based spiritual warfare journals and daily devotional apps — tools to help Christians stand firm, fight from victory, and grow in faith."/>
-  <meta name="keywords" content="spiritual warfare journal, spiritual warfare app, Christian journaling app, Bible devotional app, scripture memorization app, daily devotional app, spiritual warfare training, Christian daily devotional, Bible study journal, prayer journal app, Anchored Steps, Armed and Anchored, The Red Letters, Elora Radiance"/>
+  <meta name="keywords" content="spiritual warfare journal, spiritual warfare app, Christian journaling app, Bible devotional app, scripture memorization app, daily devotional app, spiritual warfare training, Christian daily devotional, Bible study journal, prayer journal app, Anchored Steps, Armed and Anchored, Elora Radiance"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://eloraradiance.com/"/>
-  <meta property="og:title" content="Elora Radiance Co. | Spiritual Warfare Journals &amp; Devotional Apps"/>
+  <meta property="og:title" content="Elora Radiance Co. | Spiritual Warfare Journals & Devotional Apps"/>
+  <meta property="og:description" content="Equip yourself for the battle. Scripture-based spiritual warfare journals and daily devotional apps for Christians who are ready to fight from victory."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --border-nav: var(--parchment-dd);
+      --nav-text: var(--ink);
+      --nav-muted: var(--ink-ll);
+      --ham-color: var(--ink);
+      --menu-bg: rgba(242,237,228,0.98);
+      --menu-link: var(--ink-ll);
+      --menu-label: var(--taupe);
+      --faq-bg: var(--parchment);
+      --faq-head: var(--ink);
+      --faq-text: var(--ink-ll);
+      --faq-muted: var(--taupe);
+      --faq-border: var(--parchment-dd);
+      --cs-bg: var(--parchment-d);
+      --cs-border: var(--parchment-dd);
+      --cs-head: var(--ink);
+      --cs-text: var(--ink-ll);
+      --cs-muted: var(--taupe);
+      --cs-card-bg: var(--parchment);
+      --cs-card-border: var(--parchment-dd);
+      --gold-b: rgba(176,138,78,0.3);
+    }
+    /* (original :root below — merged above) */
+    :root_IGNORE_noop {
+      --parchment:    #F2EDE4;
+      --parchment-d:  #E8E0D0;
+      --parchment-dd: #D8CCBA;
+      --taupe:        #8B7A5E;
+      --taupe-l:      #A8956F;
+      --ink:          #1C150A;
+      --ink-l:        #3D2E1A;
+      --ink-ll:       #6B5A45;
+      --gold:         #B08A4E;
+      --gold-l:       #C9A96E;
+      --gold-f:       rgba(176,138,78,0.12);
+      --gold-b:       rgba(176,138,78,0.28);
+      --crimson:      #8C2222;
+      --navy:         #070E17;
+      --navy-m:       #0D1A2A;
+      --cream:        #EDE6D6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchment);
+      color: var(--ink-l);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      background: rgba(242,237,228,0.93);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--parchment-dd);
+      padding: 14px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Cinzel', serif; font-size: 12px;
+      font-weight: 600; letter-spacing: 0.22em;
+      color: var(--ink); text-decoration: none; text-transform: uppercase;
+    }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a {
+      font-family: 'Cinzel', serif; font-size: 10px;
+      letter-spacing: 0.16em; color: var(--ink-ll);
+      text-decoration: none; text-transform: uppercase; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--navy) !important; color: var(--cream) !important;
+      padding: 9px 22px; border-radius: 5px;
+      border: 1px solid rgba(176,138,78,0.25);
+      transition: all .2s !important;
+    }
+    .nav-cta:hover { border-color: rgba(176,138,78,0.5) !important; color: var(--gold-l) !important; }
+    @media(max-width:768px){ nav { padding: 14px 20px; } .nav-links { display: none; } }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 120px 24px 110px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 20%, rgba(176,138,78,0.09) 0%, transparent 52%),
+        radial-gradient(ellipse at 85% 80%, rgba(139,122,94,0.07) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 0%, rgba(140,34,34,0.05) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-family: 'Cinzel', serif; font-size: 10px;
+      letter-spacing: 0.28em; color: var(--taupe);
+      text-transform: uppercase; margin-bottom: 28px;
+      opacity: 0; animation: fadeUp .8s ease .15s forwards;
+    }
+    .hero-logo {
+      width: min(400px, 82vw); margin-bottom: 32px;
+      opacity: 0; animation: fadeUp .9s ease .3s forwards;
+    }
+    .hero-divider {
+      width: 100px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--taupe), transparent);
+      margin: 0 auto 40px;
+      opacity: 0; animation: fadeIn 1s ease .5s forwards;
+    }
+    .hero-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(30px, 5vw, 56px); font-weight: 500; font-style: italic;
+      color: var(--ink); line-height: 1.3; max-width: 660px; margin-bottom: 18px;
+      opacity: 0; animation: fadeUp 1s ease .65s forwards;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px); color: var(--ink-ll);
+      max-width: 500px; line-height: 1.8; margin-bottom: 52px;
+      opacity: 0; animation: fadeUp 1s ease .8s forwards;
+    }
+    .hero-btns {
+      display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+      opacity: 0; animation: fadeUp 1s ease .95s forwards;
+    }
+    .scroll-hint {
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.22em;
+      color: var(--taupe); text-transform: uppercase;
+      opacity: 0; animation: fadeIn 1.2s ease 1.6s forwards;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      pointer-events: none;
+    }
+    .scroll-hint::after {
+      content: ''; width: 1px; height: 44px;
+      background: linear-gradient(180deg, var(--taupe), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    /* BUTTONS */
+    .btn-primary {
+      background: var(--navy); color: var(--cream);
+      padding: 14px 34px; font-family: 'Cinzel', serif;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; border-radius: 5px;
+      border: 1px solid rgba(176,138,78,0.3);
+      transition: all .25s; cursor: pointer; display: inline-block;
+    }
+    .btn-primary:hover { border-color: var(--gold-b); color: var(--gold-l); }
+    .btn-secondary {
+      background: transparent; color: var(--ink);
+      padding: 14px 34px; font-family: 'Cinzel', serif;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; border-radius: 5px;
+      border: 1px solid var(--parchment-dd);
+      transition: all .25s; cursor: pointer; display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--taupe); color: var(--taupe); }
+
+    /* INTRO BAND */
+    .intro-band {
+      background: var(--parchment-d);
+      border-top: 1px solid var(--parchment-dd);
+      border-bottom: 1px solid var(--parchment-dd);
+      padding: 60px 40px; text-align: center;
+    }
+    .intro-band p {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(18px, 2.5vw, 26px); font-style: italic;
+      color: var(--ink); max-width: 780px; margin: 0 auto; line-height: 1.65;
+    }
+    .intro-band span { color: var(--crimson); font-style: normal; }
+
+    /* SECTION SHARED */
+    .section-eyebrow {
+      font-family: 'Cinzel', serif; font-size: 10px;
+      letter-spacing: 0.26em; color: var(--taupe);
+      text-transform: uppercase; margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(26px, 3.5vw, 42px); font-weight: 600;
+      color: var(--ink); letter-spacing: 0.04em; margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: clamp(16px, 1.8vw, 19px);
+      color: var(--ink-ll); max-width: 540px; line-height: 1.75;
+    }
+
+    /* APPS SECTION */
+    .apps-section {
+      padding: 100px 48px; max-width: 1200px; margin: 0 auto;
+    }
+    .apps-header { text-align: center; margin-bottom: 72px; }
+    .apps-header .section-sub { margin: 0 auto; }
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 26px;
+    }
+    @media(max-width:768px){ .apps-section { padding: 70px 20px; } }
+
+    /* APP CARD */
+    .app-card {
+      background: var(--navy); border-radius: 20px; overflow: hidden;
+      border: 1px solid rgba(176,138,78,0.18);
+      transition: transform .3s ease, box-shadow .3s ease;
+      display: flex; flex-direction: column;
+      text-decoration: none;
+    }
+    .app-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 70px rgba(7,14,23,0.4);
+    }
+    .card-img-wrap {
+      background: #070E17;
+      padding: 32px; display: flex; justify-content: center; align-items: center;
+      border-bottom: 1px solid rgba(176,138,78,0.1);
+    }
+    .card-img-wrap img { width: 120px; height: 120px; border-radius: 24px; object-fit: cover; }
+    .card-body { padding: 26px 28px 32px; flex: 1; display: flex; flex-direction: column; }
+    .card-label {
+      font-family: 'Cinzel', serif; font-size: 9px;
+      letter-spacing: 0.22em; color: rgba(176,138,78,0.65);
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+    .card-title {
+      font-family: 'Cinzel', serif; font-size: 20px; font-weight: 700;
+      color: #EDE6D6; letter-spacing: 0.04em; margin-bottom: 12px;
+    }
+    .card-desc {
+      font-family: 'EB Garamond', serif; font-size: 16px;
+      color: rgba(200,190,170,0.85); line-height: 1.75;
+      margin-bottom: 22px; flex: 1;
+    }
+    .card-features { list-style: none; margin-bottom: 26px; }
+    .card-features li {
+      font-family: 'EB Garamond', serif; font-size: 14px;
+      color: rgba(176,138,78,0.75); padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .card-features li::before {
+      content: '✦'; font-size: 7px;
+      color: rgba(176,138,78,0.45); flex-shrink: 0;
+    }
+    .card-btn {
+      display: block; text-align: center; text-decoration: none;
+      padding: 13px 20px; border-radius: 10px;
+      font-family: 'Cinzel', serif; font-size: 11px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      transition: all .25s; cursor: pointer;
+    }
+    .card-btn-red {
+      background: linear-gradient(135deg, rgba(140,34,34,0.38), rgba(140,34,34,0.16));
+      border: 1px solid rgba(140,34,34,0.45); color: #EDE6D6;
+    }
+    .card-btn-red:hover {
+      background: linear-gradient(135deg, rgba(140,34,34,0.56), rgba(140,34,34,0.28));
+      border-color: rgba(140,34,34,0.65);
+    }
+    .card-btn-gold {
+      background: linear-gradient(135deg, rgba(176,138,78,0.22), rgba(176,138,78,0.08));
+      border: 1px solid rgba(176,138,78,0.32); color: rgba(201,169,110,0.95);
+    }
+    .card-btn-gold:hover {
+      background: linear-gradient(135deg, rgba(176,138,78,0.38), rgba(176,138,78,0.18));
+      border-color: rgba(176,138,78,0.52);
+    }
+
+    /* SCRIPTURE BAND */
+    .scripture-band {
+      background: var(--parchment-d);
+      border-top: 1px solid var(--parchment-dd);
+      border-bottom: 1px solid var(--parchment-dd);
+      padding: 80px 40px; text-align: center;
+    }
+    .scripture-text {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(22px, 3vw, 38px); font-style: italic;
+      color: var(--ink); max-width: 820px; margin: 0 auto 18px;
+      line-height: 1.5;
+    }
+    .scripture-ref {
+      font-family: 'Cinzel', serif; font-size: 11px;
+      letter-spacing: 0.18em; color: var(--taupe); text-transform: uppercase;
+    }
+
+    /* ABOUT */
+    .about-section {
+      padding: 100px 48px;
+      background: var(--parchment);
+    }
+    .about-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 80px; align-items: center;
+    }
+    .about-logo { width: 100%; max-width: 300px; display: block; margin: 0 auto; }
+    .about-text .section-sub { max-width: 100%; margin-bottom: 16px; }
+    .about-blockquote {
+      margin-top: 28px; padding: 18px 22px;
+      background: rgba(139,122,94,0.08);
+      border-left: 2px solid var(--taupe);
+      border-radius: 0 8px 8px 0;
+    }
+    .about-blockquote p { font-style: italic; color: var(--ink); font-size: 17px; line-height: 1.7; margin-bottom: 6px; }
+    .about-blockquote cite {
+      font-family: 'Cinzel', serif; font-size: 10px;
+      letter-spacing: 0.12em; color: var(--taupe); font-style: normal;
+    }
+    @media(max-width:768px){
+      .about-section { padding: 70px 20px; }
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy); color: rgba(220,210,195,0.85);
+      padding: 70px 48px 40px;
+    }
+    .footer-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 60px; margin-bottom: 52px;
+    }
+    .footer-brand {
+      font-family: 'Cinzel', serif; font-size: 12px;
+      letter-spacing: 0.22em; color: var(--cream);
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .footer-tagline {
+      font-size: 15px; font-style: italic;
+      color: rgba(201,169,110,0.88); line-height: 1.65; margin-bottom: 18px;
+    }
+    .footer-col-title {
+      font-family: 'Cinzel', serif; font-size: 9px;
+      letter-spacing: 0.2em; color: rgba(201,169,110,0.8);
+      text-transform: uppercase; margin-bottom: 16px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+      font-size: 15px; color: rgba(220,210,195,0.82);
+      text-decoration: none; transition: color .2s;
+    }
+    .footer-links a:hover { color: rgba(176,138,78,0.85); }
+    .footer-bottom {
+      max-width: 1100px; margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 22px;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 10px;
+    }
+    .footer-copy {
+      font-family: 'Cinzel', serif; font-size: 9px;
+      letter-spacing: 0.14em; color: rgba(220,210,195,0.55);
+      text-transform: uppercase;
+    }
+    .footer-seo { font-size: 11px; color: rgba(220,210,195,0.38); }
+    @media(max-width:768px){
+      footer { padding: 60px 20px 32px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 1; transform: scaleY(1); }
+      50%     { opacity: 0.35; transform: scaleY(0.5); }
+    }
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: .1s; }
+    .d2 { transition-delay: .2s; }
+    .d3 { transition-delay: .32s; }
+    .card-price {
+      font-family: 'Cinzel', serif; font-size: 22px; font-weight: 700;
+      color: var(--gold-l); margin: 16px 0 22px; line-height: 1;
+    }
+    .card-price span {
+      font-size: 13px; font-weight: 400; color: var(--muted); letter-spacing: 0.08em;
+    }
+    .video-label {
+      font-family: 'Cinzel', serif; font-size: 9px;
+      letter-spacing: 0.18em; color: rgba(176,138,78,0.6);
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+
+    nav { position:fixed; top:0; left:0; right:0; z-index:900; backdrop-filter:blur(18px); border-bottom:1px solid var(--border-nav); padding:14px 40px; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { font-family:'Cinzel',serif; font-size:12px; font-weight:600; letter-spacing:0.22em; color:var(--nav-text); text-decoration:none; text-transform:uppercase; }
+    .nav-home { font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.16em; color:var(--nav-muted); text-decoration:none; text-transform:uppercase; transition:color .2s; }
+    .nav-home:hover { color:var(--gold); }
+    .nav-cta { font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; padding:9px 20px; border-radius:5px; text-decoration:none; transition:all .2s; }
+    .nav-ham { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+    .nav-ham span { display:block; width:22px; height:2px; background:var(--ham-color); border-radius:2px; transition:all .3s; }
+    .nav-ham.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .nav-ham.open span:nth-child(2) { opacity:0; }
+    .nav-ham.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .nav-menu { display:none; position:fixed; top:53px; left:0; right:0; background:var(--menu-bg); border-bottom:1px solid var(--border-nav); padding:8px 0 20px; flex-direction:column; z-index:899; box-shadow:0 8px 24px rgba(0,0,0,0.12); }
+    .nav-menu.open { display:flex; }
+    .nav-menu a { font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--menu-link); text-decoration:none; padding:14px 24px; border-bottom:1px solid var(--border-nav); transition:color .2s; }
+    .nav-menu a:last-child { border-bottom:none; }
+    .nav-menu a:hover { color:var(--gold); }
+    .nav-menu .m-label { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--menu-label); padding:14px 24px 4px; display:block; }
+    @media(max-width:768px) { nav { padding:14px 20px; } .nav-ham { display:flex !important; } }
+
+    .faq-wrap { padding:90px 48px; background:var(--faq-bg); }
+    .faq-inner { max-width:760px; margin:0 auto; }
+    .faq-eyebrow { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--faq-muted); margin-bottom:12px; }
+    .faq-title { font-family:'Cinzel',serif; font-size:clamp(26px,3.5vw,40px); font-weight:600; color:var(--faq-head); letter-spacing:0.04em; margin-bottom:0; }
+    .faq-list { margin-top:40px; }
+    .faq-item { border-bottom:1px solid var(--faq-border); }
+    .faq-q { width:100%; text-align:left; background:none; border:none; cursor:pointer; padding:22px 0; display:flex; justify-content:space-between; align-items:flex-start; gap:16px; font-family:'Cinzel',serif; font-size:14px; letter-spacing:0.04em; color:var(--faq-head); transition:color .2s; }
+    .faq-q:hover { color:var(--gold); }
+    .faq-plus { font-size:22px; color:var(--faq-muted); flex-shrink:0; line-height:1; transition:transform .3s; margin-top:2px; }
+    .faq-item.open .faq-plus { transform:rotate(45deg); }
+    .faq-a { max-height:0; overflow:hidden; transition:max-height .35s ease, padding .35s ease; font-size:17px; color:var(--faq-text); line-height:1.85; }
+    .faq-item.open .faq-a { max-height:600px; padding-bottom:22px; }
+    @media(max-width:768px){ .faq-wrap { padding:70px 20px; } }
+
+    .cs-wrap { padding:90px 48px; background:var(--cs-bg); border-top:1px solid var(--cs-border); }
+    .cs-inner { max-width:900px; margin:0 auto; }
+    .cs-eyebrow { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-muted); margin-bottom:12px; }
+    .cs-title { font-family:'Cinzel',serif; font-size:clamp(22px,3vw,34px); font-weight:600; color:var(--cs-head); letter-spacing:0.04em; margin-bottom:12px; }
+    .cs-sub { font-size:17px; color:var(--cs-text); line-height:1.8; max-width:500px; margin-bottom:0; }
+    .cs-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:36px; }
+    .cs-card { display:flex; align-items:center; gap:16px; padding:20px 22px; border:1px solid var(--cs-card-border); border-radius:16px; text-decoration:none; transition:all .2s; background:var(--cs-card-bg); }
+    .cs-card:hover { border-color:var(--gold-b); transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.1); }
+    .cs-icon { font-size:26px; flex-shrink:0; }
+    .cs-name { font-family:'Cinzel',serif; font-size:13px; color:var(--cs-head); letter-spacing:0.05em; margin-bottom:3px; }
+    .cs-desc { font-size:13px; color:var(--cs-text); line-height:1.5; }
+    .cs-arr { margin-left:auto; font-size:14px; color:var(--cs-muted); flex-shrink:0; }
+    @media(max-width:768px){ .cs-wrap { padding:70px 20px; } }
+  </style>
+</head>
+<body>
+
+    <!-- NAV -->
+  <nav style="background:rgba(242,237,228,0.93);">
+    <a href="index.html" class="nav-logo">Elora Radiance Co.</a>
+    <ul class="nav-links" style="display:flex;gap:36px;list-style:none;align-items:center;">
+      <li><a href="#apps" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.16em;color:var(--ink-ll);text-decoration:none;text-transform:uppercase;transition:color .2s;">Apps</a></li>
+      <li><a href="armed-anchored.html" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.16em;color:var(--ink-ll);text-decoration:none;text-transform:uppercase;transition:color .2s;">Armed &amp; Anchored</a></li>
+      <li><a href="anchored-steps.html" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.16em;color:var(--ink-ll);text-decoration:none;text-transform:uppercase;transition:color .2s;">Anchored Steps Y1</a></li>
+      <li><a href="anchored-steps-2.html" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.16em;color:var(--ink-ll);text-decoration:none;text-transform:uppercase;transition:color .2s;">Anchored Steps Y2</a></li>
+      <li><a href="red-letters.html" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.16em;color:var(--ink-ll);text-decoration:none;text-transform:uppercase;transition:color .2s;">The Red Letters</a></li>
+      <li><a href="#about" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.16em;color:var(--ink-ll);text-decoration:none;text-transform:uppercase;transition:color .2s;">About</a></li>
+    </ul>
+    <button class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav-menu">
+      <span class="m-label">Pages</span>
+      <a href="index.html#apps">All Apps</a>
+      <a href="index.html#about">About</a>
+      <span class="m-label">Apps</span>
+      <a href="armed-anchored.html">⚔️ Armed &amp; Anchored</a>
+      <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
+      <a href="anchored-steps-2.html">⚓ Anchored Steps Year 2</a>
+      <a href="red-letters.html">✦ The Red Letters</a>
+    </nav>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Inspired by faith, created to shine</p>
+    <img src="assets/logo.png" alt="Elora Radiance Co." class="hero-logo"/>
+    <div class="hero-divider"></div>
+    <h1 class="hero-headline">Equip the Warrior.<br>Anchor the Soul.</h1>
+    <p class="hero-sub">Scripture-based apps and tools for Christians who are ready to stand firm, fight from victory, and go deeper with God.</p>
+    <div class="hero-btns">
+      <a href="#apps" class="btn-primary">Explore the Apps</a>
+      <a href="#about" class="btn-secondary">Our Mission</a>
+    </div>
+    <div class="scroll-hint">Discover</div>
+  </section>
+
+  <!-- INTRO BAND -->
+  <div class="intro-band">
+    <p>"We don't create apps. We build <span>war rooms, anchors, and arsenals</span> — digital tools rooted in Scripture for the believer who is serious about the fight."</p>
+  </div>
+
+  <!-- APPS -->
+  <section id="apps">
+    <div class="apps-section">
+      <div class="apps-header reveal">
+        <p class="section-eyebrow">Our Tools</p>
+        <h2 class="section-title">The Arsenal</h2>
+        <p class="section-sub">Three apps, one mission — equip the believer, anchor the soul, and win the war.</p>
+      </div>
+      <div class="apps-grid">
+
+        <!-- Armed & Anchored -->
+        <div class="app-card reveal d1">
+          <div class="card-img-wrap">
+            <img src="assets/armed-anchored-icon.png" alt="Armed & Anchored"/>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Spiritual Warfare Journal</div>
+            <div class="card-title">Armed &amp; Anchored</div>
+            <p class="card-desc">Your personal war room. 23 weapons of the believer — Scripture teaching, enemy tactics, declarations, battle tools, and memorization.</p>
+            <div class="card-price">$27 <span>one-time</span></div>
+            <a href="armed-anchored.html" class="card-btn card-btn-red">⚔️ Learn More</a>
+          </div>
+        </div>
+
+        <!-- Anchored Steps Year 1 -->
+        <div class="app-card reveal d2">
+          <div class="card-img-wrap">
+            <img src="assets/anchored-steps-1.png" alt="Anchored Steps Year 1"/>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Weekly Devotional · Year 1</div>
+            <div class="card-title">Anchored Steps</div>
+            <p class="card-desc">52 weeks of Scripture, study, reflection, prayer, and community. A full year of walking steadily with God.</p>
+            <div class="card-price">$5.50<span>/mo &nbsp;·&nbsp; $39/yr</span></div>
+            <a href="anchored-steps.html" class="card-btn card-btn-gold">⚓ Learn More</a>
+          </div>
+        </div>
+
+        <!-- Anchored Steps Year 2 -->
+        <div class="app-card reveal d3">
+          <div class="card-img-wrap">
+            <img src="assets/anchored-steps-2.png" alt="Anchored Steps Year 2"/>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Weekly Devotional · Year 2</div>
+            <div class="card-title">Anchored Steps · Year 2</div>
+            <p class="card-desc">Continue the journey. 52 deeper weeks — richer Scripture, harder questions, and a faith that doesn't quit.</p>
+            <div class="card-price">$5.50<span>/mo &nbsp;·&nbsp; $39/yr</span></div>
+            <a href="anchored-steps-2.html" class="card-btn card-btn-gold">⚓ Learn More</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>ad>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elora Radiance Co. | Spiritual Warfare Journals & Devotional Apps</title>
+  <meta name="description" content="Equip yourself for the battle. Elora Radiance Co. creates Scripture-based spiritual warfare journals and daily devotional apps — tools to help Christians stand firm, fight from victory, and grow in faith."/>
+  <meta name="keywords" content="spiritual warfare journal, spiritual warfare app, Christian journaling app, Bible devotional app, scripture memorization app, daily devotional app, spiritual warfare training, Christian daily devotional, Bible study journal, prayer journal app, Anchored Steps, Armed and Anchored, Elora Radiance"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://eloraradiance.com/"/>
+  <meta property="og:title" content="Elora Radiance Co. | Spiritual Warfare Journals & Devotional Apps"/>
   <meta property="og:description" content="Equip yourself for the battle. Scripture-based spiritual warfare journals and daily devotional apps for Christians who are ready to fight from victory."/>
   <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -189,13 +753,13 @@
 
     /* APPS SECTION */
     .apps-section {
-      padding: 100px 48px; max-width: 1320px; margin: 0 auto;
+      padding: 100px 48px; max-width: 1200px; margin: 0 auto;
     }
     .apps-header { text-align: center; margin-bottom: 72px; }
     .apps-header .section-sub { margin: 0 auto; }
     .apps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 26px;
     }
     @media(max-width:768px){ .apps-section { padding: 70px 20px; } }
@@ -233,6 +797,17 @@
       color: rgba(200,190,170,0.85); line-height: 1.75;
       margin-bottom: 22px; flex: 1;
     }
+    .card-features { list-style: none; margin-bottom: 26px; }
+    .card-features li {
+      font-family: 'EB Garamond', serif; font-size: 14px;
+      color: rgba(176,138,78,0.75); padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .card-features li::before {
+      content: '✦'; font-size: 7px;
+      color: rgba(176,138,78,0.45); flex-shrink: 0;
+    }
     .card-btn {
       display: block; text-align: center; text-decoration: none;
       padding: 13px 20px; border-radius: 10px;
@@ -255,18 +830,6 @@
     .card-btn-gold:hover {
       background: linear-gradient(135deg, rgba(176,138,78,0.38), rgba(176,138,78,0.18));
       border-color: rgba(176,138,78,0.52);
-    }
-    .card-price {
-      font-family: 'Cinzel', serif; font-size: 22px; font-weight: 700;
-      color: var(--gold-l); margin: 16px 0 22px; line-height: 1;
-    }
-    .card-price span {
-      font-size: 13px; font-weight: 400; letter-spacing: 0.08em;
-    }
-    .card-price-free {
-      font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600;
-      color: rgba(140,34,34,0.85); margin: 16px 0 22px; line-height: 1;
-      letter-spacing: 0.1em; text-transform: uppercase;
     }
 
     /* SCRIPTURE BAND */
@@ -382,145 +945,23 @@
     .d1 { transition-delay: .1s; }
     .d2 { transition-delay: .2s; }
     .d3 { transition-delay: .32s; }
-    .d4 { transition-delay: .44s; }
-
-    /* HAMBURGER / MOBILE MENU */
-    .nav-hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none;
+    .card-price {
+      font-family: 'Cinzel', serif; font-size: 22px; font-weight: 700;
+      color: var(--gold-l); margin: 16px 0 22px; line-height: 1;
     }
-    .nav-hamburger span {
-      display: block; width: 22px; height: 2px;
-      background: var(--ink, #1C150A); border-radius: 2px; transition: all .3s;
+    .card-price span {
+      font-size: 13px; font-weight: 400; color: var(--muted); letter-spacing: 0.08em;
     }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu {
-      display: none; position: absolute; top: 100%; left: 0; right: 0;
-      background: rgba(242,237,228,0.98); backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--parchment-dd, #D8CCBA);
-      padding: 8px 0 20px; flex-direction: column; z-index: 899; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    .video-label {
+      font-family: 'Cinzel', serif; font-size: 9px;
+      letter-spacing: 0.18em; color: rgba(176,138,78,0.6);
+      text-transform: uppercase; margin-bottom: 8px;
     }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--ink-ll, #6B5A45); text-decoration: none;
-      padding: 14px 24px; border-bottom: 1px solid var(--parchment-dd, #D8CCBA); transition: color .2s;
-    }
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a:hover { color: var(--gold, #B08A4E); }
-    .mobile-menu .menu-label {
-      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--taupe, #8B7A5E);
-      padding: 14px 24px 4px; display: block;
-    }
-    @media(max-width:768px) { .nav-hamburger { display: flex !important; } }
-
-    /* FAQ */
-    .faq-section { padding: 90px 48px; }
-    .faq-inner { max-width: 760px; margin: 0 auto; }
-    .faq-list { margin-top: 40px; }
-    .faq-item { border-bottom: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
-    .faq-q {
-      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
-      padding: 22px 0; display: flex; justify-content: space-between; align-items: center;
-      font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.04em;
-      color: var(--ink, #1C150A); transition: color .2s;
-    }
-    .faq-q:hover { color: var(--gold, #B08A4E); }
-    .faq-q::after { content: '+'; font-size: 22px; color: var(--taupe, #8B7A5E); flex-shrink: 0; margin-left: 16px; transition: transform .3s; line-height: 1; }
-    .faq-item.open .faq-q::after { transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; font-size: 17px; color: var(--ink-ll, #6B5A45); line-height: 1.85; }
-    .faq-item.open .faq-a { max-height: 600px; padding-bottom: 22px; }
-    @media(max-width:768px){ .faq-section { padding: 70px 20px; } }
-
-    /* CROSS-SELL */
-    .crosssell-section { padding: 90px 48px; border-top: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
-    .crosssell-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; margin-top: 36px; }
-    .crosssell-card {
-      display: flex; align-items: center; gap: 16px; padding: 20px 22px;
-      border: 1px solid var(--parchment-dd, rgba(0,0,0,0.1));
-      border-radius: 16px; text-decoration: none; transition: all .2s; background: var(--parchment, #F2EDE4);
-    }
-    .crosssell-card:hover { border-color: var(--gold-b, rgba(176,138,78,0.3)); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-    .crosssell-icon { font-size: 26px; flex-shrink: 0; }
-    .crosssell-name { font-family: 'Cinzel', serif; font-size: 13px; color: var(--ink, #1C150A); letter-spacing: 0.05em; margin-bottom: 3px; }
-    .crosssell-desc { font-size: 13px; color: var(--ink-ll, #6B5A45); line-height: 1.5; }
-    .crosssell-arrow { margin-left: auto; font-size: 14px; color: var(--taupe, #8B7A5E); flex-shrink: 0; }
-    @media(max-width:768px){ .crosssell-section { padding: 70px 20px; } }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav style="position:relative;">
-    <a href="index.html" class="nav-logo">Elora Radiance Co.</a>
-    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="mobile-menu">
-      <span class="menu-label">Pages</span>
-      <a href="index.html#apps">All Apps</a>
-      <a href="index.html#about">About</a>
-      <span class="menu-label">Apps</span>
-      <a href="armed-anchored.html">⚔️ Armed &amp; Anchored</a>
-      <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
-      <a href="anchored-steps-2.html">⚓ Anchored Steps Year 2</a>
-      <a href="red-letters.html">✦ The Red Letters</a>
-    </div>
-    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="mobile-menu">
-      <span class="menu-label">Pages</span>
-      <a href="index.html#apps">All Apps</a>
-      <a href="index.html#about">About</a>
-      <span class="menu-label">Apps</span>
-      <a href="armed-anchored.html">⚔️ Armed &amp; Anchored</a>
-      <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
-      <a href="anchored-steps-2.html">⚓ Anchored Steps Year 2</a>
-      <a href="red-letters.html">✦ The Red Letters</a>
-    </div>
-    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="mobile-menu">
-      <span class="menu-label">Pages</span>
-      <a href="index.html#apps">All Apps</a>
-      <a href="index.html#about">About</a>
-      <span class="menu-label">Apps</span>
-      <a href="armed-anchored.html">⚔️ Armed &amp; Anchored</a>
-      <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
-      <a href="anchored-steps-2.html">⚓ Anchored Steps Year 2</a>
-      <a href="red-letters.html">✦ The Red Letters</a>
-    </div>
-    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="mobile-menu">
-      <span class="menu-label">Pages</span>
-      <a href="index.html#apps">All Apps</a>
-      <a href="index.html#about">About</a>
-      <span class="menu-label">Apps</span>
-      <a href="armed-anchored.html">⚔️ Armed &amp; Anchored</a>
-      <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
-      <a href="anchored-steps-2.html">⚓ Anchored Steps Year 2</a>
-      <a href="red-letters.html">✦ The Red Letters</a>
-    </div>
-    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="mobile-menu">
-      <span class="menu-label">Pages</span>
-      <a href="index.html#apps">All Apps</a>
-      <a href="index.html#about">About</a>
-      <span class="menu-label">Apps</span>
-      <a href="armed-anchored.html">⚔️ Armed &amp; Anchored</a>
-      <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
-      <a href="anchored-steps-2.html">⚓ Anchored Steps Year 2</a>
-      <a href="red-letters.html">✦ The Red Letters</a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#apps">Apps</a></li>
-      <li><a href="armed-anchored.html">Armed &amp; Anchored</a></li>
-      <li><a href="anchored-steps.html">Anchored Steps Y1</a></li>
-      <li><a href="anchored-steps-2.html">Anchored Steps Y2</a></li>
-      <li><a href="red-letters.html">The Red Letters</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-  </nav>
-
+  
   <!-- HERO -->
   <section class="hero">
     <p class="hero-eyebrow">Inspired by faith, created to shine</p>
@@ -537,7 +978,7 @@
 
   <!-- INTRO BAND -->
   <div class="intro-band">
-    <p>"We don't create apps. We build <span>war rooms, anchors, arsenals, and red letter libraries</span> — digital tools rooted in Scripture for the believer who is serious about the walk."</p>
+    <p>"We don't create apps. We build <span>war rooms, anchors, and arsenals</span> — digital tools rooted in Scripture for the believer who is serious about the fight."</p>
   </div>
 
   <!-- APPS -->
@@ -546,105 +987,11 @@
       <div class="apps-header reveal">
         <p class="section-eyebrow">Our Tools</p>
         <h2 class="section-title">The Arsenal</h2>
-        <p class="section-sub">Four apps, one mission — equip the believer, anchor the soul, and win the war.</p>
+        <p class="section-sub">Three apps, one mission — equip the believer, anchor the soul, and win the war.</p>
       </div>
       <div class="apps-grid">
 
         <!-- Armed & Anchored -->
-        <div class="app-card reveal d1">
-          <div class="card-img-wrap">
-            <img src="assets/armed-anchored-icon.png" alt="Armed &amp; Anchored"/>
-          </div>
-          <div class="card-body">
-            <div class="card-label">Spiritual Warfare Journal</div>
-            <div class="card-title">Armed &amp; Anchored</div>
-            <p class="card-desc">Your personal war room. 23 weapons of the believer — Scripture teaching, enemy tactics, declarations, battle tools, and memorization.</p>
-            <div class="card-price">$27 <span>one-time</span></div>
-            <a href="armed-anchored.html" class="card-btn card-btn-red">⚔️ Learn More</a>
-          </div>
-        </div>
-
-        <!-- Anchored Steps Year 1 -->
-        <div class="app-card reveal d2">
-          <div class="card-img-wrap">
-            <img src="assets/anchored-steps-1.png" alt="Anchored Steps Year 1"/>
-          </div>
-          <div class="card-body">
-            <div class="card-label">Weekly Devotional · Year 1</div>
-            <div class="card-title">Anchored Steps</div>
-            <p class="card-desc">52 weeks of Scripture, study, reflection, prayer, and community. A full year of walking steadily with God.</p>
-            <div class="card-price">$5.50<span>/mo &nbsp;·&nbsp; $39/yr</span></div>
-            <a href="anchored-steps.html" class="card-btn card-btn-gold">⚓ Learn More</a>
-          </div>
-        </div>
-
-        <!-- Anchored Steps Year 2 -->
-        <div class="app-card reveal d3">
-          <div class="card-img-wrap">
-            <img src="assets/anchored-steps-2.png" alt="Anchored Steps Year 2"/>
-          </div>
-          <div class="card-body">
-            <div class="card-label">Weekly Devotional · Year 2</div>
-            <div class="card-title">Anchored Steps · Year 2</div>
-            <p class="card-desc">Continue the journey. 52 deeper weeks — richer Scripture, harder questions, and a faith that doesn't quit.</p>
-            <div class="card-price">$5.50<span>/mo &nbsp;·&nbsp; $39/yr</span></div>
-            <a href="anchored-steps-2.html" class="card-btn card-btn-gold">⚓ Learn More</a>
-          </div>
-        </div>
-
-        <!-- The Red Letters -->
-        <div class="app-card reveal d4">
-          <div class="card-img-wrap">
-            <img src="assets/red-letters-icon.png" alt="The Red Letters"/>
-          </div>
-          <div class="card-body">
-            <div class="card-label">Words of Jesus · Free</div>
-            <div class="card-title">The Red Letters</div>
-            <p class="card-desc">Every red-letter passage organized by theme — read, study, memorize, and live the complete words of Jesus. Context, meaning, prayer, and journal on every passage.</p>
-            <div class="card-price-free">✦ Completely Free</div>
-            <a href="red-letters.html" class="card-btn card-btn-red">✦ Learn More</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW THEY WORK TOGETHER -->
-  <section style="padding:90px 48px;background:var(--parchment-d);border-top:1px solid var(--parchment-dd);border-bottom:1px solid var(--parchment-dd);">
-    <div style="max-width:900px;margin:0 auto;text-align:center;">
-      <p class="section-eyebrow" style="margin-bottom:14px;">The Full Picture</p>
-      <h2 class="section-title" style="margin-bottom:16px;">Built to Work Together</h2>
-      <p style="font-size:clamp(16px,1.8vw,20px);color:var(--ink-ll);max-width:640px;margin:0 auto 56px;line-height:1.8;">Each app stands alone — but together they cover the full Christian life. Fight. Walk. Study. Pray.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;text-align:left;">
-        <div style="background:var(--parchment);border:1px solid var(--parchment-dd);border-radius:16px;padding:24px;">
-          <div style="font-size:28px;margin-bottom:10px;">⚔️</div>
-          <div style="font-family:'Cinzel',serif;font-size:13px;color:var(--ink);letter-spacing:0.05em;margin-bottom:6px;">Armed &amp; Anchored</div>
-          <p style="font-size:14px;color:var(--ink-ll);line-height:1.7;margin-bottom:10px;">Know your enemy. Know your weapons. Deploy them daily.</p>
-          <span style="font-family:'Cinzel',serif;font-size:10px;color:var(--taupe);letter-spacing:0.12em;text-transform:uppercase;">Spiritual Warfare</span>
-        </div>
-        <div style="background:var(--parchment);border:1px solid var(--parchment-dd);border-radius:16px;padding:24px;">
-          <div style="font-size:28px;margin-bottom:10px;">⚓</div>
-          <div style="font-family:'Cinzel',serif;font-size:13px;color:var(--ink);letter-spacing:0.05em;margin-bottom:6px;">Anchored Steps</div>
-          <p style="font-size:14px;color:var(--ink-ll);line-height:1.7;margin-bottom:10px;">52 weeks of daily study, journaling, and prayer. The long walk.</p>
-          <span style="font-family:'Cinzel',serif;font-size:10px;color:var(--taupe);letter-spacing:0.12em;text-transform:uppercase;">Daily Devotional</span>
-        </div>
-        <div style="background:var(--parchment);border:1px solid var(--parchment-dd);border-radius:16px;padding:24px;">
-          <div style="font-size:28px;margin-bottom:10px;">✦</div>
-          <div style="font-family:'Cinzel',serif;font-size:13px;color:var(--ink);letter-spacing:0.05em;margin-bottom:6px;">The Red Letters</div>
-          <p style="font-size:14px;color:var(--ink-ll);line-height:1.7;margin-bottom:10px;">Every word Jesus spoke — in full, by theme. Always free.</p>
-          <span style="font-family:'Cinzel',serif;font-size:10px;color:var(--crimson);letter-spacing:0.12em;text-transform:uppercase;">Free · Words of Jesus</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SCRIPTURE BAND -->
-  <div class="scripture-band">
-    <p class="scripture-text">"Finally, be strong in the Lord and in the strength of his might. Put on the whole armor of God."</p>
-    <p class="scripture-ref">Ephesians 6:10–11 &nbsp;·&nbsp; ESV</p>
-  </div>
-
   <!-- ABOUT -->
   <section class="about-section" id="about">
     <div class="about-inner">
@@ -677,8 +1024,7 @@
         <ul class="footer-links">
           <li><a href="https://armedandanchored.vercel.app">⚔️ Armed &amp; Anchored</a></li>
           <li><a href="https://anchored-steps.vercel.app">⚓ Anchored Steps Year 1</a></li>
-          <li><a href="https://anchored-steps-y2.vercel.app">⚓ Anchored Steps Year 2</a></li>
-          <li><a href="https://redletters.vercel.app">✦ The Red Letters</a></li>
+          <li><a href="https://anchored-steps-year2.vercel.app">⚓ Anchored Steps Year 2</a></li>
         </ul>
       </div>
       <div>
@@ -689,7 +1035,6 @@
           <li><a href="armed-anchored.html">Scripture Memorization</a></li>
           <li><a href="anchored-steps.html">Daily Devotional</a></li>
           <li><a href="anchored-steps-2.html">Christian Growth</a></li>
-          <li><a href="red-letters.html">Words of Jesus</a></li>
         </ul>
       </div>
     </div>
@@ -699,44 +1044,37 @@
     </div>
   </footer>
 
-  <!-- FAQ -->
-  <section class="faq-section" style="background:var(--parchment);">
+  <section class="faq-wrap">
     <div class="faq-inner">
-      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Questions</p>
-      <h2 style="font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,40px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:0;">Frequently Asked</h2>
+      <p class="faq-eyebrow">Questions</p>
+      <h2 class="faq-title">Frequently Asked</h2>
       <div class="faq-list">
-    <div class="faq-item"><button class="faq-q">What is Elora Radiance Co.?</button><div class="faq-a">Elora Radiance Co. creates Scripture-rooted digital tools for Christians — apps designed for serious faith, not casual consumption. Every product is built around the Word, structured for depth, and designed for daily use.</div></div>
-    <div class="faq-item"><button class="faq-q">Are the apps available on mobile?</button><div class="faq-a">Yes. All four apps are web-based and work on any device — iPhone, Android, tablet, or desktop. No app store required. Open the app in your browser and it works like a native app.</div></div>
-    <div class="faq-item"><button class="faq-q">Do I need all the apps?</button><div class="faq-a">Each app stands alone and addresses a different dimension of the Christian life. Armed &amp; Anchored is for spiritual warfare. Anchored Steps is for daily devotional rhythm. The Red Letters is for studying the words of Jesus directly. Most users find that using two or more together gives them a complete picture.</div></div>
-    <div class="faq-item"><button class="faq-q">Is there a free option?</button><div class="faq-a">Yes — The Red Letters is completely free. No subscription, no credit card, no paywall. Armed &amp; Anchored is a one-time purchase. Anchored Steps is a monthly or annual subscription.</div></div>
-    <div class="faq-item"><button class="faq-q">Who are these apps for?</button><div class="faq-a">Christians who are serious about their faith and want tools that match that seriousness. Not devotionals that skim the surface. Not inspiration quotes. Actual Scripture study, warfare training, and depth of engagement.</div></div>
+    <div class="faq-item"><button class="faq-q">What is Elora Radiance Co.?<span class="faq-plus">+</span></button><div class="faq-a">Elora Radiance Co. creates Scripture-rooted digital tools for Christians — apps designed for serious faith. Every product is built around the Word, structured for depth, and designed for daily use.</div></div>
+    <div class="faq-item"><button class="faq-q">Are the apps available on mobile?<span class="faq-plus">+</span></button><div class="faq-a">Yes. All four apps are web-based and work on any device — iPhone, Android, tablet, or desktop. No app store required. Open the app in your browser and it works like a native app.</div></div>
+    <div class="faq-item"><button class="faq-q">Is there a free option?<span class="faq-plus">+</span></button><div class="faq-a">Yes — The Red Letters is completely free. No subscription, no credit card. Armed &amp; Anchored is a one-time purchase of $27. Anchored Steps is a monthly or annual subscription.</div></div>
+    <div class="faq-item"><button class="faq-q">Who are these apps for?<span class="faq-plus">+</span></button><div class="faq-a">Christians who are serious about their faith and want tools that match that seriousness. Not devotionals that skim the surface. Actual Scripture study, warfare training, and depth of engagement.</div></div>
+    <div class="faq-item"><button class="faq-q">Do I need all the apps?<span class="faq-plus">+</span></button><div class="faq-a">Each app stands alone and addresses a different part of the Christian life — spiritual warfare, daily devotional rhythm, and direct Scripture study. Most users find two or more together gives the complete picture.</div></div>
       </div>
     </div>
   </section>
 
-  <script>
-    // Hamburger
-    const ham = document.querySelector('.nav-hamburger');
-    const menu = document.querySelector('.mobile-menu');
-    if (ham && menu) {
-      ham.addEventListener('click', (e) => { e.stopPropagation(); ham.classList.toggle('open'); menu.classList.toggle('open'); });
-      document.addEventListener('click', (e) => { if (!ham.contains(e.target) && !menu.contains(e.target)) { ham.classList.remove('open'); menu.classList.remove('open'); } });
-    }
-    // FAQ accordion
-    document.querySelectorAll('.faq-q').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const wasOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-        if (!wasOpen) item.classList.add('open');
-      });
+<script>
+  const ham = document.querySelector('.nav-ham');
+  const menu = document.querySelector('.nav-menu');
+  if (ham && menu) {
+    ham.addEventListener('click', e => { e.stopPropagation(); ham.classList.toggle('open'); menu.classList.toggle('open'); });
+    document.addEventListener('click', e => { if (!ham.contains(e.target) && !menu.contains(e.target)) { ham.classList.remove('open'); menu.classList.remove('open'); } });
+  }
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
     });
-    // Scroll reveal
-    const obs = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-      { threshold: 0.08 }
-    );
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  </script>
+  });
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold:0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
