@@ -3,718 +3,283 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anchored Steps | Weekly Scripture Devotional — Year 1</title>
-  <meta name="description" content="Anchored Steps is a weekly Scripture devotional app — 52 weeks of study, reflection, prayer, tracking, and community. Walk steadily with God all year long."/>
-  <meta name="keywords" content="daily devotional app, Bible devotional app, daily scripture app, Christian devotional, daily Bible reading, scripture reflection app, daily prayer app, Christian growth app, Anchored Steps, Elora Radiance"/>
-  <meta property="og:title" content="Anchored Steps | Daily Scripture Devotional — Year 1"/>
-  <meta property="og:description" content="A daily Scripture devotional app. One verse, one reflection, one prayer. 365 days of walking steadily with God. Free."/>
+  <title>Anchored Steps Year 1 | 52-Week Scripture Devotional App</title>
+  <meta name="description" content="Anchored Steps is a 52-week Scripture devotional app — daily study, reflection, prayer, journal, and memorization. One week at a time. One year with God."/>
+  <meta property="og:title" content="Anchored Steps Year 1 | 52-Week Scripture Devotional"/>
+  <meta property="og:url" content="https://eloraradiance.com/anchored-steps"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg:      #0A1420;
-      --bg-m:    #0F1D2E;
-      --gold:    #B08A4E;
-      --gold-l:  #C9A96E;
-      --gold-f:  rgba(176,138,78,0.12);
-      --gold-b:  rgba(176,138,78,0.28);
-      --blue:    #2A4A6B;
-      --blue-l:  rgba(42,74,107,0.3);
-      --cream:   #EDE6D6;
-      --text:    #C8BEAA;
-      --muted:   #8A9CAE;
-      --dim:     #4E6070;
-      --border:  rgba(255,255,255,0.07);
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#0F1A24;--navy-m:#172330;--navy-l:#0A1018;
+      --gold:#B08A4E;--gold-l:#C9A96E;--gold-f:rgba(176,138,78,0.12);--gold-b:rgba(176,138,78,0.28);
+      --cream:#EDE6D6;--text:rgba(200,190,170,0.9);--muted:rgba(176,160,130,0.65);
+      --border:rgba(255,255,255,0.06);
     }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg); color: var(--text);
-      font-family: 'EB Garamond', Georgia, serif;
-      font-size: 18px; line-height: 1.75; overflow-x: hidden;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-      background: rgba(10,20,32,0.94); backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(176,138,78,0.12);
-      padding: 14px 48px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-home {
-      font-family: 'Cinzel', serif; font-size: 11px;
-      letter-spacing: 0.18em; color: var(--muted);
-      text-decoration: none; text-transform: uppercase; transition: color .2s;
-    }
-    .nav-home::before { content: '← '; }
-    .nav-home:hover { color: var(--gold-l); }
-    .nav-cta {
-      background: var(--gold-f); border: 1px solid var(--gold-b);
-      color: var(--gold-l); padding: 9px 22px; border-radius: 5px;
-      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.1em;
-      text-decoration: none; text-transform: uppercase; transition: all .25s;
-    }
-    .nav-cta:hover { background: rgba(176,138,78,0.2); color: var(--cream); }
-    @media(max-width:768px){ nav { padding: 14px 20px; } }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 120px 24px 100px;
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 30% 10%, rgba(176,138,78,0.14) 0%, transparent 52%),
-        radial-gradient(ellipse at 70% 90%, rgba(42,74,107,0.2) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    .hero-icon {
-      width: min(150px,38vw); height: min(150px,38vw); border-radius: 30px;
-      object-fit: cover; margin-bottom: 30px;
-      border: 2px solid var(--gold-b);
-      box-shadow: 0 0 50px rgba(176,138,78,0.2);
-      opacity: 0; animation: fadeUp .8s ease .1s forwards;
-    }
-    .hero-eyebrow {
-      font-family: 'Cinzel', serif; font-size: 10px;
-      letter-spacing: 0.28em; color: var(--gold);
-      text-transform: uppercase; margin-bottom: 16px;
-      opacity: 0; animation: fadeUp .8s ease .25s forwards;
-    }
-    .hero-title {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(34px, 6vw, 68px); font-weight: 700;
-      color: var(--cream); letter-spacing: 0.04em; line-height: 1.1;
-      margin-bottom: 8px;
-      opacity: 0; animation: fadeUp .9s ease .4s forwards;
-    }
-    .hero-year {
-      font-family: 'Cinzel', serif; font-size: clamp(14px, 2vw, 20px);
-      letter-spacing: 0.2em; color: var(--gold);
-      text-transform: uppercase; margin-bottom: 22px;
-      opacity: 0; animation: fadeUp .9s ease .5s forwards;
-    }
-    .hero-desc {
-      font-size: clamp(16px, 1.9vw, 20px); color: var(--text);
-      max-width: 560px; line-height: 1.8; margin-bottom: 48px;
-      opacity: 0; animation: fadeUp .9s ease .62s forwards;
-    }
-    .hero-btns {
-      display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
-      opacity: 0; animation: fadeUp .9s ease .74s forwards;
-    }
-    .btn-gold {
-      background: var(--gold-f); border: 1px solid var(--gold-b);
-      color: var(--gold-l); padding: 14px 36px; border-radius: 6px;
-      font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.12em;
-      text-transform: uppercase; text-decoration: none;
-      transition: all .25s; display: inline-block; cursor: pointer;
-    }
-    .btn-gold:hover { background: rgba(176,138,78,0.22); color: var(--cream); }
-    .btn-ghost {
-      background: transparent; border: 1px solid var(--border);
-      color: var(--muted); padding: 14px 36px; border-radius: 6px;
-      font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.12em;
-      text-transform: uppercase; text-decoration: none;
-      transition: all .25s; display: inline-block; cursor: pointer;
-    }
-    .btn-ghost:hover { border-color: var(--gold-b); color: var(--gold-l); }
-    .free-badge {
-      margin-top: 22px;
-      font-family: 'Cinzel', serif; font-size: 11px;
-      letter-spacing: 0.14em; color: var(--dim); text-transform: uppercase;
-      opacity: 0; animation: fadeUp .9s ease .86s forwards;
-    }
-    .free-badge span { color: var(--gold); }
-
-    /* STAT BAR */
-    .stat-bar {
-      background: var(--bg-m); border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border); padding: 32px 48px;
-    }
-    .stat-grid {
-      max-width: 800px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 0;
-    }
-    .stat-item { text-align: center; padding: 0 20px; border-right: 1px solid var(--border); }
-    .stat-item:last-child { border-right: none; }
-    .stat-num {
-      font-family: 'Cinzel', serif; font-size: clamp(28px,4vw,44px);
-      font-weight: 700; color: var(--gold-l); line-height: 1; margin-bottom: 6px;
-    }
-    .stat-label {
-      font-family: 'Cinzel', serif; font-size: 10px;
-      letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase;
-    }
-    @media(max-width:600px){ .stat-bar{padding:28px 20px;} .stat-grid{grid-template-columns:1fr;gap:20px;} .stat-item{border:none;border-bottom:1px solid var(--border);padding-bottom:20px;} .stat-item:last-child{border:none;} }
-
-    /* SHARED */
-    .section { padding: 90px 48px; max-width: 1100px; margin: 0 auto; }
-    @media(max-width:768px){ .section { padding: 64px 20px; } }
-    .eyebrow {
-      font-family: 'Cinzel', serif; font-size: 10px;
-      letter-spacing: 0.26em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px;
-    }
-    .section-h {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(26px,3.5vw,42px); font-weight: 600;
-      color: var(--cream); letter-spacing: 0.04em; margin-bottom: 16px;
-    }
-    .section-p { font-size: clamp(16px,1.8vw,19px); color: var(--text); max-width: 560px; line-height: 1.8; }
-
-    /* VIDEO */
-    .video-section { background: var(--bg-m); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px 48px; }
-    .video-inner { max-width: 860px; margin: 0 auto; }
-    .video-header { text-align: center; margin-bottom: 38px; }
-    .video-frame { position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 16px; overflow: hidden; border: 1px solid var(--gold-b); box-shadow: 0 24px 60px rgba(0,0,0,0.5); background: #050c14; }
-    .video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-    .video-caption { text-align: center; margin-top: 16px; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
-    @media(max-width:768px){ .video-section{padding:60px 20px;} }
-
-    /* FEATURES */
-    .features-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(270px,1fr)); gap: 18px; margin-top: 52px; }
-    .feature-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 26px 26px 30px; transition: border-color .25s, background .25s; }
-    .feature-card:hover { border-color: var(--gold-b); background: var(--gold-f); }
-    .feature-icon { font-size: 26px; margin-bottom: 14px; display: block; }
-    .feature-title { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; color: var(--cream); letter-spacing: 0.06em; margin-bottom: 9px; }
-    .feature-desc { font-size: 15px; color: var(--muted); line-height: 1.7; }
-
-    /* HOW IT WORKS */
-    .steps { display: flex; flex-direction: column; gap: 0; margin-top: 52px; }
-    .step { display: flex; gap: 30px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid var(--border); }
-    .step:last-child { border-bottom: none; }
-    .step-num { font-family: 'Cinzel', serif; font-size: 34px; font-weight: 700; color: var(--gold-f); line-height: 1; flex-shrink: 0; width: 48px; color: rgba(176,138,78,0.3); }
-    .step-content h3 { font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600; color: var(--cream); letter-spacing: 0.06em; margin-bottom: 8px; }
-    .step-content p { font-size: 16px; color: var(--muted); line-height: 1.75; }
-
-    /* SCRIPTURE */
-    .scripture-band { background: var(--bg-m); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 72px 48px; text-align: center; }
-    .scripture-text { font-family: 'EB Garamond', serif; font-size: clamp(22px,3vw,36px); font-style: italic; color: var(--cream); max-width: 760px; margin: 0 auto 16px; line-height: 1.5; }
-    .scripture-ref { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
-
-    /* CTA */
-    .cta-section { padding: 80px 48px; text-align: center; }
-    .cta-card { max-width: 540px; margin: 0 auto; background: rgba(255,255,255,0.03); border: 1px solid var(--gold-b); border-radius: 20px; padding: 44px 40px; position: relative; overflow: hidden; }
-    .cta-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--gold)); }
-    .cta-title { font-family: 'Cinzel', serif; font-size: clamp(22px,3vw,32px); font-weight: 700; color: var(--cream); letter-spacing: 0.04em; margin-bottom: 14px; }
-    .cta-desc { font-size: 17px; color: var(--text); line-height: 1.75; margin-bottom: 28px; }
-    .cta-btn { display: block; background: var(--gold-f); border: 1px solid var(--gold-b); color: var(--gold-l); padding: 15px; border-radius: 10px; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all .25s; cursor: pointer; margin-bottom: 12px; }
-    .cta-btn:hover { background: rgba(176,138,78,0.22); color: var(--cream); }
-    .cta-note { font-size: 13px; color: var(--dim); }
-    @media(max-width:768px){ .cta-section{padding:60px 20px;} .cta-card{padding:32px 22px;} }
-
-    /* FOOTER */
-    footer { background: rgba(5,10,18,1); border-top: 1px solid var(--border); padding: 52px 48px 36px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 36px; margin-bottom: 36px; }
-    .footer-brand { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.2em; color: var(--cream); text-transform: uppercase; margin-bottom: 8px; }
-    .footer-tagline { font-size: 15px; font-style: italic; color: var(--gold); }
-    .footer-col-title { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em; color: rgba(176,138,78,0.75); text-transform: uppercase; margin-bottom: 14px; }
-    .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 9px; }
-    .footer-links a { font-size: 15px; color: rgba(200,190,170,0.78); text-decoration: none; transition: color .2s; }
-    .footer-links a:hover { color: var(--gold-l); }
-    .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-    .footer-copy { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.14em; color: rgba(200,190,170,0.45); text-transform: uppercase; }
-    .footer-seo { font-size: 11px; color: rgba(200,190,170,0.22); }
-    @media(max-width:768px){ footer{padding:48px 20px 28px;} }
-
-    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:none} }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    .d1{transition-delay:.1s} .d2{transition-delay:.22s} .d3{transition-delay:.34s}
-
-    /* HAMBURGER / MOBILE MENU */
-    .nav-hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none;
-    }
-    .nav-hamburger span {
-      display: block; width: 22px; height: 2px;
-      background: var(--ink, #1C150A); border-radius: 2px; transition: all .3s;
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu {
-      display: none; position: absolute; top: 100%; left: 0; right: 0;
-      background: rgba(242,237,228,0.98); backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--parchment-dd, #D8CCBA);
-      padding: 8px 0 20px; flex-direction: column; z-index: 899; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--ink-ll, #6B5A45); text-decoration: none;
-      padding: 14px 24px; border-bottom: 1px solid var(--parchment-dd, #D8CCBA); transition: color .2s;
-    }
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a:hover { color: var(--gold, #B08A4E); }
-    .mobile-menu .menu-label {
-      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--taupe, #8B7A5E);
-      padding: 14px 24px 4px; display: block;
-    }
-    @media(max-width:768px) { .nav-hamburger { display: flex !important; } }
-
-    /* FAQ */
-    .faq-section { padding: 90px 48px; }
-    .faq-inner { max-width: 760px; margin: 0 auto; }
-    .faq-list { margin-top: 40px; }
-    .faq-item { border-bottom: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
-    .faq-q {
-      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
-      padding: 22px 0; display: flex; justify-content: space-between; align-items: center;
-      font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.04em;
-      color: var(--ink, #1C150A); transition: color .2s;
-    }
-    .faq-q:hover { color: var(--gold, #B08A4E); }
-    .faq-q::after { content: '+'; font-size: 22px; color: var(--taupe, #8B7A5E); flex-shrink: 0; margin-left: 16px; transition: transform .3s; line-height: 1; }
-    .faq-item.open .faq-q::after { transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; font-size: 17px; color: var(--ink-ll, #6B5A45); line-height: 1.85; }
-    .faq-item.open .faq-a { max-height: 600px; padding-bottom: 22px; }
-    @media(max-width:768px){ .faq-section { padding: 70px 20px; } }
-
-    /* CROSS-SELL */
-    .crosssell-section { padding: 90px 48px; border-top: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
-    .crosssell-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; margin-top: 36px; }
-    .crosssell-card {
-      display: flex; align-items: center; gap: 16px; padding: 20px 22px;
-      border: 1px solid var(--parchment-dd, rgba(0,0,0,0.1));
-      border-radius: 16px; text-decoration: none; transition: all .2s; background: var(--parchment, #F2EDE4);
-    }
-    .crosssell-card:hover { border-color: var(--gold-b, rgba(176,138,78,0.3)); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-    .crosssell-icon { font-size: 26px; flex-shrink: 0; }
-    .crosssell-name { font-family: 'Cinzel', serif; font-size: 13px; color: var(--ink, #1C150A); letter-spacing: 0.05em; margin-bottom: 3px; }
-    .crosssell-desc { font-size: 13px; color: var(--ink-ll, #6B5A45); line-height: 1.5; }
-    .crosssell-arrow { margin-left: auto; font-size: 14px; color: var(--taupe, #8B7A5E); flex-shrink: 0; }
-    @media(max-width:768px){ .crosssell-section { padding: 70px 20px; } }
-
-    /* HAMBURGER / MOBILE MENU */
-    .nav-hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none;
-    }
-    .nav-hamburger span {
-      display: block; width: 22px; height: 2px;
-      background: var(--ink, #1C150A); border-radius: 2px; transition: all .3s;
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu {
-      display: none; position: absolute; top: 100%; left: 0; right: 0;
-      background: rgba(242,237,228,0.98); backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--parchment-dd, #D8CCBA);
-      padding: 8px 0 20px; flex-direction: column; z-index: 899; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--ink-ll, #6B5A45); text-decoration: none;
-      padding: 14px 24px; border-bottom: 1px solid var(--parchment-dd, #D8CCBA); transition: color .2s;
-    }
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a:hover { color: var(--gold, #B08A4E); }
-    .mobile-menu .menu-label {
-      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--taupe, #8B7A5E);
-      padding: 14px 24px 4px; display: block;
-    }
-    @media(max-width:768px) { .nav-hamburger { display: flex !important; } }
-
-    /* FAQ */
-    .faq-section { padding: 90px 48px; }
-    .faq-inner { max-width: 760px; margin: 0 auto; }
-    .faq-list { margin-top: 40px; }
-    .faq-item { border-bottom: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
-    .faq-q {
-      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
-      padding: 22px 0; display: flex; justify-content: space-between; align-items: center;
-      font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.04em;
-      color: var(--ink, #1C150A); transition: color .2s;
-    }
-    .faq-q:hover { color: var(--gold, #B08A4E); }
-    .faq-q::after { content: '+'; font-size: 22px; color: var(--taupe, #8B7A5E); flex-shrink: 0; margin-left: 16px; transition: transform .3s; line-height: 1; }
-    .faq-item.open .faq-q::after { transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; font-size: 17px; color: var(--ink-ll, #6B5A45); line-height: 1.85; }
-    .faq-item.open .faq-a { max-height: 600px; padding-bottom: 22px; }
-    @media(max-width:768px){ .faq-section { padding: 70px 20px; } }
-
-    /* CROSS-SELL */
-    .crosssell-section { padding: 90px 48px; border-top: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
-    .crosssell-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; margin-top: 36px; }
-    .crosssell-card {
-      display: flex; align-items: center; gap: 16px; padding: 20px 22px;
-      border: 1px solid var(--parchment-dd, rgba(0,0,0,0.1));
-      border-radius: 16px; text-decoration: none; transition: all .2s; background: var(--parchment, #F2EDE4);
-    }
-    .crosssell-card:hover { border-color: var(--gold-b, rgba(176,138,78,0.3)); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-    .crosssell-icon { font-size: 26px; flex-shrink: 0; }
-    .crosssell-name { font-family: 'Cinzel', serif; font-size: 13px; color: var(--ink, #1C150A); letter-spacing: 0.05em; margin-bottom: 3px; }
-    .crosssell-desc { font-size: 13px; color: var(--ink-ll, #6B5A45); line-height: 1.5; }
-    .crosssell-arrow { margin-left: auto; font-size: 14px; color: var(--taupe, #8B7A5E); flex-shrink: 0; }
-    @media(max-width:768px){ .crosssell-section { padding: 70px 20px; } }
-
-    /* HAMBURGER / MOBILE MENU */
-    .nav-hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none;
-    }
-    .nav-hamburger span {
-      display: block; width: 22px; height: 2px;
-      background: var(--ink, #1C150A); border-radius: 2px; transition: all .3s;
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu {
-      display: none; position: absolute; top: 100%; left: 0; right: 0;
-      background: rgba(242,237,228,0.98); backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--parchment-dd, #D8CCBA);
-      padding: 8px 0 20px; flex-direction: column; z-index: 899; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--ink-ll, #6B5A45); text-decoration: none;
-      padding: 14px 24px; border-bottom: 1px solid var(--parchment-dd, #D8CCBA); transition: color .2s;
-    }
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a:hover { color: var(--gold, #B08A4E); }
-    .mobile-menu .menu-label {
-      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--taupe, #8B7A5E);
-      padding: 14px 24px 4px; display: block;
-    }
-    @media(max-width:768px) { .nav-hamburger { display: flex !important; } }
-
-    /* FAQ */
-    .faq-section { padding: 90px 48px; }
-    .faq-inner { max-width: 760px; margin: 0 auto; }
-    .faq-list { margin-top: 40px; }
-    .faq-item { border-bottom: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
-    .faq-q {
-      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
-      padding: 22px 0; display: flex; justify-content: space-between; align-items: center;
-      font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.04em;
-      color: var(--ink, #1C150A); transition: color .2s;
-    }
-    .faq-q:hover { color: var(--gold, #B08A4E); }
-    .faq-q::after { content: '+'; font-size: 22px; color: var(--taupe, #8B7A5E); flex-shrink: 0; margin-left: 16px; transition: transform .3s; line-height: 1; }
-    .faq-item.open .faq-q::after { transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; font-size: 17px; color: var(--ink-ll, #6B5A45); line-height: 1.85; }
-    .faq-item.open .faq-a { max-height: 600px; padding-bottom: 22px; }
-    @media(max-width:768px){ .faq-section { padding: 70px 20px; } }
-
-    /* CROSS-SELL */
-    .crosssell-section { padding: 90px 48px; border-top: 1px solid var(--parchment-dd, rgba(0,0,0,0.1)); }
-    .crosssell-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; margin-top: 36px; }
-    .crosssell-card {
-      display: flex; align-items: center; gap: 16px; padding: 20px 22px;
-      border: 1px solid var(--parchment-dd, rgba(0,0,0,0.1));
-      border-radius: 16px; text-decoration: none; transition: all .2s; background: var(--parchment, #F2EDE4);
-    }
-    .crosssell-card:hover { border-color: var(--gold-b, rgba(176,138,78,0.3)); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-    .crosssell-icon { font-size: 26px; flex-shrink: 0; }
-    .crosssell-name { font-family: 'Cinzel', serif; font-size: 13px; color: var(--ink, #1C150A); letter-spacing: 0.05em; margin-bottom: 3px; }
-    .crosssell-desc { font-size: 13px; color: var(--ink-ll, #6B5A45); line-height: 1.5; }
-    .crosssell-arrow { margin-left: auto; font-size: 14px; color: var(--taupe, #8B7A5E); flex-shrink: 0; }
-    @media(max-width:768px){ .crosssell-section { padding: 70px 20px; } }
+    html{scroll-behavior:smooth}
+    body{font-family:'EB Garamond',Georgia,serif;background:var(--navy);color:var(--text);line-height:1.75;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(15,26,36,0.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .nav-home{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.18em;color:var(--muted);text-decoration:none;text-transform:uppercase;transition:color .2s}
+    .nav-home:hover{color:var(--gold)}
+    .nav-cta{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:9px 22px;border-radius:5px;text-decoration:none;background:var(--gold-f);border:1px solid var(--gold-b);color:var(--gold-l);transition:all .2s}
+    .nav-cta:hover{background:rgba(176,138,78,0.22);border-color:rgba(176,138,78,0.5)}
+    .nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+    .nav-ham span{display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;transition:all .3s}
+    .nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-ham.open span:nth-child(2){opacity:0}
+    .nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav-menu{display:none;position:fixed;top:53px;left:0;right:0;background:rgba(7,14,23,0.98);border-bottom:1px solid var(--gold-b);padding:8px 0 20px;flex-direction:column;z-index:899}
+    .nav-menu.open{display:flex}
+    .nav-menu a{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(200,190,170,0.85);text-decoration:none;padding:14px 24px;border-bottom:1px solid var(--border);transition:color .2s}
+    .nav-menu a:last-child{border-bottom:none}
+    .nav-menu a:hover{color:var(--gold)}
+    .m-lbl{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(176,138,78,0.6);padding:14px 24px 4px;display:block}
+    @media(max-width:768px){nav{padding:14px 20px}.nav-ham{display:flex !important}}
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 90px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(176,138,78,0.14) 0%,transparent 55%);pointer-events:none}
+    .hero-icon{width:80px;height:80px;border-radius:20px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+    .hero-eyebrow{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.26em;color:var(--gold);text-transform:uppercase;margin-bottom:14px;opacity:0;animation:fadeUp .8s ease .1s forwards}
+    .hero-title{font-family:'Cinzel',serif;font-size:clamp(34px,6vw,62px);font-weight:700;color:var(--cream);letter-spacing:0.04em;line-height:1.1;margin-bottom:10px;opacity:0;animation:fadeUp .9s ease .25s forwards}
+    .hero-sub-label{font-family:'Cinzel',serif;font-size:15px;color:var(--gold);letter-spacing:0.1em;margin-bottom:20px;opacity:0;animation:fadeUp .9s ease .35s forwards}
+    .hero-desc{font-size:clamp(16px,2vw,20px);color:var(--text);line-height:1.85;max-width:540px;margin:0 auto 40px;font-style:italic;opacity:0;animation:fadeUp 1s ease .5s forwards}
+    .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;opacity:0;animation:fadeUp 1s ease .65s forwards}
+    .hero-note{font-family:'Cinzel',serif;font-size:10px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;opacity:0;animation:fadeIn 1s ease .9s forwards}
+    .hero-stats{display:flex;justify-content:center;gap:48px;margin-top:48px;flex-wrap:wrap;opacity:0;animation:fadeIn 1s ease 1s forwards}
+    .stat-num{font-family:'Cinzel',serif;font-size:34px;font-weight:700;color:var(--gold);display:block;line-height:1}
+    .stat-lbl{font-size:12px;color:var(--muted);font-style:italic;margin-top:5px;display:block}
+    .btn-p{background:var(--gold-f);border:1px solid var(--gold-b);color:var(--gold-l);padding:14px 34px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:5px;transition:all .25s;display:inline-block}
+    .btn-p:hover{background:rgba(176,138,78,0.22);border-color:rgba(176,138,78,0.5)}
+    .btn-s{background:transparent;border:1px solid var(--border);color:var(--muted);padding:14px 34px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:5px;transition:all .25s;display:inline-block}
+    .btn-s:hover{border-color:var(--gold-b);color:var(--gold)}
+    .section{padding:90px 48px}
+    .section-inner{max-width:1040px;margin:0 auto}
+    .eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.24em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+    .s-title{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,42px);font-weight:600;color:var(--cream);letter-spacing:0.04em;margin-bottom:14px;line-height:1.2}
+    .s-body{font-size:18px;color:var(--text);line-height:1.85;max-width:600px}
+    .alt{background:var(--navy-m)}
+    @media(max-width:768px){.section{padding:70px 20px}}
+    .tabs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:36px}
+    .tab-card{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:14px;padding:24px;transition:border-color .2s}
+    .tab-card:hover{border-color:var(--gold-b)}
+    .tab-icon{font-size:26px;margin-bottom:10px}
+    .tab-name{font-family:'Cinzel',serif;font-size:13px;color:var(--cream);letter-spacing:0.06em;margin-bottom:7px}
+    .tab-desc{font-size:15px;color:var(--muted);line-height:1.75}
+    .weeks-band{padding:70px 48px;background:var(--navy-l);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
+    .weeks-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:36px;max-width:900px;margin-left:auto;margin-right:auto}
+    .week-pill{font-family:'Cinzel',serif;font-size:10px;color:var(--muted);letter-spacing:0.06em;padding:6px 12px;border:1px solid var(--border);border-radius:20px;transition:all .2s}
+    .week-pill:hover{border-color:var(--gold-b);color:var(--gold)}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:36px}
+    .step{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:14px;padding:26px 22px}
+    .step-n{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:10px}
+    .step-t{font-family:'Cinzel',serif;font-size:14px;color:var(--cream);letter-spacing:0.04em;margin-bottom:8px}
+    .step-d{font-size:15px;color:var(--muted);line-height:1.7}
+    .quote-band{padding:80px 40px;text-align:center;background:var(--navy-m);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .q-text{font-family:'EB Garamond',serif;font-size:clamp(20px,2.8vw,34px);font-style:italic;color:var(--cream);max-width:780px;margin:0 auto 18px;line-height:1.55}
+    .q-ref{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase}
+    .plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:40px;max-width:640px;margin-left:auto;margin-right:auto}
+    .plan-card{background:var(--gold-f);border:1px solid var(--gold-b);border-radius:18px;padding:32px;text-align:center;position:relative}
+    .plan-best{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.12em;padding:3px 14px;border-radius:20px;font-weight:700;white-space:nowrap}
+    .plan-label{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:10px}
+    .plan-price{font-family:'Cinzel',serif;font-size:40px;font-weight:700;color:var(--cream);line-height:1;margin-bottom:4px}
+    .plan-per{font-size:14px;color:var(--muted);margin-bottom:20px}
+    .plan-note{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:24px}
+    .faq-wrap{padding:90px 48px;background:var(--navy-l)}
+    .faq-inner{max-width:760px;margin:0 auto}
+    .faq-list{margin-top:40px}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;font-family:'Cinzel',serif;font-size:14px;letter-spacing:0.04em;color:var(--cream);transition:color .2s}
+    .faq-q:hover{color:var(--gold)}
+    .faq-plus{font-size:22px;color:var(--gold);flex-shrink:0;line-height:1;transition:transform .3s;margin-top:2px}
+    .faq-item.open .faq-plus{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;font-size:17px;color:var(--text);line-height:1.85}
+    .faq-item.open .faq-a{max-height:400px;padding-bottom:22px}
+    @media(max-width:768px){.faq-wrap{padding:70px 20px}}
+    .cs-wrap{padding:90px 48px;background:var(--navy-m);border-top:1px solid var(--border)}
+    .cs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:36px}
+    .cs-card{display:flex;align-items:center;gap:16px;padding:20px 22px;border:1px solid var(--border);border-radius:16px;text-decoration:none;transition:all .2s;background:rgba(255,255,255,0.03)}
+    .cs-card:hover{border-color:var(--gold-b);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+    .cs-icon{font-size:26px;flex-shrink:0}
+    .cs-name{font-family:'Cinzel',serif;font-size:13px;color:var(--cream);letter-spacing:0.05em;margin-bottom:3px}
+    .cs-desc{font-size:13px;color:var(--muted);line-height:1.5}
+    .cs-arr{margin-left:auto;font-size:14px;color:var(--gold);flex-shrink:0}
+    @media(max-width:768px){.cs-wrap{padding:70px 20px}}
+    footer{background:rgba(0,0,0,0.3);border-top:1px solid var(--border);padding:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-brand{font-family:'Cinzel',serif;font-size:11px;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase}
+    .footer-links{display:flex;gap:20px}
+    .footer-links a{font-family:'Cinzel',serif;font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--gold)}
+    @media(max-width:768px){footer{padding:30px 20px;flex-direction:column;align-items:flex-start}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
   </style>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="nav-home">Elora Radiance Co.</a>
-    <a href="https://anchored-steps.vercel.app" class="nav-cta">⚓ Open App</a>
+    <a href="https://anchored-steps.vercel.app" class="nav-cta">⚓ Get Access</a>
+    <button class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav-menu">
+      <span class="m-lbl">More Apps</span>
+      <a href="armed-anchored.html">⚔️ Armed &amp; Anchored</a>
+      <a href="anchored-steps-2.html">⚓ Anchored Steps Year 2</a>
+      <a href="red-letters.html">✦ The Red Letters — Free</a>
+      <span class="m-lbl">Site</span>
+      <a href="index.html">← Elora Radiance Co.</a>
+    </nav>
   </nav>
 
   <section class="hero">
     <img src="assets/anchored-steps-1.png" alt="Anchored Steps Year 1" class="hero-icon"/>
-    <p class="hero-eyebrow">Elora Radiance Co. · Weekly Devotional</p>
+    <p class="hero-eyebrow">Elora Radiance Co. · Year 1</p>
     <h1 class="hero-title">Anchored Steps</h1>
-    <p class="hero-year">Year One</p>
-    <p class="hero-desc">52 weeks of Scripture, study, reflection, prayer, tracking, and community. A full year of walking steadily with God — one week at a time.</p>
+    <p class="hero-sub-label">52 Weeks of Faith in Action</p>
+    <p class="hero-desc">One week at a time. Seven daily sections. A full year of walking steadily with God — study, reflection, prayer, and journal.</p>
     <div class="hero-btns">
-      <a href="https://anchored-steps.vercel.app" class="btn-gold">⚓ Open Anchored Steps</a>
-      <a href="#demo" class="btn-ghost">Watch Demo</a>
+      <a href="https://anchored-steps.vercel.app" class="btn-p">⚓ Get Access</a>
+      <a href="#how" class="btn-s">See How It Works</a>
     </div>
-    <p class="free-badge">$5.50/month &nbsp;·&nbsp; <span>$39/year</span> &nbsp;·&nbsp; Works on any device</p>
+    <p class="hero-note">$5.50/month · $39/year · Cancel Anytime</p>
+    <div class="hero-stats">
+      <div><span class="stat-num">52</span><span class="stat-lbl">Weeks</span></div>
+      <div><span class="stat-num">7</span><span class="stat-lbl">Daily Sections</span></div>
+      <div><span class="stat-num">$39</span><span class="stat-lbl">Per Year</span></div>
+    </div>
   </section>
 
-  <div class="stat-bar">
-    <div class="stat-grid">
-      <div class="stat-item reveal"><div class="stat-num">52</div><div class="stat-label">Weeks</div></div>
-      <div class="stat-item reveal d1"><div class="stat-num">9</div><div class="stat-label">Tabs Per Week</div></div>
-      <div class="stat-item reveal d2"><div class="stat-num">$39</div><div class="stat-label">Per Year</div></div>
-    </div>
-  </div>
-
-  <!-- DEMO VIDEO -->
-  <div class="video-section" id="demo">
-    <div class="video-inner">
-      <div class="video-header reveal">
-        <p class="eyebrow">See It in Action</p>
-        <h2 class="section-h">Watch the App</h2>
-        <p class="section-p" style="margin:0 auto;">A walkthrough of Anchored Steps — the daily verse, reflection, and share card experience.</p>
-      </div>
-      <div class="video-frame reveal d1">
-        <!-- Replace with your YouTube embed URL: https://www.youtube.com/embed/YOUR_VIDEO_ID -->
-        <iframe src="YOUR_YOUTUBE_EMBED_URL" title="Anchored Steps Year 1 Demo" allowfullscreen></iframe>
-      </div>
-      <p class="video-caption reveal d2">Anchored Steps Year 1 — Full App Walkthrough</p>
-    </div>
-  </div>
-
-  <!-- FEATURES -->
-  <section class="section">
-    <div class="reveal">
-      <p class="eyebrow">What's Inside</p>
-      <h2 class="section-h">Walk Steadily.<br>Stay Anchored.</h2>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card reveal d1">
-        <span class="feature-icon">📖</span>
-        <div class="feature-title">Scripture — Key Passages</div>
-        <p class="feature-desc">Each week opens with the key Scripture passages for that theme. Multiple verses with context, cross-references, and memorization tools built in.</p>
-      </div>
-      <div class="feature-card reveal d2">
-        <span class="feature-icon">🗺️</span>
-        <div class="feature-title">Verse Map</div>
-        <p class="feature-desc">A visual verse mapping tool that helps you connect Scripture to other passages — see the full counsel of God on each theme.</p>
-      </div>
-      <div class="feature-card reveal d3">
-        <span class="feature-icon">📚</span>
-        <div class="feature-title">Deep Study</div>
-        <p class="feature-desc">More than surface reading. Each week includes a full study section — background, theology, and application to help you go deep in the Word.</p>
-      </div>
-      <div class="feature-card reveal d1">
-        <span class="feature-icon">💭</span>
-        <div class="feature-title">Reflect &amp; Apply</div>
-        <p class="feature-desc">Guided reflection questions and application prompts that move Scripture from your head into your daily life — where it was always meant to land.</p>
-      </div>
-      <div class="feature-card reveal d2">
-        <span class="feature-icon">🙏</span>
-        <div class="feature-title">Prayer</div>
-        <p class="feature-desc">A weekly prayer written for the theme — plus space to write your own personal prayer. Scripture and prayer in the same place every week.</p>
-      </div>
-      <div class="feature-card reveal d3">
-        <span class="feature-icon">📊</span>
-        <div class="feature-title">Tracker &amp; Progress</div>
-        <p class="feature-desc">Track your weekly consistency and see your growth over the year. Progress is visible — which builds the habit of coming back.</p>
-      </div>
-      <div class="feature-card reveal d1">
-        <span class="feature-icon">⭐</span>
-        <div class="feature-title">Saved Verses</div>
-        <p class="feature-desc">Bookmark any verse across the 52 weeks to a personal saved library — your own curated collection of the Scriptures that moved you.</p>
-      </div>
-      <div class="feature-card reveal d2">
-        <span class="feature-icon">🌿</span>
-        <div class="feature-title">Community</div>
-        <p class="feature-desc">Connect with others on the same journey. The community tab brings a shared dimension to personal study — you're not walking alone.</p>
-      </div>
-      <div class="feature-card reveal d3">
-        <span class="feature-icon">🔗</span>
-        <div class="feature-title">Scripture Share Cards</div>
-        <p class="feature-desc">Share any week's key verse as a beautiful card on social media — spreading the Word with one tap.</p>
+  <section class="section" id="how">
+    <div class="section-inner">
+      <p class="eyebrow reveal">How It Works</p>
+      <h2 class="s-title reveal">Seven Sections Every Week</h2>
+      <p class="s-body reveal">Each week has a key theme and seven study sections. Work through one each day and you've completed the week by Sunday. Structured on purpose — because consistency is the discipline.</p>
+      <div class="tabs-grid">
+        <div class="tab-card reveal d1"><div class="tab-icon">📖</div><div class="tab-name">Scripture</div><div class="tab-desc">The key passage for the week — read, sit with it, and let it anchor the rest of the study.</div></div>
+        <div class="tab-card reveal d1"><div class="tab-icon">📚</div><div class="tab-name">Study</div><div class="tab-desc">Deep theological notes with background context, Verse Map commentary, and cross-references.</div></div>
+        <div class="tab-card reveal d2"><div class="tab-icon">🪞</div><div class="tab-name">Reflect</div><div class="tab-desc">Guided reflection questions to move truth from your head to your heart and into your actual life.</div></div>
+        <div class="tab-card reveal d2"><div class="tab-icon">⚡</div><div class="tab-name">Apply</div><div class="tab-desc">A specific challenge for the week — not generic encouragement, but a concrete thing to do differently.</div></div>
+        <div class="tab-card reveal d3"><div class="tab-icon">🙏</div><div class="tab-name">Prayer</div><div class="tab-desc">A prayer written directly from the week's theme — specific, scriptural, and honest.</div></div>
+        <div class="tab-card reveal d3"><div class="tab-icon">📝</div><div class="tab-name">Journal</div><div class="tab-desc">Your personal space to write responses, questions, and what God is showing you. Saved to your account.</div></div>
+        <div class="tab-card reveal"><div class="tab-icon">📊</div><div class="tab-name">Week End</div><div class="tab-desc">A closing summary and check-in for the week — what landed, what still needs work, what's next.</div></div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <div style="background:var(--bg-m);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <section class="section">
-      <div class="reveal">
-        <p class="eyebrow">How It Works</p>
-        <h2 class="section-h">Simple by Design</h2>
-      </div>
-      <div class="steps">
-        <div class="step reveal">
-          <div class="step-num">01</div>
-          <div class="step-content">
-            <h3>Open the App Each Morning</h3>
-            <p>Add Anchored Steps to your home screen so it's one tap away. Make it part of your morning — before the noise starts.</p>
-          </div>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">02</div>
-          <div class="step-content">
-            <h3>Open This Week's Theme</h3>
-            <p>The app opens to the current week of 52. Each week has a theme rooted in Scripture — open it Monday morning and let it anchor your week.</p>
-          </div>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">03</div>
-          <div class="step-content">
-            <h3>Study, Reflect, and Pray</h3>
-            <p>Work through Scripture, the study notes, reflection questions, and the week's prayer. Go deep or skim — come back as often as you need to.</p>
-          </div>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">04</div>
-          <div class="step-content">
-            <h3>Share If It Moves You</h3>
-            <p>Tap the share card to send the verse to a friend, post it to social media, or save it for yourself. The Word is meant to spread.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- SCRIPTURE BAND -->
-  <div class="scripture-band">
-    <p class="scripture-text reveal">"Walk steadily. Stay anchored. The Word is a lamp to your feet and a light to your path."</p>
-    <p class="scripture-ref reveal d1">Psalm 119:105 &nbsp;—&nbsp; One step at a time.</p>
-  </div>
-
-  <!-- CTA -->
-  <div class="cta-section">
-    <div class="cta-card reveal">
-      <div class="cta-title">Start Year 1 Today</div>
-      <p class="cta-desc">365 days of Scripture, reflection, and prayer. Free, always. No account. No App Store. Just open and begin.</p>
-      <a href="https://anchored-steps.vercel.app" class="cta-btn">⚓ Open Anchored Steps</a>
-      <p class="cta-note">$5.50/month or $39/year · Then continue with <a href="anchored-steps-2.html" style="color:var(--gold);text-decoration:none;">Year 2</a></p>
+  <div class="weeks-band">
+    <p class="eyebrow reveal">The Year</p>
+    <h2 style="font-family:'Cinzel',serif;font-size:clamp(24px,3.5vw,38px);font-weight:600;color:var(--cream);letter-spacing:0.04em;margin-bottom:14px;" class="reveal">52 Themes. One Year.</h2>
+    <p style="font-size:18px;color:var(--text);font-style:italic;max-width:540px;margin:0 auto 0;" class="reveal">Every week covers a different facet of the Christian life — faith, identity, prayer, warfare, grace, obedience, and more.</p>
+    <div class="weeks-grid">
+      <span class="week-pill">Identity in Christ</span>
+      <span class="week-pill">The Armor of God</span>
+      <span class="week-pill">Prayer &amp; Intercession</span>
+      <span class="week-pill">Walking in the Spirit</span>
+      <span class="week-pill">Faith vs. Fear</span>
+      <span class="week-pill">Repentance &amp; Renewal</span>
+      <span class="week-pill">The Love of God</span>
+      <span class="week-pill">Biblical Community</span>
+      <span class="week-pill">Obedience</span>
+      <span class="week-pill">Spiritual Disciplines</span>
+      <span class="week-pill">God's Word</span>
+      <span class="week-pill">Waiting on God</span>
+      <span class="week-pill">Gratitude</span>
+      <span class="week-pill">Forgiveness</span>
+      <span class="week-pill">God's Sovereignty</span>
+      <span class="week-pill">+ 37 more weeks</span>
     </div>
   </div>
+
+  <section class="section alt">
+    <div class="section-inner">
+      <p class="eyebrow reveal">Tools Built In</p>
+      <h2 class="s-title reveal">More Than a Devotional</h2>
+      <p class="s-body reveal">Every week includes tools to help the Word go deeper than the screen.</p>
+      <div class="tabs-grid" style="margin-top:28px;">
+        <div class="tab-card reveal d1"><div class="tab-icon">🗺</div><div class="tab-name">Verse Map</div><div class="tab-desc">Every scripture has a deep-dive Verse Map — author background, Enduring Word commentary, and cross-references.</div></div>
+        <div class="tab-card reveal d2"><div class="tab-icon">🧠</div><div class="tab-name">Memorization</div><div class="tab-desc">Three modes: Read &amp; Recall, Fill the Gaps, and Write it Out. The Word in your heart, not just your screen.</div></div>
+        <div class="tab-card reveal d3"><div class="tab-icon">↗</div><div class="tab-name">Share Cards</div><div class="tab-desc">Generate a shareable image from any section — scripture, study, reflection, apply, or prayer.</div></div>
+        <div class="tab-card reveal"><div class="tab-icon">📥</div><div class="tab-name">Export Journal</div><div class="tab-desc">Download your entire year's journal as a text file or print it as a formatted PDF from Settings.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="section-inner" style="text-align:center;">
+      <p class="eyebrow reveal">Pricing</p>
+      <h2 class="s-title reveal" style="margin:0 auto 14px;">Choose Your Plan</h2>
+      <p class="s-body reveal" style="margin:0 auto;">Less than a dollar a week for a full year of structured time with God.</p>
+      <div class="plans-grid">
+        <div class="plan-card reveal d1">
+          <div class="plan-label">Monthly</div>
+          <div class="plan-price">$5.50</div>
+          <div class="plan-per">per month</div>
+          <div class="plan-note">Full access. Cancel anytime.</div>
+          <a href="https://buy.stripe.com/28E4gyfDSfG69KLgQj57W04" class="btn-p" style="display:block;text-align:center;font-size:12px;">Subscribe Monthly</a>
+        </div>
+        <div class="plan-card reveal d2" style="position:relative;">
+          <div class="plan-best">BEST VALUE</div>
+          <div class="plan-label">Annual</div>
+          <div class="plan-price">$39</div>
+          <div class="plan-per">per year · $3.25/mo</div>
+          <div class="plan-note">Full year, one payment. Saves 40%.</div>
+          <a href="https://buy.stripe.com/dRmbJ09fu51s9KLgQj57W01" class="btn-p" style="display:block;text-align:center;font-size:12px;">Subscribe Annual</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote-band">
+    <p class="q-text">"But as for you, continue in what you have learned and have firmly believed, knowing from whom you learned it."</p>
+    <p class="q-ref">2 Timothy 3:14 · ESV</p>
+  </div>
+
+  <section class="faq-wrap">
+    <div class="faq-inner">
+      <p class="eyebrow">Questions</p>
+      <h2 style="font-family:'Cinzel',serif;font-size:clamp(26px,4vw,40px);font-weight:600;color:var(--cream);letter-spacing:0.04em;margin-bottom:0;">Frequently Asked</h2>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-q">Do I need a subscription?<span class="faq-plus">+</span></button><div class="faq-a">Yes — $5.50/month or $39/year. Annual saves over 40% and gives full access for the whole year. Cancel anytime from your account settings.</div></div>
+        <div class="faq-item"><button class="faq-q">Do I have to start at Week 1?<span class="faq-plus">+</span></button><div class="faq-a">You can start at any week. The weeks build on each other, but each one also stands alone. Most people start at Week 1 for the full context and progression.</div></div>
+        <div class="faq-item"><button class="faq-q">Do I need to finish Year 1 before Year 2?<span class="faq-plus">+</span></button><div class="faq-a">It's strongly recommended. Year 2 builds in depth and complexity, and assumes familiarity with the Year 1 rhythm. Year 1 is the foundation; Year 2 is the continuation.</div></div>
+        <div class="faq-item"><button class="faq-q">What Bible translation is used?<span class="faq-plus">+</span></button><div class="faq-a">The app presents Scripture in context with references across translations. Each week's Verse Map tool lets you dig into Enduring Word commentary and cross-reference any translation you prefer.</div></div>
+        <div class="faq-item"><button class="faq-q">Does my journal save automatically?<span class="faq-plus">+</span></button><div class="faq-a">Yes. Journal entries are saved to your account in real time and synced across all your devices. They are private and accessible only to you.</div></div>
+        <div class="faq-item"><button class="faq-q">Can I cancel my subscription?<span class="faq-plus">+</span></button><div class="faq-a">Yes, anytime. Cancel from your account settings and keep access through the end of your current billing period. No penalty, no questions.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-wrap">
+    <div style="max-width:900px;margin:0 auto;">
+      <p class="eyebrow">Elora Radiance Co.</p>
+      <h2 style="font-family:'Cinzel',serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--cream);letter-spacing:0.04em;margin-bottom:12px;">Continue the Journey</h2>
+      <p style="font-size:17px;color:var(--text);line-height:1.8;max-width:500px;margin-bottom:0;">Scripture-based tools for every dimension of the Christian life.</p>
+      <div class="cs-grid">
+        <a href="armed-anchored.html" class="cs-card"><span class="cs-icon">⚔️</span><span><div class="cs-name">Armed &amp; Anchored</div><div class="cs-desc">Spiritual warfare training — 23 weapons</div></span><span class="cs-arr">→</span></a>
+        <a href="anchored-steps-2.html" class="cs-card"><span class="cs-icon">⚓</span><span><div class="cs-name">Anchored Steps · Year 2</div><div class="cs-desc">Deeper study for those who kept going</div></span><span class="cs-arr">→</span></a>
+        <a href="red-letters.html" class="cs-card"><span class="cs-icon">✦</span><span><div class="cs-name">The Red Letters</div><div class="cs-desc">Complete words of Jesus — free</div></span><span class="cs-arr">→</span></a>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand">Elora Radiance Co.</div>
-        <p class="footer-tagline">Inspired by faith, created to shine.</p>
-      </div>
-      <div style="display:flex;gap:48px;flex-wrap:wrap;">
-        <div>
-          <div class="footer-col-title">Apps</div>
-          <ul class="footer-links">
-            <li><a href="https://armedandanchored.vercel.app">⚔️ Armed &amp; Anchored</a></li>
-            <li><a href="https://anchored-steps.vercel.app">⚓ Anchored Steps Year 1</a></li>
-            <li><a href="https://anchored-steps-year2.vercel.app">⚓ Anchored Steps Year 2</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="footer-col-title">Site</div>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="armed-anchored.html">Armed &amp; Anchored</a></li>
-            <li><a href="anchored-steps-2.html">Anchored Steps Year 2</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">© 2025 Elora Radiance Co. All rights reserved.</p>
-      <p class="footer-seo">Daily devotional app · Bible scripture app · Christian devotional · anchored-steps.vercel.app</p>
+    <span class="footer-brand">Anchored Steps · Year 1 · Elora Radiance Co.</span>
+    <div class="footer-links">
+      <a href="https://anchored-steps.vercel.app">Open App</a>
+      <a href="index.html">← Home</a>
     </div>
   </footer>
 
-  
-  <!-- FAQ -->
-  <section class="faq-section" style="background:var(--bg, #0F1A24);">
-    <div class="faq-inner">
-      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Questions</p>
-      <h2 style="font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,40px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:0;">Frequently Asked</h2>
-      <div class="faq-list">
-    <div class="faq-item"><button class="faq-q">Do I need a subscription to use it?</button><div class="faq-a">Yes — Anchored Steps is $5.50/month or $39/year. Annual saves over 40% and gives you full access for the whole year. Cancel anytime.</div></div>
-    <div class="faq-item"><button class="faq-q">Do I have to start at Week 1?</button><div class="faq-a">You can start at any week. The weeks are designed to build on each other, but each one also stands alone. Most people start at Week 1 for full context and progression.</div></div>
-    <div class="faq-item"><button class="faq-q">Do I need to finish Year 1 before starting Year 2?</button><div class="faq-a">It's strongly recommended. Year 2 builds in depth and complexity, and assumes familiarity with the Year 1 rhythm. Year 1 is the foundation; Year 2 is the continuation.</div></div>
-    <div class="faq-item"><button class="faq-q">What Bible translation do you use?</button><div class="faq-a">The app presents scripture in context with references across multiple translations. You can cross-reference any translation using the Verse Map tool built into each week.</div></div>
-    <div class="faq-item"><button class="faq-q">Does my journal save automatically?</button><div class="faq-a">Yes. Journal entries are saved to your account in real time and synced across all your devices. They're private and accessible only to you.</div></div>
-    <div class="faq-item"><button class="faq-q">Can I cancel my subscription?</button><div class="faq-a">Yes, anytime. Cancel through your account settings and you keep access through the end of your current billing period. No penalty.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CROSS-SELL -->
-  <section class="crosssell-section" style="background:var(--parchment-d,#E8E0D0);">
-    <div style="max-width:900px;margin:0 auto;">
-      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Elora Radiance Co.</p>
-      <h2 style="font-family:'Cinzel',serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:14px;">Continue the Journey</h2>
-      <p style="font-size:17px;color:var(--ink-ll);line-height:1.8;max-width:540px;margin-bottom:0;">Scripture-based tools for the believer who is serious about their faith.</p>
-      <div class="crosssell-grid">
-      <a href="armed-anchored.html" class="crosssell-card"><span class="crosssell-icon">⚔️</span><span><div class="crosssell-name">Armed &amp; Anchored</div><div class="crosssell-desc">Spiritual warfare training — 23 weapons</div></span><span class="crosssell-arrow">→</span></a>
-      <a href="anchored-steps-2.html" class="crosssell-card"><span class="crosssell-icon">⚓</span><span><div class="crosssell-name">Anchored Steps · Year 2</div><div class="crosssell-desc">Deeper study for those who kept going</div></span><span class="crosssell-arrow">→</span></a>
-      <a href="red-letters.html" class="crosssell-card"><span class="crosssell-icon">✦</span><span><div class="crosssell-name">The Red Letters</div><div class="crosssell-desc">Complete words of Jesus — free</div></span><span class="crosssell-arrow">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  
-  <!-- FAQ -->
-  <section class="faq-section" style="background:var(--bg, #0F1A24);">
-    <div class="faq-inner">
-      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Questions</p>
-      <h2 style="font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,40px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:0;">Frequently Asked</h2>
-      <div class="faq-list">
-    <div class="faq-item"><button class="faq-q">Do I need a subscription to use it?</button><div class="faq-a">Yes — Anchored Steps is $5.50/month or $39/year. Annual saves over 40% and gives you full access for the whole year. Cancel anytime.</div></div>
-    <div class="faq-item"><button class="faq-q">Do I have to start at Week 1?</button><div class="faq-a">You can start at any week. The weeks are designed to build on each other, but each one also stands alone. Most people start at Week 1 for full context and progression.</div></div>
-    <div class="faq-item"><button class="faq-q">Do I need to finish Year 1 before starting Year 2?</button><div class="faq-a">It's strongly recommended. Year 2 builds in depth and complexity, and assumes familiarity with the Year 1 rhythm. Year 1 is the foundation; Year 2 is the continuation.</div></div>
-    <div class="faq-item"><button class="faq-q">What Bible translation do you use?</button><div class="faq-a">The app presents scripture in context with references across multiple translations. You can cross-reference any translation using the Verse Map tool built into each week.</div></div>
-    <div class="faq-item"><button class="faq-q">Does my journal save automatically?</button><div class="faq-a">Yes. Journal entries are saved to your account in real time and synced across all your devices. They're private and accessible only to you.</div></div>
-    <div class="faq-item"><button class="faq-q">Can I cancel my subscription?</button><div class="faq-a">Yes, anytime. Cancel through your account settings and you keep access through the end of your current billing period. No penalty.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CROSS-SELL -->
-  <section class="crosssell-section" style="background:var(--parchment-d,#E8E0D0);">
-    <div style="max-width:900px;margin:0 auto;">
-      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Elora Radiance Co.</p>
-      <h2 style="font-family:'Cinzel',serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:14px;">Continue the Journey</h2>
-      <p style="font-size:17px;color:var(--ink-ll);line-height:1.8;max-width:540px;margin-bottom:0;">Scripture-based tools for the believer who is serious about their faith.</p>
-      <div class="crosssell-grid">
-      <a href="armed-anchored.html" class="crosssell-card"><span class="crosssell-icon">⚔️</span><span><div class="crosssell-name">Armed &amp; Anchored</div><div class="crosssell-desc">Spiritual warfare training — 23 weapons</div></span><span class="crosssell-arrow">→</span></a>
-      <a href="anchored-steps-2.html" class="crosssell-card"><span class="crosssell-icon">⚓</span><span><div class="crosssell-name">Anchored Steps · Year 2</div><div class="crosssell-desc">Deeper study for those who kept going</div></span><span class="crosssell-arrow">→</span></a>
-      <a href="red-letters.html" class="crosssell-card"><span class="crosssell-icon">✦</span><span><div class="crosssell-name">The Red Letters</div><div class="crosssell-desc">Complete words of Jesus — free</div></span><span class="crosssell-arrow">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  
-  <!-- FAQ -->
-  <section class="faq-section" style="background:var(--bg, #0F1A24);">
-    <div class="faq-inner">
-      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Questions</p>
-      <h2 style="font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,40px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:0;">Frequently Asked</h2>
-      <div class="faq-list">
-    <div class="faq-item"><button class="faq-q">Do I need a subscription to use it?</button><div class="faq-a">Yes — Anchored Steps is $5.50/month or $39/year. Annual saves over 40% and gives you full access for the whole year. Cancel anytime.</div></div>
-    <div class="faq-item"><button class="faq-q">Do I have to start at Week 1?</button><div class="faq-a">You can start at any week. The weeks are designed to build on each other, but each one also stands alone. Most people start at Week 1 for full context and progression.</div></div>
-    <div class="faq-item"><button class="faq-q">Do I need to finish Year 1 before starting Year 2?</button><div class="faq-a">It's strongly recommended. Year 2 builds in depth and complexity, and assumes familiarity with the Year 1 rhythm. Year 1 is the foundation; Year 2 is the continuation.</div></div>
-    <div class="faq-item"><button class="faq-q">What Bible translation do you use?</button><div class="faq-a">The app presents scripture in context with references across multiple translations. You can cross-reference any translation using the Verse Map tool built into each week.</div></div>
-    <div class="faq-item"><button class="faq-q">Does my journal save automatically?</button><div class="faq-a">Yes. Journal entries are saved to your account in real time and synced across all your devices. They're private and accessible only to you.</div></div>
-    <div class="faq-item"><button class="faq-q">Can I cancel my subscription?</button><div class="faq-a">Yes, anytime. Cancel through your account settings and you keep access through the end of your current billing period. No penalty.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CROSS-SELL -->
-  <section class="crosssell-section" style="background:var(--parchment-d,#E8E0D0);">
-    <div style="max-width:900px;margin:0 auto;">
-      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:var(--taupe);text-transform:uppercase;margin-bottom:12px;">Elora Radiance Co.</p>
-      <h2 style="font-family:'Cinzel',serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:14px;">Continue the Journey</h2>
-      <p style="font-size:17px;color:var(--ink-ll);line-height:1.8;max-width:540px;margin-bottom:0;">Scripture-based tools for the believer who is serious about their faith.</p>
-      <div class="crosssell-grid">
-      <a href="armed-anchored.html" class="crosssell-card"><span class="crosssell-icon">⚔️</span><span><div class="crosssell-name">Armed &amp; Anchored</div><div class="crosssell-desc">Spiritual warfare training — 23 weapons</div></span><span class="crosssell-arrow">→</span></a>
-      <a href="anchored-steps-2.html" class="crosssell-card"><span class="crosssell-icon">⚓</span><span><div class="crosssell-name">Anchored Steps · Year 2</div><div class="crosssell-desc">Deeper study for those who kept going</div></span><span class="crosssell-arrow">→</span></a>
-      <a href="red-letters.html" class="crosssell-card"><span class="crosssell-icon">✦</span><span><div class="crosssell-name">The Red Letters</div><div class="crosssell-desc">Complete words of Jesus — free</div></span><span class="crosssell-arrow">→</span></a>
-      </div>
-    </div>
-  </section>
-
   <script>
-    // Hamburger
-    const ham = document.querySelector('.nav-hamburger');
-    const menu = document.querySelector('.mobile-menu');
+    const ham = document.querySelector('.nav-ham');
+    const menu = document.querySelector('.nav-menu');
     if (ham && menu) {
-      ham.addEventListener('click', (e) => { e.stopPropagation(); ham.classList.toggle('open'); menu.classList.toggle('open'); });
-      document.addEventListener('click', (e) => { if (!ham.contains(e.target) && !menu.contains(e.target)) { ham.classList.remove('open'); menu.classList.remove('open'); } });
+      ham.addEventListener('click', e => { e.stopPropagation(); ham.classList.toggle('open'); menu.classList.toggle('open'); });
+      document.addEventListener('click', e => { if (!ham.contains(e.target) && !menu.contains(e.target)) { ham.classList.remove('open'); menu.classList.remove('open'); } });
     }
-    // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
@@ -723,11 +288,7 @@
         if (!wasOpen) item.classList.add('open');
       });
     });
-    // Scroll reveal
-    const obs = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-      { threshold: 0.08 }
-    );
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   </script>
 </body>
