@@ -418,50 +418,20 @@
     }
 
     nav { position:fixed; top:0; left:0; right:0; z-index:900; backdrop-filter:blur(18px); border-bottom:1px solid var(--border-nav); padding:14px 40px; display:flex; align-items:center; justify-content:space-between; }
-    .nav-logo { font-family:'Cinzel',serif; font-size:12px; font-weight:600; letter-spacing:0.22em; color:var(--nav-text); text-decoration:none; text-transform:uppercase; }
-    .nav-home { font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.16em; color:var(--nav-muted); text-decoration:none; text-transform:uppercase; transition:color .2s; }
-    .nav-home:hover { color:var(--gold); }
-    .nav-cta { font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; padding:9px 20px; border-radius:5px; text-decoration:none; transition:all .2s; }
+    
+    /* ── NAV HAMBURGER ─────────────────────── */
     .nav-ham { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
-    .nav-ham span { display:block; width:22px; height:2px; background:var(--ham-color); border-radius:2px; transition:all .3s; }
+    .nav-ham span { display:block; width:22px; height:2px; background:var(--ink); border-radius:2px; transition:all .3s; }
     .nav-ham.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
     .nav-ham.open span:nth-child(2) { opacity:0; }
     .nav-ham.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-    .nav-menu { display:none; position:fixed; top:53px; left:0; right:0; background:var(--menu-bg); border-bottom:1px solid var(--border-nav); padding:8px 0 20px; flex-direction:column; z-index:899; box-shadow:0 8px 24px rgba(0,0,0,0.12); }
+    .nav-menu { display:none; position:fixed; top:53px; left:0; right:0; background:rgba(242,237,228,0.98); border-bottom:1px solid var(--parchment-dd,#D4C9B0); padding:8px 0 20px; flex-direction:column; z-index:899; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
     .nav-menu.open { display:flex; }
-    .nav-menu a { font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--menu-link); text-decoration:none; padding:14px 24px; border-bottom:1px solid var(--border-nav); transition:color .2s; }
+    .nav-menu a { font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-ll,#6B5A45); text-decoration:none; padding:14px 24px; border-bottom:1px solid rgba(0,0,0,0.06); transition:color .2s; }
     .nav-menu a:last-child { border-bottom:none; }
     .nav-menu a:hover { color:var(--gold); }
-    .nav-menu .m-label { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--menu-label); padding:14px 24px 4px; display:block; }
-    @media(max-width:768px) { nav { padding:14px 20px; } .nav-ham { display:flex !important; } }
-
-    .faq-wrap { padding:90px 48px; background:var(--faq-bg); }
-    .faq-inner { max-width:760px; margin:0 auto; }
-    .faq-eyebrow { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--faq-muted); margin-bottom:12px; }
-    .faq-title { font-family:'Cinzel',serif; font-size:clamp(26px,3.5vw,40px); font-weight:600; color:var(--faq-head); letter-spacing:0.04em; margin-bottom:0; }
-    .faq-list { margin-top:40px; }
-    .faq-item { border-bottom:1px solid var(--faq-border); }
-    .faq-q { width:100%; text-align:left; background:none; border:none; cursor:pointer; padding:22px 0; display:flex; justify-content:space-between; align-items:flex-start; gap:16px; font-family:'Cinzel',serif; font-size:14px; letter-spacing:0.04em; color:var(--faq-head); transition:color .2s; }
-    .faq-q:hover { color:var(--gold); }
-    .faq-plus { font-size:22px; color:var(--faq-muted); flex-shrink:0; line-height:1; transition:transform .3s; margin-top:2px; }
-    .faq-item.open .faq-plus { transform:rotate(45deg); }
-    .faq-a { max-height:0; overflow:hidden; transition:max-height .35s ease, padding .35s ease; font-size:17px; color:var(--faq-text); line-height:1.85; }
-    .faq-item.open .faq-a { max-height:600px; padding-bottom:22px; }
-    @media(max-width:768px){ .faq-wrap { padding:70px 20px; } }
-
-    .cs-wrap { padding:90px 48px; background:var(--cs-bg); border-top:1px solid var(--cs-border); }
-    .cs-inner { max-width:900px; margin:0 auto; }
-    .cs-eyebrow { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-muted); margin-bottom:12px; }
-    .cs-title { font-family:'Cinzel',serif; font-size:clamp(22px,3vw,34px); font-weight:600; color:var(--cs-head); letter-spacing:0.04em; margin-bottom:12px; }
-    .cs-sub { font-size:17px; color:var(--cs-text); line-height:1.8; max-width:500px; margin-bottom:0; }
-    .cs-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:36px; }
-    .cs-card { display:flex; align-items:center; gap:16px; padding:20px 22px; border:1px solid var(--cs-card-border); border-radius:16px; text-decoration:none; transition:all .2s; background:var(--cs-card-bg); }
-    .cs-card:hover { border-color:var(--gold-b); transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.1); }
-    .cs-icon { font-size:26px; flex-shrink:0; }
-    .cs-name { font-family:'Cinzel',serif; font-size:13px; color:var(--cs-head); letter-spacing:0.05em; margin-bottom:3px; }
-    .cs-desc { font-size:13px; color:var(--cs-text); line-height:1.5; }
-    .cs-arr { margin-left:auto; font-size:14px; color:var(--cs-muted); flex-shrink:0; }
-    @media(max-width:768px){ .cs-wrap { padding:70px 20px; } }
+    .m-label { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--taupe,#9B8E7A); padding:14px 24px 4px; display:block; }
+    @media(max-width:768px) { .nav-links { display:none !important; } .nav-ham { display:flex !important; } }
   </style>
 </head>
 <body>
@@ -469,7 +439,7 @@
     <!-- NAV -->
   <nav style="background:rgba(242,237,228,0.93);">
     <a href="index.html" class="nav-logo">Elora Radiance Co.</a>
-    <ul class="nav-links" style="display:flex;gap:36px;list-style:none;align-items:center;">
+    <ul class="nav-links">
       <li><a href="#apps" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.16em;color:var(--ink-ll);text-decoration:none;text-transform:uppercase;transition:color .2s;">Apps</a></li>
       <li><a href="armed-anchored.html" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.16em;color:var(--ink-ll);text-decoration:none;text-transform:uppercase;transition:color .2s;">Armed &amp; Anchored</a></li>
       <li><a href="anchored-steps.html" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.16em;color:var(--ink-ll);text-decoration:none;text-transform:uppercase;transition:color .2s;">Anchored Steps Y1</a></li>
