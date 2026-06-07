@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://eloraradiance.com/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/logo.png</image:loc>
+      <image:title>Elora Radiance Co.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://eloraradiance.com/red-letters.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/red-letters-icon.png</image:loc>
+      <image:title>The Red Letters — Complete Words of Jesus App</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://eloraradiance.com/anchored-steps.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/anchored-steps-1.png</image:loc>
+      <image:title>Anchored Steps Year 1 — 52-Week Scripture Devotional</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://eloraradiance.com/anchored-steps-2.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/anchored-steps-2.png</image:loc>
+      <image:title>Anchored Steps Year 2 — Deeper Scripture Study</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://eloraradiance.com/armed-anchored.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/armed-anchored-icon.png</image:loc>
+      <image:title>Armed &amp; Anchored — Spiritual Warfare Training Journal</image:title>
+    </image:image>
+  </url>
+</urlset>
