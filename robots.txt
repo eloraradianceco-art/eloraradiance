@@ -1,0 +1,6 @@
+# Elora Radiance Co. — robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://eloraradiance.com/sitemap.xml
