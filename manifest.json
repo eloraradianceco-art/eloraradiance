@@ -6,12 +6,13 @@
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#F7F2EA",
+  "background_color": "#E6E1DD",
   "theme_color": "#070E17",
   "categories": ["lifestyle", "education", "productivity"],
   "icons": [
-    { "src": "/assets/logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/assets/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "/assets/logo.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+    { "src": "/assets/app-icon.png", "sizes": "1024x1024", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/app-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/app-icon.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/app-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
   ]
 }
