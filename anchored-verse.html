@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anchored Verse | Scripture for Every Emotion — Free App</title>
+  <meta name="description" content="A word for every weight your heart carries. 17 emotions. 259 Scripture verses. Three translations. Find an anchor for whatever you're feeling — free."/>
+  <meta name="keywords" content="emotion bible app, scripture for anxiety, bible verses for sadness, christian mental health app, bible app for emotions, scripture for fear, free bible app, anchored verse, elora radiance"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://eloraradiance.com/anchored-verse"/>
+  <meta property="og:title" content="Anchored Verse | Scripture for Every Emotion"/>
+  <meta property="og:description" content="A word for every weight your heart carries. 17 emotions across the full human experience, anchored to 259 verses of Scripture."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F2EA;--bg2:#EDE8DC;--bg3:#E4DDD0;
+      --navy:#1C2B39;--navyL:#2D3E4E;
+      --teal:#2A8C8C;--tealL:#3FA8A8;--tealF:rgba(42,140,140,0.08);--tealB:rgba(42,140,140,0.28);
+      --amber:#E8A33D;--amberL:#F0B860;--amberF:rgba(232,163,61,0.1);--amberB:rgba(232,163,61,0.32);
+      --ink:#1C150A;--text:#3D2E1A;--muted:#7A6248;--dim:#B09A80;
+      --cream:#E3E5D8;
+      --border:rgba(42,140,140,0.14);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(247,242,234,0.96);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .nav-home{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:0.2em;color:var(--muted);text-decoration:none;text-transform:uppercase;transition:color .2s}
+    .nav-home:hover{color:var(--teal)}
+    .nav-cta{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;padding:9px 22px;border-radius:5px;text-decoration:none;background:linear-gradient(135deg,rgba(42,140,140,0.22),rgba(42,140,140,0.08));border:1px solid var(--tealB);color:var(--navy);transition:all .2s}
+    .nav-cta:hover{background:linear-gradient(135deg,rgba(42,140,140,0.36),rgba(42,140,140,0.16))}
+    .nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+    .nav-ham span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s}
+    .nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-ham.open span:nth-child(2){opacity:0}
+    .nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav-menu{display:none;position:fixed;top:53px;left:0;right:0;background:rgba(247,242,234,0.98);border-bottom:1px solid var(--border);padding:8px 0 20px;flex-direction:column;z-index:899;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+    .nav-menu.open{display:flex}
+    .nav-menu a{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:14px 24px;border-bottom:1px solid var(--border);transition:color .2s}
+    .nav-menu a:last-child{border-bottom:none}
+    .nav-menu a:hover{color:var(--teal)}
+    .m-lbl{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--dim);padding:14px 24px 4px;display:block}
+    @media(max-width:768px){nav{padding:14px 20px}.nav-ham{display:flex !important}}
+
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 90px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,rgba(42,140,140,0.12) 0%,transparent 55%),radial-gradient(ellipse at 80% 100%,rgba(232,163,61,0.1) 0%,transparent 50%)}
+    .hero-icon{width:84px;height:84px;border-radius:20px;margin-bottom:22px;box-shadow:0 8px 32px rgba(42,140,140,0.25);background:linear-gradient(145deg,var(--navy),var(--navyL));display:flex;align-items:center;justify-content:center;color:var(--amber);font-size:42px;font-family:'Oswald',sans-serif;font-weight:700}
+    .hero-eyebrow{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:0.28em;color:var(--amber);text-transform:uppercase;margin-bottom:14px;opacity:0;animation:fadeUp .8s ease .1s forwards;font-weight:600}
+    .hero-title{font-family:'Oswald',sans-serif;font-size:clamp(36px,6vw,64px);font-weight:700;color:var(--navy);letter-spacing:0.03em;line-height:1.05;margin-bottom:8px;opacity:0;animation:fadeUp .9s ease .25s forwards}
+    .hero-sub-label{font-family:'Oswald',sans-serif;font-size:15px;color:var(--teal);letter-spacing:0.1em;margin-bottom:22px;opacity:0;animation:fadeUp .9s ease .35s forwards;font-weight:500}
+    .hero-desc{font-size:clamp(17px,2vw,21px);color:var(--text);line-height:1.85;max-width:540px;margin:0 auto 40px;font-style:italic;opacity:0;animation:fadeUp 1s ease .5s forwards}
+    .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;opacity:0;animation:fadeUp 1s ease .65s forwards}
+    .free-badge{font-family:'Oswald',sans-serif;font-size:10px;color:var(--teal);letter-spacing:0.14em;text-transform:uppercase;background:var(--tealF);border:1px solid var(--tealB);padding:7px 20px;border-radius:20px;display:inline-block;opacity:0;animation:fadeIn 1s ease .9s forwards;font-weight:600}
+    .hero-stats{display:flex;justify-content:center;gap:48px;margin-top:48px;flex-wrap:wrap;opacity:0;animation:fadeIn 1s ease 1s forwards}
+    .stat-num{font-family:'Oswald',sans-serif;font-size:38px;font-weight:700;color:var(--teal);display:block;line-height:1}
+    .stat-lbl{font-size:11px;color:var(--muted);font-style:italic;margin-top:6px;display:block;letter-spacing:0.06em}
+
+    .btn-p{background:linear-gradient(135deg,rgba(42,140,140,0.22),rgba(42,140,140,0.08));border:1px solid var(--tealB);color:var(--navy);padding:14px 34px;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border-radius:5px;transition:all .25s;display:inline-block;font-weight:600}
+    .btn-p:hover{background:linear-gradient(135deg,rgba(42,140,140,0.36),rgba(42,140,140,0.16))}
+    .btn-s{background:transparent;border:1px solid rgba(0,0,0,0.12);color:var(--muted);padding:14px 34px;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border-radius:5px;transition:all .25s;display:inline-block;font-weight:500}
+    .btn-s:hover{border-color:var(--tealB);color:var(--teal)}
+
+    .section{padding:90px 48px}
+    .section-inner{max-width:1040px;margin:0 auto}
+    .eyebrow{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:0.26em;color:var(--amber);text-transform:uppercase;margin-bottom:12px;font-weight:600}
+    .s-title{font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:700;color:var(--navy);letter-spacing:0.02em;margin-bottom:16px;line-height:1.15}
+    .s-body{font-size:17px;color:var(--text);line-height:1.85;max-width:620px}
+    .alt{background:var(--bg2)}
+    @media(max-width:768px){.section{padding:70px 20px}}
+
+    /* SAMPLE VERSE CARD */
+    .verse-preview{background:linear-gradient(145deg,#fff,var(--cream));border:1px solid var(--tealB);border-radius:22px;padding:38px 36px;position:relative;overflow:hidden;max-width:560px;margin:0 auto;box-shadow:0 16px 40px rgba(28,43,57,0.12)}
+    .verse-emotion{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:0.3em;color:var(--teal);text-transform:uppercase;text-align:center;margin-bottom:18px;font-weight:600}
+    .verse-text{font-size:clamp(17px,2.1vw,21px);font-style:italic;line-height:1.6;text-align:center;color:var(--navy);margin-bottom:20px}
+    .verse-meta{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(28,43,57,0.12);padding-top:14px}
+    .verse-ref{font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.06em;color:var(--navy);font-size:14px}
+    .verse-trans{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.15em;color:var(--amber);font-weight:500}
+
+    /* BANDS GRID */
+    .bands-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:36px}
+    .band-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px 24px;border-top:4px solid var(--teal)}
+    .band-card.bc-heavy{border-top-color:var(--navy)}
+    .band-card.bc-friction{border-top-color:var(--amber)}
+    .band-card.bc-light{border-top-color:var(--teal)}
+    .band-label{font-family:'Oswald',sans-serif;font-size:18px;letter-spacing:0.16em;color:var(--navy);text-transform:uppercase;font-weight:700;margin-bottom:4px}
+    .band-hint{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:16px}
+    .band-emotions{display:flex;flex-wrap:wrap;gap:6px}
+    .band-emo{font-family:'Sora',sans-serif;font-size:13px;background:var(--bg);color:var(--text);padding:6px 12px;border-radius:20px;border:1px solid var(--border)}
+
+    /* FEATURES LIST */
+    .features-list{display:flex;flex-direction:column;gap:10px;margin-top:36px}
+    .feature{display:flex;align-items:flex-start;gap:18px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s}
+    .feature:hover{border-color:var(--tealB)}
+    .feature-icon{font-size:24px;flex-shrink:0;margin-top:2px;width:30px;text-align:center}
+    .feature-name{font-family:'Oswald',sans-serif;font-size:14px;color:var(--navy);letter-spacing:0.08em;margin-bottom:6px;font-weight:600;text-transform:uppercase}
+    .feature-desc{font-size:15px;color:var(--muted);line-height:1.7}
+
+    .quote-band{padding:80px 40px;text-align:center;background:linear-gradient(160deg,var(--navy),var(--navyL));color:var(--cream);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .q-text{font-family:'Sora',serif;font-size:clamp(20px,2.8vw,32px);font-style:italic;color:var(--cream);max-width:780px;margin:0 auto 20px;line-height:1.55}
+    .q-ref{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;font-weight:500}
+
+    .cta-section{padding:100px 24px;text-align:center;background:radial-gradient(ellipse at 50% 100%,rgba(42,140,140,0.12) 0%,transparent 60%)}
+
+    .faq-wrap{padding:90px 48px;background:var(--bg2)}
+    .faq-inner{max-width:760px;margin:0 auto}
+    .faq-list{margin-top:40px}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:0.06em;color:var(--navy);transition:color .2s;font-weight:500;text-transform:uppercase}
+    .faq-q:hover{color:var(--teal)}
+    .faq-plus{font-size:22px;color:var(--teal);flex-shrink:0;line-height:1;transition:transform .3s;margin-top:2px}
+    .faq-item.open .faq-plus{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;font-size:16px;color:var(--text);line-height:1.85}
+    .faq-item.open .faq-a{max-height:400px;padding-bottom:22px}
+    @media(max-width:768px){.faq-wrap{padding:70px 20px}}
+
+    .cs-wrap{padding:90px 48px;background:var(--bg3);border-top:1px solid var(--border)}
+    .cs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:36px}
+    .cs-card{display:flex;align-items:center;gap:16px;padding:20px 22px;border:1px solid var(--border);border-radius:16px;text-decoration:none;transition:all .2s;background:var(--bg)}
+    .cs-card:hover{border-color:var(--tealB);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+    .cs-icon{font-size:26px;flex-shrink:0}
+    .cs-name{font-family:'Oswald',sans-serif;font-size:13px;color:var(--navy);letter-spacing:0.06em;margin-bottom:3px;font-weight:600;text-transform:uppercase}
+    .cs-desc{font-size:13px;color:var(--muted);line-height:1.5}
+    .cs-arr{margin-left:auto;font-size:14px;color:var(--amber);flex-shrink:0}
+    @media(max-width:768px){.cs-wrap{padding:70px 20px}}
+
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-brand{font-family:'Oswald',sans-serif;font-size:11px;color:var(--muted);letter-spacing:0.18em;text-transform:uppercase}
+    .footer-links{display:flex;gap:20px}
+    .footer-links a{font-family:'Oswald',sans-serif;font-size:10px;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--teal)}
+    @media(max-width:768px){footer{padding:30px 20px;flex-direction:column;align-items:flex-start}}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+  </style>
+
+  <link rel="canonical" href="https://eloraradiance.com/anchored-verse.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:site_name" content="Elora Radiance Co." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://eloraradiance.com/assets/anchored-verse-icon.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Anchored Verse | Scripture for Every Emotion" />
+  <meta name="twitter:description" content="A word for every weight your heart carries. 17 emotions across the full human experience, anchored to 259 verses of Scripture. Free." />
+  <meta name="twitter:image" content="https://eloraradiance.com/assets/anchored-verse-icon.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Anchored Verse","applicationCategory":"ReferenceApplication","applicationSubCategory":"Bible Study","operatingSystem":"Web, iOS, Android","url":"https://anchoredverse.vercel.app","description":"Emotion-indexed Scripture companion. 17 emotions across three bands (Heavy, Friction, Light), 259 anchor verses, three translations (NKJV, ESV, NIV). Save anchors, share verse cards.","image":"https://eloraradiance.com/assets/anchored-verse-icon.png","publisher":{"@type":"Organization","name":"Elora Radiance Co."},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":"17 emotions across three bands, 259 anchor verses, three translations (NKJV ESV NIV), saved anchors, shareable verse cards with light and dark themes"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does Anchored Verse do?","acceptedAnswer":{"@type":"Answer","text":"Pick what you're feeling. Get Scripture anchored to that exact emotion. 17 emotions across Heavy, Friction, and Light — 259 verses total. Each emotion includes a short reflection so the Word doesn't just speak to the feeling but reframes it."}},{"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Completely free. No account required, no subscription, no ads. Save anchors to your device and share verse cards immediately."}},{"@type":"Question","name":"Which translations does it use?","acceptedAnswer":{"@type":"Answer","text":"Three translations side-by-side: NKJV, ESV, and NIV. Switch instantly at the top of the screen — your selection follows you through every emotion."}},{"@type":"Question","name":"Can I save verses or share them?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tap the star to save any verse to your Anchors. Tap share to open a styled card you can post to Instagram, send to a friend, or save as an image — with light and dark theme options."}}]}</script>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-home">Elora Radiance Co.</a>
+    <a href="https://anchoredverse.vercel.app" class="nav-cta">⚓ Open App — Free</a>
+    <button class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav-menu">
+      <span class="m-lbl">More Apps</span>
+      <a href="armed-anchored.html">⚔️ Armed &amp; Anchored</a>
+      <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
+      <a href="anchored-steps-2.html">⚓ Anchored Steps Year 2</a>
+      <a href="red-letters.html">✦ The Red Letters</a>
+      <span class="m-lbl">Site</span>
+      <a href="index.html">← Elora Radiance Co.</a>
+    </nav>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-icon">⚓</div>
+    <p class="hero-eyebrow">Elora Radiance Co. · Free</p>
+    <h1 class="hero-title">ANCHORED VERSE</h1>
+    <p class="hero-sub-label">Scripture for Every Emotion</p>
+    <p class="hero-desc">A word for every weight your heart carries. Pick what you're feeling — Scripture meets you there.</p>
+    <div class="hero-btns">
+      <a href="https://anchoredverse.vercel.app" class="btn-p">⚓ Open App — Free</a>
+      <a href="#emotions" class="btn-s">See the Emotions</a>
+    </div>
+    <div class="free-badge">⚓ Completely Free · No Account Required</div>
+    <div class="hero-stats">
+      <div><span class="stat-num">17</span><span class="stat-lbl">Emotions</span></div>
+      <div><span class="stat-num">259</span><span class="stat-lbl">Anchor Verses</span></div>
+      <div><span class="stat-num">3</span><span class="stat-lbl">Translations</span></div>
+    </div>
+  </section>
+
+  <div style="max-width:640px;margin:0 auto;padding:0 24px 80px;">
+    <div class="verse-preview reveal">
+      <div class="verse-emotion">ANXIOUS</div>
+      <p class="verse-text">"Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God."</p>
+      <div class="verse-meta">
+        <span class="verse-ref">Philippians 4:6</span>
+        <span class="verse-trans">ESV</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section alt" id="emotions">
+    <div class="section-inner">
+      <p class="eyebrow reveal">What's Inside</p>
+      <h2 class="s-title reveal">17 Emotions Across Three Bands</h2>
+      <p class="s-body reveal">Not a generic devotional. Real human feelings — the heavy ones, the ones full of friction, and the ones we want to stay anchored in. Each emotion opens to multiple verses with a brief reflection that meets you where you actually are.</p>
+      <div class="bands-grid">
+        <div class="band-card bc-heavy reveal d1">
+          <div class="band-label">HEAVY</div>
+          <div class="band-hint">When the weight is pressing</div>
+          <div class="band-emotions">
+            <span class="band-emo">Anxious</span><span class="band-emo">Sad</span><span class="band-emo">Overwhelmed</span><span class="band-emo">Fearful</span><span class="band-emo">Lonely</span><span class="band-emo">Grieving</span><span class="band-emo">Insecure</span>
+          </div>
+        </div>
+        <div class="band-card bc-friction reveal d2">
+          <div class="band-label">FRICTION</div>
+          <div class="band-hint">When something needs to give</div>
+          <div class="band-emotions">
+            <span class="band-emo">Angry</span><span class="band-emo">Frustrated</span><span class="band-emo">Tempted</span><span class="band-emo">Repentant</span>
+          </div>
+        </div>
+        <div class="band-card bc-light reveal d3">
+          <div class="band-label">LIGHT</div>
+          <div class="band-hint">When you want to stay anchored</div>
+          <div class="band-emotions">
+            <span class="band-emo">Happy</span><span class="band-emo">Grateful</span><span class="band-emo">Hopeful</span><span class="band-emo">Peaceful</span><span class="band-emo">Faith-Filled</span><span class="band-emo">Forgiving</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="eyebrow reveal">How It Works</p>
+      <h2 class="s-title reveal">Simple. Fast. Anchored.</h2>
+      <p class="s-body reveal">Designed for the moments you actually need it — not after twenty taps and a sign-up flow. Open it. Pick a feeling. Read the verse. Carry it with you.</p>
+      <div class="features-list">
+        <div class="feature reveal d1"><span class="feature-icon">🫀</span><div><div class="feature-name">Pick the Feeling</div><div class="feature-desc">Tap whatever's actually true for you right now. No journaling required. No mood scale. Just the word for what you're carrying.</div></div></div>
+        <div class="feature reveal d1"><span class="feature-icon">📖</span><div><div class="feature-name">Get the Anchor</div><div class="feature-desc">A Scripture matched to that emotion appears immediately — with a short reflection that doesn't just speak to the feeling, but reframes it.</div></div></div>
+        <div class="feature reveal d2"><span class="feature-icon">🔄</span><div><div class="feature-name">Three Translations</div><div class="feature-desc">NKJV, ESV, or NIV. Toggle at the top — your choice persists across every emotion, so the Word reads in the voice that resonates with you.</div></div></div>
+        <div class="feature reveal d2"><span class="feature-icon">⚓</span><div><div class="feature-name">Save Your Anchors</div><div class="feature-desc">Star any verse to keep it. Build your own collection of the Scriptures that have anchored you — accessible whenever you need to return to them.</div></div></div>
+        <div class="feature reveal d3"><span class="feature-icon">↗</span><div><div class="feature-name">Share Verse Cards</div><div class="feature-desc">Tap share to generate a beautifully styled card with the verse, reference, and emotion category. Light or dark theme. Send to a friend, post to Instagram, or save the image.</div></div></div>
+        <div class="feature reveal d3"><span class="feature-icon">⚡</span><div><div class="feature-name">No Account Needed</div><div class="feature-desc">Open the app and start. No sign-up, no credit card, no friction between you and the next verse you need.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote-band">
+    <p class="q-text">"I waited patiently for the Lord; he inclined to me and heard my cry. He drew me up from the pit of destruction, out of the miry bog, and set my feet upon a rock, making my steps secure."</p>
+    <p class="q-ref">Psalm 40:1–2 · ESV — This is what Anchored Verse is for.</p>
+  </div>
+
+  <section class="cta-section">
+    <p class="eyebrow reveal">Open It Now</p>
+    <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(28px,5vw,46px);font-weight:700;color:var(--navy);letter-spacing:0.02em;line-height:1.15;margin-bottom:16px;" class="reveal">When the Heart Is Heavy, the Word Anchors.</h2>
+    <p style="font-size:18px;color:var(--text);line-height:1.85;max-width:520px;margin:0 auto 36px;font-style:italic;" class="reveal">Whatever you're feeling right now — anxiety, gratitude, grief, hope — there's a verse for that. Pick it. Read it. Anchor.</p>
+    <a href="https://anchoredverse.vercel.app" class="btn-p reveal" style="font-size:13px;padding:16px 40px;">⚓ Open Anchored Verse — Free</a>
+    <div class="free-badge reveal" style="margin-top:20px;">No account · No sign-up · Just Scripture</div>
+  </section>
+
+  <section class="faq-wrap">
+    <div class="faq-inner">
+      <p class="eyebrow">Questions</p>
+      <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:700;color:var(--navy);letter-spacing:0.02em;margin-bottom:0;">FREQUENTLY ASKED</h2>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-q">Is it really completely free?<span class="faq-plus">+</span></button><div class="faq-a">Yes — no credit card, no subscription, no paywall, no account required. Open the app and start using it immediately. Save anchors and share cards work without sign-up.</div></div>
+        <div class="faq-item"><button class="faq-q">Which translations does it include?<span class="faq-plus">+</span></button><div class="faq-a">Three side-by-side translations: NKJV, ESV, and NIV. Switch at the top of any screen and your selection carries through every verse you read.</div></div>
+        <div class="faq-item"><button class="faq-q">How is this different from a regular Bible app?<span class="faq-plus">+</span></button><div class="faq-a">Most Bible apps organize by book and chapter. Anchored Verse organizes by emotion — so when you're actually feeling anxious, lonely, grateful, or repentant, you don't have to know where to look. Pick the feeling, get the Scripture.</div></div>
+        <div class="faq-item"><button class="faq-q">What are the three bands?<span class="faq-plus">+</span></button><div class="faq-a">Heavy (when the weight is pressing — anxious, sad, overwhelmed, fearful, lonely, grieving, insecure), Friction (when something needs to give — angry, frustrated, tempted, repentant), and Light (when you want to stay anchored — happy, grateful, hopeful, peaceful, faith-filled, forgiving).</div></div>
+        <div class="faq-item"><button class="faq-q">Can I save verses for later?<span class="faq-plus">+</span></button><div class="faq-a">Yes. Tap the star next to any verse to save it to your Anchors — your own growing collection of the Scriptures that have spoken to you. Every saved anchor includes a share button.</div></div>
+        <div class="faq-item"><button class="faq-q">Does it work on mobile?<span class="faq-plus">+</span></button><div class="faq-a">Yes — any browser on iPhone, Android, iPad, or desktop. You can also add it to your home screen for an app-like experience. No download from any app store required.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-wrap">
+    <div style="max-width:900px;margin:0 auto;">
+      <p class="eyebrow">Elora Radiance Co.</p>
+      <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:700;color:var(--navy);letter-spacing:0.02em;margin-bottom:12px;">MORE FROM ELORA RADIANCE CO.</h2>
+      <p style="font-size:17px;color:var(--text);line-height:1.8;max-width:520px;margin-bottom:0;">Scripture-based tools for every dimension of the Christian life.</p>
+      <div class="cs-grid">
+        <a href="armed-anchored.html" class="cs-card"><span class="cs-icon">⚔️</span><span><div class="cs-name">Armed &amp; Anchored</div><div class="cs-desc">Spiritual warfare training — 23 weapons</div></span><span class="cs-arr">→</span></a>
+        <a href="anchored-steps.html" class="cs-card"><span class="cs-icon">⚓</span><span><div class="cs-name">Anchored Steps · Year 1</div><div class="cs-desc">52 weeks of daily study and prayer</div></span><span class="cs-arr">→</span></a>
+        <a href="anchored-steps-2.html" class="cs-card"><span class="cs-icon">⚓</span><span><div class="cs-name">Anchored Steps · Year 2</div><div class="cs-desc">Deeper study for those who kept going</div></span><span class="cs-arr">→</span></a>
+        <a href="red-letters.html" class="cs-card"><span class="cs-icon">✦</span><span><div class="cs-name">The Red Letters</div><div class="cs-desc">Complete words of Jesus — free</div></span><span class="cs-arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-brand">Anchored Verse · Elora Radiance Co.</span>
+    <div class="footer-links">
+      <a href="https://anchoredverse.vercel.app">Open App</a>
+      <a href="mailto:eloraradiance.co@gmail.com">Contact</a>
+      <a href="index.html">← Home</a>
+    </div>
+  </footer>
+
+  <script>
+    const ham = document.querySelector('.nav-ham');
+    const menu = document.querySelector('.nav-menu');
+    if (ham && menu) {
+      ham.addEventListener('click', e => { e.stopPropagation(); ham.classList.toggle('open'); menu.classList.toggle('open'); });
+      document.addEventListener('click', e => { if (!ham.contains(e.target) && !menu.contains(e.target)) { ham.classList.remove('open'); menu.classList.remove('open'); } });
+    }
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
