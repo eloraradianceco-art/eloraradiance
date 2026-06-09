@@ -1,0 +1,17 @@
+{
+  "name": "Elora Radiance Co.",
+  "short_name": "Elora Radiance",
+  "description": "Faith-based apps for the whole Christian life — devotional study, spiritual warfare, words of Jesus, Scripture for emotions, and a faith-centered life planner.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F7F2EA",
+  "theme_color": "#070E17",
+  "categories": ["lifestyle", "education", "productivity"],
+  "icons": [
+    { "src": "/assets/logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/logo.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
+}
