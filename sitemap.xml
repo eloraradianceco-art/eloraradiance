@@ -51,4 +51,9 @@
       <image:title>Armed &amp; Anchored — Spiritual Warfare Training Journal</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://eloraradiance.com/anchored-verse.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 </urlset>
