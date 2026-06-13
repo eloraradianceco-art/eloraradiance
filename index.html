@@ -613,6 +613,7 @@
     .testimonial-card .t-title{font-family:'Cinzel',serif;font-size:16px;color:var(--ink);font-weight:600;letter-spacing:0.02em}
     .testimonial-card .t-body{font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--ink-l);line-height:1.7;margin:0}
     .testimonial-card .t-author{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--taupe);margin-top:6px}
+    .testimonial-card .t-app{align-self:flex-start;font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);background:var(--gold-f);border:1px solid var(--gold-b);border-radius:999px;padding:4px 11px;margin-bottom:2px}
     .card-rating{display:flex;align-items:center;gap:7px;margin:2px 0 14px;font-family:'EB Garamond',serif}
     .card-rating .cr-stars{color:var(--gold-l);font-size:14px;letter-spacing:1px}
     .card-rating .cr-num{color:var(--cream);font-weight:600;font-size:14px}
@@ -653,10 +654,10 @@
           var grid = document.getElementById('testimonials-grid'); if(!grid) return;
           grid.innerHTML = feat.map(function(r){
             var body=(r.body||'').trim(); if(body.length>240) body=body.slice(0,237)+'\u2026';
-            return '<div class="testimonial-card"><div class="t-stars">'+stars(r.rating)+'</div>'+
+            return '<div class="testimonial-card"><div class="t-app">'+esc(APP_NAME[r.app]||'')+'</div><div class="t-stars">'+stars(r.rating)+'</div>'+
               (r.title ? '<div class="t-title">'+esc(r.title)+'</div>' : '')+
               '<p class="t-body">\u201c'+esc(body)+'\u201d</p>'+
-              '<div class="t-author">'+esc(r.author_name||'A believer')+' \u00b7 '+(APP_NAME[r.app]||'')+'</div></div>';
+              '<div class="t-author">'+esc(r.author_name||'A believer')+'</div></div>';
           }).join('');
           var band = document.getElementById('reviews'); if(band) band.style.display='block';
         })
