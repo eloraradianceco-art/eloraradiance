@@ -601,6 +601,70 @@
     </div>
   </section>
 
+  <!-- Social proof: ratings badges + testimonials (data-driven from approved reviews) -->
+  <style>
+    .testimonials-band{background:var(--parchment-d);border-top:1px solid var(--parchment-dd);border-bottom:1px solid var(--parchment-dd);padding:80px 40px}
+    .testimonials-inner{max-width:1100px;margin:0 auto;text-align:center}
+    .t-eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.26em;color:var(--taupe);text-transform:uppercase;margin-bottom:10px}
+    .t-heading{font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,40px);font-weight:600;color:var(--ink);letter-spacing:0.03em;margin-bottom:44px}
+    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;text-align:left}
+    .testimonial-card{background:var(--parchment);border:1px solid var(--gold-b);border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;gap:8px}
+    .testimonial-card .t-stars{color:var(--gold);font-size:15px;letter-spacing:2px}
+    .testimonial-card .t-title{font-family:'Cinzel',serif;font-size:16px;color:var(--ink);font-weight:600;letter-spacing:0.02em}
+    .testimonial-card .t-body{font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--ink-l);line-height:1.7;margin:0}
+    .testimonial-card .t-author{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--taupe);margin-top:6px}
+    .card-rating{display:flex;align-items:center;gap:7px;margin:2px 0 14px;font-family:'EB Garamond',serif}
+    .card-rating .cr-stars{color:var(--gold-l);font-size:14px;letter-spacing:1px}
+    .card-rating .cr-num{color:var(--cream);font-weight:600;font-size:14px}
+    .card-rating .cr-count{color:rgba(200,190,170,0.6);font-size:13px}
+  </style>
+  <section class="testimonials-band" id="reviews" style="display:none;">
+    <div class="testimonials-inner">
+      <p class="t-eyebrow">Testimonies</p>
+      <h2 class="t-heading">What People Are Saying</h2>
+      <div class="testimonials-grid" id="testimonials-grid"></div>
+    </div>
+  </section>
+  <script>
+    (function(){
+      var SB_URL = "https://cvtukqamaqrhjtdvmslb.supabase.co";
+      var SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN2dHVrcWFtYXFyaGp0ZHZtc2xiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4NDU1MjQsImV4cCI6MjA5MTQyMTUyNH0.gSksF5jV-UpuaUL7x7vhHHOB6Z7Qq0iehtbc2PoSAxw";
+      var HREF_APP = { 'armed-anchored.html':'aa', 'anchored-steps.html':'as1', 'anchored-steps-2.html':'as2', 'red-letters.html':'rl', 'the-living-planner.html':'tlp' };
+      var APP_NAME = { aa:'Armed & Anchored', as1:'Anchored Steps', as2:'Anchored Steps \u00b7 Year 2', rl:'The Red Letters', tlp:'The Living Planner' };
+      function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+      function stars(n){ var f=Math.round(n), s=''; for(var i=1;i<=5;i++) s+=(i<=f?'\u2605':'\u2606'); return s; }
+      fetch(SB_URL + "/rest/v1/reviews?status=eq.approved&select=app,rating,title,body,author_name,created_at&order=created_at.desc&limit=200", { headers:{ apikey:SB_KEY, Authorization:"Bearer "+SB_KEY } })
+        .then(function(r){ return r.ok ? r.json() : []; })
+        .then(function(rows){
+          if(!Array.isArray(rows) || !rows.length) return;
+          var stat = {};
+          rows.forEach(function(r){ (stat[r.app] = stat[r.app] || {sum:0,n:0}); stat[r.app].sum += r.rating; stat[r.app].n++; });
+          document.querySelectorAll('.app-card').forEach(function(card){
+            var a = card.querySelector('a[href]'); if(!a) return;
+            var app = HREF_APP[a.getAttribute('href')]; if(!app || !stat[app]) return;
+            var avg = stat[app].sum/stat[app].n, n = stat[app].n;
+            var b = document.createElement('div'); b.className='card-rating';
+            b.innerHTML = '<span class="cr-stars">'+stars(avg)+'</span><span class="cr-num">'+avg.toFixed(1)+'</span><span class="cr-count">\u00b7 '+n+' review'+(n===1?'':'s')+'</span>';
+            var price = card.querySelector('.card-price');
+            if(price) price.parentNode.insertBefore(b, price); else (card.querySelector('.card-body')||card).appendChild(b);
+          });
+          var feat = rows.filter(function(r){ return r.rating>=4 && (r.body||'').trim().length>=20; }).slice(0,6);
+          if(!feat.length) return;
+          var grid = document.getElementById('testimonials-grid'); if(!grid) return;
+          grid.innerHTML = feat.map(function(r){
+            var body=(r.body||'').trim(); if(body.length>240) body=body.slice(0,237)+'\u2026';
+            return '<div class="testimonial-card"><div class="t-stars">'+stars(r.rating)+'</div>'+
+              (r.title ? '<div class="t-title">'+esc(r.title)+'</div>' : '')+
+              '<p class="t-body">\u201c'+esc(body)+'\u201d</p>'+
+              '<div class="t-author">'+esc(r.author_name||'A believer')+' \u00b7 '+(APP_NAME[r.app]||'')+'</div></div>';
+          }).join('');
+          var band = document.getElementById('reviews'); if(band) band.style.display='block';
+        })
+        .catch(function(){});
+    })();
+  </script>
+
+
   <!-- Email capture band -->
   <style>
     .signup-band{background:linear-gradient(160deg,var(--navy),var(--navy-m));padding:74px 24px;text-align:center;border-top:1px solid var(--gold-b);border-bottom:1px solid var(--gold-b)}
