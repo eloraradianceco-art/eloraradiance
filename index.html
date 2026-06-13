@@ -601,6 +601,66 @@
     </div>
   </section>
 
+  <!-- Email capture band -->
+  <style>
+    .signup-band{background:linear-gradient(160deg,var(--navy),var(--navy-m));padding:74px 24px;text-align:center;border-top:1px solid var(--gold-b);border-bottom:1px solid var(--gold-b)}
+    .signup-inner{max-width:600px;margin:0 auto}
+    .signup-eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.24em;color:var(--gold-l);text-transform:uppercase;margin-bottom:14px;font-weight:600}
+    .signup-title{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,38px);color:var(--cream);letter-spacing:0.02em;line-height:1.2;margin:0 0 14px}
+    .signup-sub{font-family:'EB Garamond',Georgia,serif;font-size:17px;color:var(--cream);opacity:0.82;line-height:1.7;margin:0 auto 30px;max-width:480px}
+    .signup-form{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+    .signup-input{flex:1;min-width:220px;padding:15px 18px;border-radius:8px;border:1px solid var(--gold-b);background:rgba(255,255,255,0.06);color:var(--cream);font-family:'EB Garamond',Georgia,serif;font-size:16px;outline:none;transition:border-color .2s}
+    .signup-input::placeholder{color:rgba(237,230,214,0.5)}
+    .signup-input:focus{border-color:var(--gold-l)}
+    .signup-btn{padding:15px 30px;border-radius:8px;border:none;background:linear-gradient(135deg,var(--gold),var(--gold-l));color:var(--navy);font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:transform .15s,opacity .2s;white-space:nowrap}
+    .signup-btn:hover{transform:translateY(-1px)}
+    .signup-btn:disabled{opacity:0.6;cursor:default;transform:none}
+    .signup-msg{margin-top:16px;font-family:'EB Garamond',Georgia,serif;font-size:15px;min-height:20px}
+    .signup-note{margin-top:14px;font-size:12px;color:var(--cream);opacity:0.5;font-style:italic}
+  </style>
+  <section class="signup-band" id="join">
+    <div class="signup-inner">
+      <p class="signup-eyebrow">Join the Community</p>
+      <h2 class="signup-title">Be First to Know</h2>
+      <p class="signup-sub">New app releases, Scripture resources, and faith tools &mdash; sent straight to your inbox. No noise, just what helps you stand firm.</p>
+      <div class="signup-form">
+        <input type="email" id="signup-email" class="signup-input" placeholder="you@example.com" autocomplete="email" aria-label="Email address"/>
+        <button type="button" id="signup-btn" class="signup-btn" onclick="eloraSubscribe()">Join</button>
+      </div>
+      <p class="signup-msg" id="signup-msg" role="status" aria-live="polite"></p>
+      <p class="signup-note">We'll never share your email. Unsubscribe anytime.</p>
+    </div>
+  </section>
+  <script>
+    (function(){
+      var SUPABASE_URL = "https://cvtukqamaqrhjtdvmslb.supabase.co";
+      var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN2dHVrcWFtYXFyaGp0ZHZtc2xiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4NDU1MjQsImV4cCI6MjA5MTQyMTUyNH0.gSksF5jV-UpuaUL7x7vhHHOB6Z7Qq0iehtbc2PoSAxw";
+      window.eloraSubscribe = function(){
+        var input = document.getElementById('signup-email');
+        var btn = document.getElementById('signup-btn');
+        var msg = document.getElementById('signup-msg');
+        var email = (input.value || '').trim();
+        if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ msg.style.color='#E8A33D'; msg.textContent='Please enter a valid email.'; return; }
+        btn.disabled = true; var orig = btn.textContent; btn.textContent = '\u2026';
+        fetch(SUPABASE_URL + '/rest/v1/subscribers', {
+          method:'POST',
+          headers:{ 'apikey':SUPABASE_ANON, 'Authorization':'Bearer '+SUPABASE_ANON, 'Content-Type':'application/json', 'Prefer':'return=minimal' },
+          body: JSON.stringify({ email: email, source: 'homepage', user_agent: navigator.userAgent })
+        }).then(function(r){
+          if(r.status===201 || r.status===200){ done("You're in. Watch your inbox."); }
+          else if(r.status===409){ done("You're already on the list \u2014 thank you!"); }
+          else { return r.text().then(function(t){
+                   if(/duplicate|unique/i.test(t)){ done("You're already on the list \u2014 thank you!"); }
+                   else { fail(); }
+                 }); }
+        }).catch(function(){ fail(); });
+        function done(text){ msg.style.color='#9FD8B0'; msg.textContent=text; input.value=''; btn.disabled=true; btn.textContent='\u2713 Joined'; if(window.va) try{window.va('event',{name:'newsletter_signup'});}catch(e){} }
+        function fail(){ btn.disabled=false; btn.textContent=orig; msg.style.color='#E8A33D'; msg.textContent='Something went wrong. Please try again.'; }
+      };
+    })();
+  </script>
+
+
 <section class="about-section" id="about">
     <div class="about-inner">
       <div class="reveal">
