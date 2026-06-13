@@ -282,6 +282,54 @@
     </div>
   </section>
 
+  <!-- Social proof: ratings + testimonials (live from approved reviews) -->
+  <style>
+    .er-reviews-band{background:#ECE4D5;border-top:1px solid #DCD0BE;border-bottom:1px solid #DCD0BE;padding:78px 40px}
+    .er-reviews-inner{max-width:1100px;margin:0 auto;text-align:center}
+    .er-rev-eyebrow{font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:0.26em;color:#8B7A5E;text-transform:uppercase;margin-bottom:12px}
+    .er-rev-agg{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+    .er-rev-agg .er-stars{color:#B08A4E;font-size:20px;letter-spacing:2px}
+    .er-rev-agg .er-num{font-family:'Cinzel',Georgia,serif;font-size:22px;font-weight:700;color:#1C150A}
+    .er-rev-agg .er-count{font-family:'EB Garamond',Georgia,serif;font-size:15px;color:#6B5A45}
+    .er-rev-heading{font-family:'Cinzel',Georgia,serif;font-size:clamp(24px,3.2vw,36px);font-weight:600;color:#1C150A;letter-spacing:0.03em;margin-bottom:40px}
+    .er-rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;text-align:left}
+    .er-rev-card{background:#F7F2EA;border:1px solid rgba(176,138,78,0.30);border-radius:16px;padding:24px 22px;display:flex;flex-direction:column;gap:8px}
+    .er-rev-card .er-c-stars{color:#B08A4E;font-size:14px;letter-spacing:2px}
+    .er-rev-card .er-c-title{font-family:'Cinzel',Georgia,serif;font-size:15px;color:#1C150A;font-weight:600}
+    .er-rev-card .er-c-body{font-family:'EB Garamond',Georgia,serif;font-size:16px;font-style:italic;color:#3D2E1A;line-height:1.7;margin:0}
+    .er-rev-card .er-c-author{font-family:'Cinzel',Georgia,serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#8B7A5E;margin-top:4px}
+  </style>
+  <section class="er-reviews-band" id="er-reviews" style="display:none;">
+    <div class="er-reviews-inner">
+      <p class="er-rev-eyebrow">Reviews</p>
+      <div class="er-rev-agg" id="er-rev-agg"></div>
+      <h2 class="er-rev-heading">What People Are Saying</h2>
+      <div class="er-rev-grid" id="er-rev-grid"></div>
+    </div>
+  </section>
+  <script>
+    (function(){
+      var SB_URL="https://cvtukqamaqrhjtdvmslb.supabase.co";
+      var SB_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN2dHVrcWFtYXFyaGp0ZHZtc2xiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4NDU1MjQsImV4cCI6MjA5MTQyMTUyNH0.gSksF5jV-UpuaUL7x7vhHHOB6Z7Qq0iehtbc2PoSAxw";
+      var APP="rl";
+      function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+      function stars(n){var f=Math.round(n),s='';for(var i=1;i<=5;i++)s+=(i<=f?'★':'☆');return s;}
+      fetch(SB_URL+"/rest/v1/reviews?app=eq."+APP+"&status=eq.approved&select=rating,title,body,author_name,created_at&order=created_at.desc&limit=100",{headers:{apikey:SB_KEY,Authorization:"Bearer "+SB_KEY}})
+        .then(function(r){return r.ok?r.json():[];})
+        .then(function(rows){
+          if(!Array.isArray(rows)||!rows.length) return;
+          var feat=rows.filter(function(r){return r.rating>=4 && (r.body||'').trim().length>=20;}).slice(0,6);
+          if(!feat.length) return;
+          var avg=rows.reduce(function(s,r){return s+(r.rating||0);},0)/rows.length;
+          document.getElementById('er-rev-agg').innerHTML='<span class="er-stars">'+stars(avg)+'</span><span class="er-num">'+avg.toFixed(1)+'</span><span class="er-count">· '+rows.length+' review'+(rows.length===1?'':'s')+'</span>';
+          document.getElementById('er-rev-grid').innerHTML=feat.map(function(r){
+            var b=(r.body||'').trim(); if(b.length>240)b=b.slice(0,237)+'…';
+            return '<div class="er-rev-card"><div class="er-c-stars">'+stars(r.rating)+'</div>'+(r.title?'<div class="er-c-title">'+esc(r.title)+'</div>':'')+'<p class="er-c-body">“'+esc(b)+'”</p><div class="er-c-author">'+esc(r.author_name||'A believer')+'</div></div>';
+          }).join('');
+          var band=document.getElementById('er-reviews'); if(band) band.style.display='block';
+        }).catch(function(){});
+    })();
+  </script>
     <!-- Email capture band (Elora Radiance newsletter) -->
   <style>
     .signup-band{background:linear-gradient(160deg,#070E17,#0D1A2A);padding:74px 24px;text-align:center;border-top:1px solid rgba(176,138,78,0.28);border-bottom:1px solid rgba(176,138,78,0.28)}
