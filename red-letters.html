@@ -126,6 +126,14 @@
     .nav-menu a:hover { color:#B08A4E; }
     .m-lbl { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(176,138,78,0.6); padding:14px 24px 4px; display:block; }
     @media(max-width:768px) { nav { padding:14px 20px !important; } .nav-ham { display:flex !important; } }
+    /* SIGN IN */
+    .nav-signin{margin-left:auto;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:9px 8px;white-space:nowrap;transition:color .2s}
+    .nav-signin:hover{color:var(--gold)}
+    @media(max-width:768px){.nav-signin{display:none}}
+    .m-signin{color:var(--gold) !important}
+    .hero-signin{font-size:16px;color:var(--muted);margin-top:14px;opacity:0;animation:fadeIn 1s ease 1s forwards}
+    .hero-signin a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(176,138,78,0.35)}
+    .hero-signin a:hover{border-bottom-color:var(--gold)}
   </style>
 
   <link rel="canonical" href="https://eloraradiance.com/red-letters.html" />
@@ -140,7 +148,7 @@
   <meta name="twitter:description" content="Study the complete words of Jesus — every red-letter passage organized by theme, with context, meaning, Greek word study with audio, application, prayer, and journal. Completely free." />
   <meta name="twitter:image" content="https://eloraradiance.com/assets/red-letters-icon.png" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "The Red Letters", "applicationCategory": "ReferenceApplication", "applicationSubCategory": "Bible Study", "operatingSystem": "Web, iOS, Android", "url": "https://redletters.vercel.app", "description": "The complete words of Jesus organized into 14 themes and 41 complete passages with Greek word study, audio pronunciation, context, meaning, application, prayer, and journal.", "image": "https://eloraradiance.com/assets/red-letters-icon.png", "publisher": {"@type": "Organization", "name": "Elora Radiance Co."}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "14 themes, 41 complete passages, Greek word study with audio, contextual study layers, written prayer for each passage, personal journal"}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is The Red Letters really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Red Letters is completely free. No subscription, no in-app purchases, no ads. Every passage and every study layer is available without cost."}}, {"@type": "Question", "name": "What translation does The Red Letters use?", "acceptedAnswer": {"@type": "Answer", "text": "Each passage is presented in ESV translation by default, with the original Greek studied in the Word Study section. You can hear the original Greek pronunciation by tapping any word."}}, {"@type": "Question", "name": "How is The Red Letters different from a regular Bible app?", "acceptedAnswer": {"@type": "Answer", "text": "Most Bible apps give you verses. The Red Letters gives you complete teachings of Jesus in their full context, organized by theme — not chronologically. Each passage opens into seven study layers including Greek word study with audio pronunciation."}}, {"@type": "Question", "name": "Do I need an account to use it?", "acceptedAnswer": {"@type": "Answer", "text": "You can read everything without an account. Sign in only when you want to save passages, write journal entries, or sync across devices."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is The Red Letters really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Red Letters is completely free. No subscription, no in-app purchases, no ads. Every passage and every study layer is available without cost."}}, {"@type": "Question", "name": "What translation does The Red Letters use?", "acceptedAnswer": {"@type": "Answer", "text": "Each passage is presented in ESV translation by default, with the original Greek studied in the Word Study section. You can hear the original Greek pronunciation by tapping any word."}}, {"@type": "Question", "name": "How is The Red Letters different from a regular Bible app?", "acceptedAnswer": {"@type": "Answer", "text": "Most Bible apps give you verses. The Red Letters gives you complete teachings of Jesus in their full context, organized by theme — not chronologically. Each passage opens into seven study layers including Greek word study with audio pronunciation."}}, {"@type": "Question", "name": "Do I need an account to use it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A free account (just your email and a password) opens the app and saves your journal entries, memorization progress, and bookmarks across devices. Already have an Anchored Steps or Armed & Anchored account? Sign in with it. One login works across every Elora Radiance app."}}]}</script>
   
   <!-- Home Screen / PWA icons -->
   <link rel="icon" type="image/png" href="/assets/app-icon.png" />
@@ -159,9 +167,12 @@
 
   <nav>
     <a href="index.html" class="nav-home">Elora Radiance Co.</a>
+    <a href="https://redletters.vercel.app" class="nav-signin">Sign in</a>
     <a href="https://redletters.vercel.app" class="nav-cta">✦ Open App — Free</a>
     <button class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav class="nav-menu">
+      <span class="m-lbl">Your Account</span>
+      <a href="https://redletters.vercel.app" class="m-signin">→ Sign in to The Red Letters</a>
       <span class="m-lbl">More Apps</span>
       <a href="armed-anchored.html">⚔️ Armed &amp; Anchored</a>
       <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
@@ -184,6 +195,7 @@
       <a href="#themes" class="btn-s">See the Themes</a>
     </div>
     <div class="free-badge">✦ Completely Free · No Credit Card · No Subscription</div>
+    <p class="hero-signin">Already have an account? <a href="https://redletters.vercel.app">Sign in →</a></p>
     <div class="hero-stats">
       <div><span class="stat-num">14</span><span class="stat-lbl">Themes</span></div>
       <div><span class="stat-num">41</span><span class="stat-lbl">Complete Passages</span></div>
@@ -249,7 +261,7 @@
     <h2 style="font-family:'Cinzel',serif;font-size:clamp(28px,5vw,46px);font-weight:700;color:var(--ink);letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;" class="reveal">The Words of Jesus Are for You</h2>
     <p style="font-size:18px;color:var(--text);line-height:1.85;max-width:500px;margin:0 auto 36px;font-style:italic;" class="reveal">Not ancient history. Not a theological reference. Addressed to you, right now, in your actual life.</p>
     <a href="https://redletters.vercel.app" class="btn-p reveal" style="font-size:13px;padding:16px 40px;">✦ Open The Red Letters — Free</a>
-    <div class="free-badge reveal" style="margin-top:20px;">No account required to read · Sign up free to save journal &amp; progress</div>
+    <div class="free-badge reveal" style="margin-top:20px;">Free account · Your journal &amp; progress saved on every device</div>
   </section>
 
   <section class="faq-wrap">
@@ -260,7 +272,7 @@
         <div class="faq-item"><button class="faq-q">Is it really completely free?<span class="faq-plus">+</span></button><div class="faq-a">Yes — no credit card, no subscription, no paywall. Create a free account with your email and you have full access to every passage, every study tab, and every tool immediately.</div></div>
         <div class="faq-item"><button class="faq-q">Why is it free?<span class="faq-plus">+</span></button><div class="faq-a">The Red Letters contains the complete words of Jesus. That content should be as accessible as possible. Elora Radiance Co. makes it free as a matter of principle, not strategy.</div></div>
         <div class="faq-item"><button class="faq-q">What Bible translation is used?<span class="faq-plus">+</span></button><div class="faq-a">Passages are drawn primarily from the ESV with some NIV. Each passage shows its translation label. The focus is completeness — showing the full passage as Jesus spoke it, not isolated fragments.</div></div>
-        <div class="faq-item"><button class="faq-q">Do I need an account?<span class="faq-plus">+</span></button><div class="faq-a">Yes, a free account is required to save your journal entries, memorization progress, and bookmarks across devices. Sign up with just your email — nothing else required.</div></div>
+        <div class="faq-item"><button class="faq-q">Do I need an account?<span class="faq-plus">+</span></button><div class="faq-a">Yes. A free account (just your email and a password) opens the app and saves your journal entries, memorization progress, and bookmarks across devices. Already have an Anchored Steps or Armed &amp; Anchored account? <a href="https://redletters.vercel.app" style="color:var(--gold)">Sign in</a> with it. One login works across every Elora Radiance app.</div></div>
         <div class="faq-item"><button class="faq-q">How many passages are there?<span class="faq-plus">+</span></button><div class="faq-a">41 complete passages across 14 themes — Prayer, Love, The Kingdom, The Cross, Discipleship, Peace &amp; Rest, Anxiety, Truth &amp; Freedom, The Holy Spirit, and Resurrection &amp; Life. More are added over time.</div></div>
         <div class="faq-item"><button class="faq-q">Does it work on mobile?<span class="faq-plus">+</span></button><div class="faq-a">Yes — any browser on iPhone, Android, iPad, or desktop. No app store download needed. Your journal syncs to the cloud so your work is always saved.</div></div>
       </div>
