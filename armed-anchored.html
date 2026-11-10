@@ -146,6 +146,15 @@
     .nav-menu a:hover { color:#B08A4E; }
     .m-lbl { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(176,138,78,0.6); padding:14px 24px 4px; display:block; }
     @media(max-width:768px) { nav { padding:14px 20px !important; } .nav-ham { display:flex !important; } }
+    /* SIGN IN */
+    .nav-signin{margin-left:auto;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:9px 8px;white-space:nowrap;transition:color .2s}
+    .nav-signin:hover{color:var(--gold)}
+    @media(max-width:768px){.nav-signin{display:none}}
+    .m-signin{color:var(--gold) !important}
+    .hero-signin{font-size:16px;color:var(--muted);margin-top:14px;opacity:0;animation:fadeIn 1s ease 1s forwards}
+    .hero-signin a,.signin-link span{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(176,138,78,0.35)}
+    .hero-signin a:hover,.signin-link:hover span{border-bottom-color:var(--gold)}
+    .signin-link{display:block;text-align:center;margin-top:16px;font-size:15px;color:var(--muted);text-decoration:none}
   </style>
 
   <link rel="canonical" href="https://eloraradiance.com/armed-anchored.html" />
@@ -179,9 +188,12 @@
 
   <nav>
     <a href="index.html" class="nav-home">Elora Radiance Co.</a>
+    <a href="https://armedandanchored.vercel.app" class="nav-signin">Sign in</a>
     <a href="https://buy.stripe.com/cNi9AS3Va8dEbSTarV57W0a" target="_blank" class="nav-cta">⚔️ Get Access — $39</a>
     <button class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav class="nav-menu">
+      <span class="m-lbl">Your Account</span>
+      <a href="https://armedandanchored.vercel.app" class="m-signin">→ Sign in to Armed &amp; Anchored</a>
       <span class="m-lbl">More Apps</span>
       <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
       <a href="anchored-steps-2.html">⚓ Anchored Steps Year 2</a>
@@ -204,6 +216,7 @@
       <a href="#weapons" class="btn-s">See the Weapons</a>
     </div>
     <p class="hero-note">One-time · No subscription · Full access forever</p>
+    <p class="hero-signin">Already have access? <a href="https://armedandanchored.vercel.app">Sign in →</a></p>
     <div class="hero-stats">
       <div><span class="stat-num">26</span><span class="stat-lbl">Weapons</span></div>
       <div><span class="stat-num">7</span><span class="stat-lbl">Study Tabs</span></div>
@@ -300,6 +313,7 @@
           <li>Works on any device</li>
         </ul>
         <a href="https://buy.stripe.com/cNi9AS3Va8dEbSTarV57W0a" target="_blank" class="btn-p" style="display:block;text-align:center;">⚔️ Get Full Access — $39</a>
+          <a href="https://armedandanchored.vercel.app" class="signin-link">Already purchased? <span>Sign in →</span></a>
       </div>
     </div>
   </section>
@@ -317,7 +331,7 @@
         <div class="faq-item"><button class="faq-q">Can I use my Anchored Steps account?<span class="faq-plus">+</span></button><div class="faq-a">Yes. One Elora Radiance account works across Armed &amp; Anchored and Anchored Steps Year 1 and Year 2. Each app unlocks with its own purchase.</div></div>
         <div class="faq-item"><button class="faq-q">What devices does it work on?<span class="faq-plus">+</span></button><div class="faq-a">Any device with a browser — iPhone, Android, iPad, tablet, or desktop. No app store download needed. Works like a native app in your mobile browser.</div></div>
         <div class="faq-item"><button class="faq-q">Can I reset my progress?<span class="faq-plus">+</span></button><div class="faq-a">Yes. The Settings section of the app has a reset option. Your journal entries are always kept unless you explicitly delete them.</div></div>
-        <div class="faq-item"><button class="faq-q">What if I've already purchased?<span class="faq-plus">+</span></button><div class="faq-a">Sign in with the email you used at checkout. Your account unlocks automatically — once you're in, you can sign in from any device at any time.</div></div>
+        <div class="faq-item"><button class="faq-q">What if I've already purchased?<span class="faq-plus">+</span></button><div class="faq-a"><a href="https://armedandanchored.vercel.app" style="color:var(--gold)">Sign in</a> with the email you used at checkout. Your account unlocks automatically — once you're in, you can sign in from any device at any time.</div></div>
       </div>
     </div>
   </section>

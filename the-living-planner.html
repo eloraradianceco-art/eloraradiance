@@ -146,6 +146,15 @@
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
     .reveal.visible{opacity:1;transform:none}
     .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+    /* SIGN IN */
+    .nav-signin{margin-left:auto;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:9px 8px;white-space:nowrap;transition:color .2s}
+    .nav-signin:hover{color:var(--gold)}
+    @media(max-width:768px){.nav-signin{display:none}}
+    .m-signin{color:var(--gold) !important}
+    .hero-signin{font-size:16px;color:var(--muted);margin-top:14px;opacity:0;animation:fadeIn 1s ease 1s forwards}
+    .hero-signin a,.signin-link span{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(176,138,78,0.35)}
+    .hero-signin a:hover,.signin-link:hover span{border-bottom-color:var(--gold)}
+    .signin-link{display:block;text-align:center;margin-top:16px;font-size:15px;color:var(--muted);text-decoration:none}
   </style>
 
   <link rel="canonical" href="https://eloraradiance.com/the-living-planner.html" />
@@ -178,9 +187,12 @@
 
   <nav>
     <a href="index.html" class="nav-home">Elora Radiance Co.</a>
+    <a href="https://the-living-planner.vercel.app" class="nav-signin">Sign in</a>
     <a href="https://the-living-planner.vercel.app" class="nav-cta">⚓ Open App — Free</a>
     <button class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav class="nav-menu">
+      <span class="m-lbl">Your Account</span>
+      <a href="https://the-living-planner.vercel.app" class="m-signin">→ Sign in to The Living Planner</a>
       <span class="m-lbl">More Apps</span>
       <a href="armed-anchored.html">⚔️ Armed &amp; Anchored</a>
       <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
@@ -203,6 +215,7 @@
       <a href="#pricing" class="btn-s">See Pro Pricing</a>
     </div>
     <div class="free-badge">Free tier · Pro $7.99/mo or $59.99/yr</div>
+    <p class="hero-signin">Already have an account? <a href="https://the-living-planner.vercel.app">Sign in →</a></p>
     <div class="hero-stats">
       <div><span class="stat-num">8</span><span class="stat-lbl">Life Domains</span></div>
       <div><span class="stat-num">50+</span><span class="stat-lbl">Built-In Tools</span></div>
