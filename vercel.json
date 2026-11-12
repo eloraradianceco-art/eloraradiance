@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    { "source": "/anchored-steps", "destination": "/anchored-steps.html", "permanent": true },
+    { "source": "/anchored-steps-2", "destination": "/anchored-steps-2.html", "permanent": true },
+    { "source": "/armed-anchored", "destination": "/armed-anchored.html", "permanent": true },
+    { "source": "/red-letters", "destination": "/red-letters.html", "permanent": true },
+    { "source": "/anchored-verse", "destination": "/anchored-verse.html", "permanent": true },
+    { "source": "/the-living-planner", "destination": "/the-living-planner.html", "permanent": true },
+    { "source": "/privacy", "destination": "/privacy.html", "permanent": true },
+    { "source": "/terms", "destination": "/terms.html", "permanent": true },
+    { "source": "/support", "destination": "/support.html", "permanent": true },
+    { "source": "/scripture-credits", "destination": "/scripture-credits.html", "permanent": true }
+  ]
+}
