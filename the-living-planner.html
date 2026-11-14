@@ -96,8 +96,9 @@
     .price-amount{font-family:'Cinzel',serif;font-size:38px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:4px}
     .price-amount small{font-size:14px;color:var(--muted);font-weight:400;letter-spacing:0.02em;margin-left:4px}
     .price-period{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:18px}
-    .price-feats{list-style:none;padding:0;margin:18px 0 24px;font-size:14px;color:var(--text);line-height:1.85}
-    .price-feats li::before{content:'✓ ';color:var(--navy);font-weight:600;margin-right:6px}
+    .price-feats{list-style:none;padding:0;margin:18px 0 24px;font-size:14px;color:var(--text);line-height:1.6}
+    .price-feats li{position:relative;padding-left:22px;margin-bottom:7px}
+    .price-feats li::before{content:'✓';position:absolute;left:0;top:0;color:var(--navy);font-weight:600}
     .price-cta{display:block;width:100%;text-align:center;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;padding:13px;border-radius:5px;text-decoration:none;transition:all .2s;font-weight:500}
     .price-cta-free{background:transparent;border:1px solid var(--border);color:var(--text)}
     .price-cta-free:hover{border-color:var(--navyB);color:var(--navy)}
@@ -136,7 +137,7 @@
 
     footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
     .footer-brand{font-family:'Cinzel',serif;font-size:11px;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase}
-    .footer-links{display:flex;gap:20px}
+    .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 20px}
     .footer-links a{font-family:'Cinzel',serif;font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:color .2s}
     .footer-links a:hover{color:var(--navy)}
     @media(max-width:768px){footer{padding:30px 20px;flex-direction:column;align-items:flex-start}}
@@ -169,7 +170,7 @@
   <meta name="twitter:description" content="Eight domains, 50+ tools, real-time sync. The faith-centered life-management system for Christians. Free to start." />
   <meta name="twitter:image" content="https://eloraradiance.com/assets/living-planner-icon.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"The Living Planner","applicationCategory":"ProductivityApplication","operatingSystem":"Web, iOS, Android","url":"https://planner.eloraradiance.com","description":"A faith-centered life-management system covering goals, habits, faith, finance, health and wellness, productivity, lifestyle, and growth — across eight domains and fifty-plus built-in tools. Free tier with Pro upgrade.","image":"https://eloraradiance.com/assets/living-planner-icon.png","publisher":{"@type":"Organization","name":"Elora Radiance Co.","legalName":"Elora Radiance Co. LLC"},"offers":[{"@type":"Offer","name":"Pro Monthly","price":"7.99","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":"7.99","priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1,"unitCode":"MON"}}},{"@type":"Offer","name":"Pro Annual","price":"59.99","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":"59.99","priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1,"unitCode":"ANN"}}}],"featureList":"Eight life domains, goal tracking across seven horizons, habit consistency, full finance management with donations and no-spend, faith tools including devotional and prayer and scripture and fasting, whole-person wellness, drag-and-drop tasks, calendar, projects, recipe cards that build your shopping list, built-in calculator, search across everything, life-score scorecard, real-time sync across devices, configurable push notifications, PWA install"}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is The Living Planner?","acceptedAnswer":{"@type":"Answer","text":"A complete life planning system built for Christians who want to steward time, money, and energy under the lordship of Christ. Set goals, track habits, manage finances, and structure your daily life — all anchored in faith."}},{"@type":"Question","name":"Is there a free version?","acceptedAnswer":{"@type":"Answer","text":"Yes. Open the app and start using core planning features immediately — no credit card required. Pro unlocks the full system with advanced tracking, deeper finance tools, and priority features."}},{"@type":"Question","name":"How much does Pro cost?","acceptedAnswer":{"@type":"Answer","text":"Pro is $7.99 per month or $59.99 per year. Annual saves about 37 percent (effectively $5/month). Cancel anytime."}},{"@type":"Question","name":"Does it work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Living Planner is a Progressive Web App — open it in any browser on iPhone, Android, iPad, or desktop. Add it to your home screen for an app-like experience. Push notifications keep your habits and reminders on track."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is The Living Planner?","acceptedAnswer":{"@type":"Answer","text":"A complete life planning system built for Christians who want to steward time, money, and energy under the lordship of Christ. Set goals, track habits, manage finances, and structure your daily life — all anchored in faith."}},{"@type":"Question","name":"Is there a free version?","acceptedAnswer":{"@type":"Answer","text":"Yes. Free includes tasks, calendar and reminders, up to 3 habits, 2 goals and 2 projects, the daily devotional and prayer list, and a weekly budget, with no credit card and no time limit. Pro unlocks the full eight-domain system with no limits."}},{"@type":"Question","name":"How much does Pro cost?","acceptedAnswer":{"@type":"Answer","text":"Pro is $7.99 per month or $59.99 per year. Annual saves about 37 percent (effectively $5/month). There is no free trial; the Free plan is how you try it. Cancel anytime."}},{"@type":"Question","name":"Does it work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Living Planner is a Progressive Web App — open it in any browser on iPhone, Android, iPad, or desktop. Add it to your home screen for an app-like experience. Push notifications keep your habits and reminders on track."}}]}</script>
   <!-- Home Screen / PWA icons -->
   <link rel="icon" type="image/png" href="/assets/app-icon.png" />
   <link rel="apple-touch-icon" href="/assets/app-icon.png" />
@@ -337,17 +338,18 @@
     <div class="pricing-inner">
       <p class="eyebrow">Pricing</p>
       <h2 class="s-title" style="margin-bottom:18px;">Start Free. Upgrade When You're Ready.</h2>
-      <p class="s-body" style="margin:0 auto;">No credit card to start. Pro unlocks the full planning system when you decide you want more.</p>
+      <p class="s-body" style="margin:0 auto;">Free covers your daily rhythm, with no card and no time limit. Pro unlocks the whole system, billed monthly or yearly.</p>
       <div class="pricing-grid">
         <div class="price-card">
           <div class="price-label">FREE</div>
           <div class="price-amount">$0<small>/forever</small></div>
           <div class="price-period">No credit card required</div>
           <ul class="price-feats">
-            <li>Core daily planning</li>
-            <li>Goal &amp; habit basics</li>
-            <li>Simple finance tracking</li>
-            <li>Push notifications</li>
+            <li>Tasks, calendar &amp; push reminders</li>
+            <li>Up to 3 habits, 2 goals, 2 projects</li>
+            <li>Daily devotional &amp; prayer list</li>
+            <li>Weekly budget &amp; spending log</li>
+            <li>Mood check-ins, groceries, notes</li>
             <li>Install on any device</li>
           </ul>
           <a href="https://planner.eloraradiance.com" class="price-cta price-cta-free">Open Free</a>
@@ -357,12 +359,13 @@
           <div class="price-amount">$7.99<small>/month</small></div>
           <div class="price-period">Cancel anytime</div>
           <ul class="price-feats">
-            <li>Everything in Free</li>
-            <li>Advanced goal tracking</li>
-            <li>Full finance workflow</li>
-            <li>Unlimited habits</li>
-            <li>Weekly review tools</li>
-            <li>Priority support</li>
+            <li>Everything in Free, with no limits</li>
+            <li>Full Finance: income, bills, savings, debt, giving, net worth</li>
+            <li>Full Health &amp; Wellness: training, nutrition, sleep, recovery, meds</li>
+            <li>All of Faith: scripture, Bible reading plan, gratitude, fasting, sermons</li>
+            <li>Growth: Life Score breakdown, 30-day trends, weekly review</li>
+            <li>Lifestyle, checklists &amp; focus timer</li>
+            <li>Every Home mode · priority support</li>
           </ul>
           <a href="https://planner.eloraradiance.com" class="price-cta price-cta-pro">Upgrade Monthly</a>
         </div>
@@ -400,9 +403,9 @@
       <p class="eyebrow">Questions</p>
       <h2 style="font-family:'Cinzel',serif;font-size:clamp(26px,4vw,40px);font-weight:600;color:var(--ink);letter-spacing:0.04em;margin-bottom:0;">Frequently Asked</h2>
       <div class="faq-list">
-        <div class="faq-item"><button class="faq-q">What does the free tier include?<span class="faq-plus">+</span></button><div class="faq-a">Open the app and start using core daily planning, basic goal and habit tracking, simple finance categories, faith tools, wellness tracking, and push notifications immediately — no credit card required. Pro unlocks the full eight-domain system with advanced tracking, deeper finance workflow, and unlimited habits.</div></div>
-        <div class="faq-item"><button class="faq-q">What's the difference between Free and Pro?<span class="faq-plus">+</span></button><div class="faq-a">Free gives you the daily rhythm of planning — enough to actually use The Living Planner every day. Pro adds the deeper layer: advanced goal milestones, full finance workflow with multiple budgets, unlimited habits, weekly review tools, and priority support. You can use Free indefinitely.</div></div>
-        <div class="faq-item"><button class="faq-q">How does Pro pricing work?<span class="faq-plus">+</span></button><div class="faq-a">Pro is $7.99 per month or $59.99 per year. Annual saves about 37% (effectively $5/month, about $36 less per year). Both bill through Stripe. Cancel anytime by emailing support@eloraradiance.com; you keep access until the end of the period you've paid for.</div></div>
+        <div class="faq-item"><button class="faq-q">What does the free tier include?<span class="faq-plus">+</span></button><div class="faq-a">Tasks, calendar and push reminders; up to 3 habits, 2 active goals and 2 active projects; the daily devotional and prayer list; a weekly budget with spending log; mood check-ins, groceries, notes and the calculator. No credit card, no time limit. Pro unlocks the rest of the eight-domain system and removes every limit.</div></div>
+        <div class="faq-item"><button class="faq-q">What's the difference between Free and Pro?<span class="faq-plus">+</span></button><div class="faq-a">Free gives you the daily rhythm of planning, enough to use The Living Planner every day. Pro is the whole system: the full Finance suite (income, bills, savings, debt payoff, giving, net worth), the full Health &amp; Wellness suite, every Faith tool (scripture, Bible reading plan, gratitude, fasting, sermon notes, faith goals), the Growth page with your Life Score broken into seven areas, 30-day trends and a weekly review, Lifestyle tools, checklists, the focus timer, every Home mode, unlimited habits, goals and projects, and priority support. You can use Free indefinitely.</div></div>
+        <div class="faq-item"><button class="faq-q">How does Pro pricing work?<span class="faq-plus">+</span></button><div class="faq-a">Pro is $7.99 per month or $59.99 per year. Annual saves about 37% (effectively $5/month, about $36 less per year). Both bill through Stripe from the day you subscribe; there's no free trial, because Free is how you try it, for as long as you like. Cancel anytime by emailing support@eloraradiance.com; you keep access until the end of the period you've paid for.</div></div>
         <div class="faq-item"><button class="faq-q">Why is this different from Notion or a paper planner?<span class="faq-plus">+</span></button><div class="faq-a">Notion is a blank canvas. Paper planners can't notify you. The Living Planner is a complete, opinionated system — eight life domains and fifty-plus tools designed to work together, with push notifications, real-time sync, and PWA install. Built specifically for Christians who want their planning to integrate with their faith, not sit on a separate shelf.</div></div>
         <div class="faq-item"><button class="faq-q">Does it work on iPhone, Android, and desktop?<span class="faq-plus">+</span></button><div class="faq-a">Yes — Progressive Web App means any modern browser, any device. Install to your home screen for an app-like experience on iOS and Android. Your data syncs across every device you sign in on.</div></div>
         <div class="faq-item"><button class="faq-q">Do I need a credit card to start?<span class="faq-plus">+</span></button><div class="faq-a">No. Free tier is genuinely free, no card required. You only enter payment information when you choose to upgrade to Pro.</div></div>
