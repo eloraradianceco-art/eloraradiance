@@ -12,7 +12,7 @@
   <meta property="og:description" content="A word for every weight your heart carries. A Feelings Wheel of 30 emotions around 6 core feelings, anchored to 394 verses of Scripture."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,380;1,6..72,400&family=Oswald:wght@400;500;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,380;1,6..72,400&family=Oswald:wght@400;500;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
@@ -141,8 +141,21 @@
     .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
   
 
+
+
+    /* Header button: identical on every app page (2026-11-15) */
+    nav .nav-home{white-space:nowrap}
+    nav .nav-cta{font-family:'Cinzel',serif;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;line-height:1;white-space:nowrap;padding:11px 18px;border-radius:6px;text-decoration:none;background:#C9A96E;border:1px solid #B08A4E;color:#14100A;box-shadow:0 1px 0 rgba(255,255,255,0.18) inset;transition:background .2s,border-color .2s}
+    nav .nav-cta:hover{background:#D6B87F;border-color:#C09A5C;color:#14100A;filter:none}
+    nav .nav-cta:focus-visible{outline:2px solid #C9A96E;outline-offset:3px}
+    @media(max-width:520px){nav .nav-cta-extra{display:none}nav .nav-cta{padding:10px 14px}}
+    @media(max-width:420px){nav .nav-home{font-size:11px;letter-spacing:0.12em}}
+    nav .nav-home{font-family:'Cinzel',serif;font-weight:400;letter-spacing:0.18em} /* same brand bar as the other app pages */
+    /* /Header button */
+
     /* Inside the App: screenshot gallery (2026-11-15). Four phone screens in a row; swipe on phones. */
     .shots-band{--shot-label:var(--teal);--shot-text:var(--muted);--shot-frame:#1C2B39;--shot-edge:rgba(28,43,57,0.2);--shot-note:var(--muted)}
+    #inside{scroll-margin-top:64px}
     .shots{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:28px;margin-top:44px;list-style:none;padding:0}
     .shot{margin:0;text-align:center}
     .shot-frame{background:var(--shot-frame);border:1px solid var(--shot-edge);border-radius:30px;padding:8px;box-shadow:0 20px 40px rgba(28,43,57,0.22)}
@@ -191,7 +204,7 @@
 
   <nav>
     <a href="index.html" class="nav-home">Elora Radiance Co.</a>
-    <a href="https://verse.eloraradiance.com" class="nav-cta">⚓ Open App — Free</a>
+    <a href="https://verse.eloraradiance.com" class="nav-cta">Open App<span class="nav-cta-extra"> · Free</span></a>
     <button class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav class="nav-menu">
       <span class="m-lbl">More Apps</span>
@@ -255,6 +268,7 @@
       <p class="shots-note">Real screens from the app, shown with a sample account.</p>
     </div>
   </section>
+
 
 
   <div style="max-width:640px;margin:0 auto;padding:0 24px 80px;">

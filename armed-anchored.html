@@ -157,8 +157,20 @@
     .signin-link{display:block;text-align:center;margin-top:16px;font-size:15px;color:var(--muted);text-decoration:none}
   
 
+
+
+    /* Header button: identical on every app page (2026-11-15) */
+    nav .nav-home{white-space:nowrap}
+    nav .nav-cta{font-family:'Cinzel',serif;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;line-height:1;white-space:nowrap;padding:11px 18px;border-radius:6px;text-decoration:none;background:#C9A96E;border:1px solid #B08A4E;color:#14100A;box-shadow:0 1px 0 rgba(255,255,255,0.18) inset;transition:background .2s,border-color .2s}
+    nav .nav-cta:hover{background:#D6B87F;border-color:#C09A5C;color:#14100A;filter:none}
+    nav .nav-cta:focus-visible{outline:2px solid #C9A96E;outline-offset:3px}
+    @media(max-width:520px){nav .nav-cta-extra{display:none}nav .nav-cta{padding:10px 14px}}
+    @media(max-width:420px){nav .nav-home{font-size:11px;letter-spacing:0.12em}}
+    /* /Header button */
+
     /* Inside the App: screenshot gallery (2026-11-15). Four phone screens in a row; swipe on phones. */
     .shots-band{--shot-label:var(--gold-l);--shot-text:var(--text);--shot-frame:#04080D;--shot-edge:rgba(255,255,255,0.09);--shot-note:var(--muted)}
+    #inside{scroll-margin-top:64px}
     .shots{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:28px;margin-top:44px;list-style:none;padding:0}
     .shot{margin:0;text-align:center}
     .shot-frame{background:var(--shot-frame);border:1px solid var(--shot-edge);border-radius:30px;padding:8px;box-shadow:0 22px 44px rgba(0,0,0,0.45)}
@@ -209,7 +221,7 @@
   <nav>
     <a href="index.html" class="nav-home">Elora Radiance Co.</a>
     <a href="https://armed.eloraradiance.com" class="nav-signin">Sign in</a>
-    <a href="https://buy.stripe.com/cNi9AS3Va8dEbSTarV57W0a" target="_blank" class="nav-cta">⚔️ Get Access — $39</a>
+    <a href="https://buy.stripe.com/cNi9AS3Va8dEbSTarV57W0a" target="_blank" rel="noopener" class="nav-cta">Get Access<span class="nav-cta-extra"> · $39</span></a>
     <button class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav class="nav-menu">
       <span class="m-lbl">Your Account</span>
@@ -217,7 +229,7 @@
       <span class="m-lbl">More Apps</span>
       <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
       <a href="anchored-steps-2.html">⚓ Anchored Steps Year 2</a>
-      <a href="red-letters.html">✦ The Red Letters — Free</a>
+      <a href="red-letters.html">✦ The Red Letters</a>
       <a href="anchored-verse.html">⚓ Anchored Verse</a>
       <a href="the-living-planner.html">📓 The Living Planner</a>
       <span class="m-lbl">Site</span>
@@ -276,6 +288,7 @@
       <p class="shots-note">Real screens from the app, shown with a sample account.</p>
     </div>
   </section>
+
 
 
   <section class="section" id="weapons">

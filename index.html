@@ -413,7 +413,34 @@
       .nav-ham { display:flex !important; }
       nav { padding:14px 20px !important; }
     }
-  </style>
+  
+
+
+    /* A LOOK INSIDE: one real screen per app (2026-11-15) */
+    .peek-band { padding: 96px 48px 40px; }
+    .peek-inner { max-width: 1200px; margin: 0 auto; }
+    .peek { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 22px; }
+    .peek li { margin: 0; }
+    .peek-link { display: block; text-align: center; text-decoration: none; color: inherit; border-radius: 26px; }
+    .peek-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
+    .peek-frame { display: block; background: var(--ink); border: 1px solid rgba(28,21,10,0.25); border-radius: 26px; padding: 7px; box-shadow: 0 18px 36px rgba(60,40,20,0.22); transition: transform .3s ease, box-shadow .3s ease; }
+    .peek-frame img { display: block; width: 100%; height: auto; border-radius: 20px; background: var(--ink); }
+    .peek-link:hover .peek-frame { transform: translateY(-6px); box-shadow: 0 26px 44px rgba(60,40,20,0.28); }
+    .peek-name { display: block; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); margin-top: 16px; line-height: 1.3; }
+    .peek-line { display: block; font-size: 15px; font-style: italic; color: var(--ink-ll); margin-top: 4px; line-height: 1.4; }
+    .peek-tag { display: inline-block; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--taupe); margin-top: 8px; }
+    .peek-note { text-align: center; font-size: 14px; font-style: italic; color: var(--ink-ll); margin-top: 30px; }
+    .peek-hint { display: none; text-align: center; font-size: 14px; color: var(--ink-ll); margin-top: 6px; }
+    @media (max-width: 1100px) { .peek { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px 26px; } .peek li { max-width: 240px; justify-self: center; width: 100%; } }
+    @media (max-width: 768px) {
+      .peek-band { padding: 70px 20px 20px; }
+      .peek { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 58%; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; margin: 0 -20px; padding: 6px 20px 22px; scroll-padding: 0 20px; scrollbar-width: none; }
+      .peek::-webkit-scrollbar { display: none; }
+      .peek li { scroll-snap-align: start; max-width: none; }
+      .peek-hint { display: block; }
+    }
+    /* /A LOOK INSIDE */
+</style>
 
   <link rel="canonical" href="https://eloraradiance.com/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -486,6 +513,71 @@
   <div class="intro-band">
     <p>"We don't create apps. We build <span>war rooms, anchors, and arsenals</span> — digital tools rooted in Scripture for the believer who is serious about the fight."</p>
   </div>
+
+
+
+  <!-- A LOOK INSIDE: one real screen per app (2026-11-15) -->
+  <section class="peek-band" id="inside" aria-labelledby="peek-title">
+    <div class="peek-inner">
+      <div class="apps-header reveal" style="margin-bottom:48px;">
+        <p class="section-eyebrow">A Look Inside</p>
+        <h2 class="section-title" id="peek-title">Real Screens. Real Tools.</h2>
+        <p class="section-sub">Built to be opened every day. Here is what each app looks like on your phone. Tap one to see more.</p>
+      </div>
+      <ul class="peek" tabindex="0" aria-label="A screen from each app">
+        <li class="reveal d1">
+          <a href="armed-anchored.html#inside" class="peek-link" aria-label="Armed &amp; Anchored: A daily drill and 26 weapons. $39 · lifetime. See inside">
+            <span class="peek-frame"><img src="assets/screens/aa-1-arsenal.webp" width="780" height="1328" loading="lazy" decoding="async" alt="Armed &amp; Anchored app screen"/></span>
+            <span class="peek-name">Armed &amp; Anchored</span>
+            <span class="peek-line">A daily drill and 26 weapons</span>
+            <span class="peek-tag">$39 · lifetime</span>
+          </a>
+        </li>
+        <li class="reveal d2">
+          <a href="anchored-steps.html#inside" class="peek-link" aria-label="Anchored Steps Y1: One short step a day. $39 · lifetime. See inside">
+            <span class="peek-frame"><img src="assets/screens/as1-1-steps.webp" width="780" height="1328" loading="lazy" decoding="async" alt="Anchored Steps Y1 app screen"/></span>
+            <span class="peek-name">Anchored Steps Y1</span>
+            <span class="peek-line">One short step a day</span>
+            <span class="peek-tag">$39 · lifetime</span>
+          </a>
+        </li>
+        <li class="reveal d3">
+          <a href="anchored-steps-2.html#inside" class="peek-link" aria-label="Anchored Steps Y2: Deeper, one passage a week. $39 · lifetime. See inside">
+            <span class="peek-frame"><img src="assets/screens/as2-2-read.webp" width="780" height="1328" loading="lazy" decoding="async" alt="Anchored Steps Y2 app screen"/></span>
+            <span class="peek-name">Anchored Steps Y2</span>
+            <span class="peek-line">Deeper, one passage a week</span>
+            <span class="peek-tag">$39 · lifetime</span>
+          </a>
+        </li>
+        <li class="reveal d1">
+          <a href="red-letters.html#inside" class="peek-link" aria-label="The Red Letters: The words of Jesus by theme. Free. See inside">
+            <span class="peek-frame"><img src="assets/screens/rl-3-passage.webp" width="780" height="1328" loading="lazy" decoding="async" alt="The Red Letters app screen"/></span>
+            <span class="peek-name">The Red Letters</span>
+            <span class="peek-line">The words of Jesus by theme</span>
+            <span class="peek-tag">Free</span>
+          </a>
+        </li>
+        <li class="reveal d2">
+          <a href="anchored-verse.html#inside" class="peek-link" aria-label="Anchored Verse: A verse for how you feel. Free. See inside">
+            <span class="peek-frame"><img src="assets/screens/av-1-wheel.webp" width="780" height="1328" loading="lazy" decoding="async" alt="Anchored Verse app screen"/></span>
+            <span class="peek-name">Anchored Verse</span>
+            <span class="peek-line">A verse for how you feel</span>
+            <span class="peek-tag">Free</span>
+          </a>
+        </li>
+        <li class="reveal d3">
+          <a href="the-living-planner.html#inside" class="peek-link" aria-label="The Living Planner: Your whole life, planned. Free · Pro optional. See inside">
+            <span class="peek-frame"><img src="assets/screens/lp-1-home.webp" width="780" height="1328" loading="lazy" decoding="async" alt="The Living Planner app screen"/></span>
+            <span class="peek-name">The Living Planner</span>
+            <span class="peek-line">Your whole life, planned</span>
+            <span class="peek-tag">Free · Pro optional</span>
+          </a>
+        </li>
+      </ul>
+      <p class="peek-hint">Swipe to see all six →</p>
+      <p class="peek-note">Real screens, shown with a sample account.</p>
+    </div>
+  </section>
 
   <!-- APPS -->
   <section id="apps">
