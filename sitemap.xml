@@ -13,55 +13,151 @@
   </url>
   <url>
     <loc>https://eloraradiance.com/red-letters.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://eloraradiance.com/assets/red-letters-icon.png</image:loc>
       <image:title>The Red Letters — Complete Words of Jesus App</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/rl-1-themes.webp</image:loc>
+      <image:title>The Red Letters: 14 Themes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/rl-2-prayer.webp</image:loc>
+      <image:title>The Red Letters: Read by Theme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/rl-3-passage.webp</image:loc>
+      <image:title>The Red Letters: Seven Study Layers</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/rl-4-word-study.webp</image:loc>
+      <image:title>The Red Letters: Original Words</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://eloraradiance.com/anchored-steps.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://eloraradiance.com/assets/anchored-steps-1.png</image:loc>
       <image:title>Anchored Steps Year 1 — 52-Week Scripture Devotional</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/as1-1-steps.webp</image:loc>
+      <image:title>Anchored Steps Year 1: Daily Steps</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/as1-2-word-study.webp</image:loc>
+      <image:title>Anchored Steps Year 1: Word Study</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/as1-3-memorize.webp</image:loc>
+      <image:title>Anchored Steps Year 1: Memorize</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/as1-4-week.webp</image:loc>
+      <image:title>Anchored Steps Year 1: The Full Week</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://eloraradiance.com/anchored-steps-2.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://eloraradiance.com/assets/anchored-steps-2.png</image:loc>
       <image:title>Anchored Steps Year 2 — Deeper Scripture Study</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/as2-1-steps.webp</image:loc>
+      <image:title>Anchored Steps Year 2: Daily Steps</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/as2-2-read.webp</image:loc>
+      <image:title>Anchored Steps Year 2: The Passage</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/as2-3-word-study.webp</image:loc>
+      <image:title>Anchored Steps Year 2: Word Study</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/as2-4-dont-miss.webp</image:loc>
+      <image:title>Anchored Steps Year 2: Don’t Miss This</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://eloraradiance.com/armed-anchored.html</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://eloraradiance.com/assets/armed-anchored-icon.png</image:loc>
       <image:title>Armed &amp; Anchored — Spiritual Warfare Training Journal</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/aa-1-arsenal.webp</image:loc>
+      <image:title>Armed &amp; Anchored: Your Arsenal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/aa-2-drill.webp</image:loc>
+      <image:title>Armed &amp; Anchored: Daily Drill</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/aa-3-weapon.webp</image:loc>
+      <image:title>Armed &amp; Anchored: Every Weapon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/aa-4-under-attack.webp</image:loc>
+      <image:title>Armed &amp; Anchored: Under Attack</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://eloraradiance.com/anchored-verse.html</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/av-1-wheel.webp</image:loc>
+      <image:title>Anchored Verse: The Feelings Wheel</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/av-2-anxious.webp</image:loc>
+      <image:title>Anchored Verse: A Verse for the Moment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/av-3-grateful.webp</image:loc>
+      <image:title>Anchored Verse: Save or Share</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/av-4-list.webp</image:loc>
+      <image:title>Anchored Verse: Browse by Feeling</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://eloraradiance.com/the-living-planner.html</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/lp-1-home.webp</image:loc>
+      <image:title>The Living Planner: Today</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/lp-2-tasks.webp</image:loc>
+      <image:title>The Living Planner: Tasks</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/lp-3-habits.webp</image:loc>
+      <image:title>The Living Planner: Habits</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/screens/lp-4-life-balance.webp</image:loc>
+      <image:title>The Living Planner: Life Balance</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://eloraradiance.com/privacy.html</loc>

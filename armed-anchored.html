@@ -155,7 +155,27 @@
     .hero-signin a,.signin-link span{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(176,138,78,0.35)}
     .hero-signin a:hover,.signin-link:hover span{border-bottom-color:var(--gold)}
     .signin-link{display:block;text-align:center;margin-top:16px;font-size:15px;color:var(--muted);text-decoration:none}
-  </style>
+  
+
+    /* Inside the App: screenshot gallery (2026-11-15). Four phone screens in a row; swipe on phones. */
+    .shots-band{--shot-label:var(--gold-l);--shot-text:var(--text);--shot-frame:#04080D;--shot-edge:rgba(255,255,255,0.09);--shot-note:var(--muted)}
+    .shots{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:28px;margin-top:44px;list-style:none;padding:0}
+    .shot{margin:0;text-align:center}
+    .shot-frame{background:var(--shot-frame);border:1px solid var(--shot-edge);border-radius:30px;padding:8px;box-shadow:0 22px 44px rgba(0,0,0,0.45)}
+    .shot-frame img{display:block;width:100%;height:auto;border-radius:23px;background:var(--shot-frame)}
+    .shot-name{display:block;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--shot-label);margin:18px 0 4px}
+    .shot-desc{display:block;font-size:16px;line-height:1.5;color:var(--shot-text);max-width:230px;margin:0 auto}
+    .shots-note{font-size:14px;color:var(--shot-note);margin-top:26px;text-align:center;font-style:italic}
+    .shots-hint{display:none;font-size:14px;color:var(--shot-note);margin-top:4px;text-align:center}
+    .shots:focus-visible{outline:2px solid var(--shot-label);outline-offset:6px;border-radius:12px}
+    @media(max-width:860px){
+      .shots{grid-auto-columns:64%;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:36px -20px 0;padding:6px 20px 22px;scroll-padding:0 20px;scrollbar-width:none}
+      .shots::-webkit-scrollbar{display:none}
+      .shot{scroll-snap-align:start}
+      .shots-hint{display:block}
+    }
+    /* /Inside the App */
+</style>
 
   <link rel="canonical" href="https://eloraradiance.com/armed-anchored.html" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -168,7 +188,7 @@
   <meta name="twitter:title" content="Armed & Anchored | Spiritual Warfare Training Journal App" />
   <meta name="twitter:description" content="Armed & Anchored is a Scripture-based spiritual warfare training journal with 26 weapons of the believer — a five-minute Daily Drill, an Under Attack button, teaching, enemy tactics, declarations, Greek/Hebrew word study with audio, battle tools, and Scripture memorization. $39 lifetime." />
   <meta name="twitter:image" content="https://eloraradiance.com/assets/armed-anchored-icon.png" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Armed & Anchored", "applicationCategory": "LifestyleApplication", "applicationSubCategory": "Spiritual Warfare", "operatingSystem": "Web, iOS, Android", "url": "https://armed.eloraradiance.com", "description": "A spiritual warfare training journal with 26 weapons of the believer, a five-minute Daily Drill and an Under Attack button, including Scripture, teaching, enemy tactics, declaration, Greek and Hebrew word study with audio pronunciation, journal, and battle tools.", "image": "https://eloraradiance.com/assets/armed-anchored-icon.png", "publisher": {"@type": "Organization", "name": "Elora Radiance Co.", "legalName": "Elora Radiance Co. LLC"}, "offers": {"@type": "Offer", "price": "39.00", "priceCurrency": "USD", "category": "OneTimePayment"}, "featureList": "26 weapons of the believer, Daily Drill, Under Attack quick response, 7 study tabs per weapon, Greek and Hebrew word study with audio, enemy tactics guide, declarations, battle tools, Scripture memorization, personal journal, daily reminders at the time you choose"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Armed & Anchored", "applicationCategory": "LifestyleApplication", "applicationSubCategory": "Spiritual Warfare", "operatingSystem": "Web, iOS, Android", "url": "https://armed.eloraradiance.com", "description": "A spiritual warfare training journal with 26 weapons of the believer, a five-minute Daily Drill and an Under Attack button, including Scripture, teaching, enemy tactics, declaration, Greek and Hebrew word study with audio pronunciation, journal, and battle tools.", "image": "https://eloraradiance.com/assets/armed-anchored-icon.png", "publisher": {"@type": "Organization", "name": "Elora Radiance Co.", "legalName": "Elora Radiance Co. LLC"}, "offers": {"@type": "Offer", "price": "39.00", "priceCurrency": "USD", "category": "OneTimePayment"}, "featureList": "26 weapons of the believer, Daily Drill, Under Attack quick response, 7 study tabs per weapon, Greek and Hebrew word study with audio, enemy tactics guide, declarations, battle tools, Scripture memorization, personal journal, daily reminders at the time you choose", "screenshot": ["https://eloraradiance.com/assets/screens/aa-1-arsenal.webp", "https://eloraradiance.com/assets/screens/aa-2-drill.webp", "https://eloraradiance.com/assets/screens/aa-3-weapon.webp", "https://eloraradiance.com/assets/screens/aa-4-under-attack.webp"]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are the 26 weapons?", "acceptedAnswer": {"@type": "Answer", "text": "The 26 weapons are spiritual disciplines and truths drawn directly from Scripture — the Name of Jesus, the Blood of Jesus, the Full Armor of God, the Sword of the Spirit, the Word of Your Testimony, the Anchor of Hope, fasting, intercession, praise, declaration, and more. Each one is a means of standing firm in spiritual warfare."}}, {"@type": "Question", "name": "Do I need to complete them in order?", "acceptedAnswer": {"@type": "Answer", "text": "No. The weapons are designed to stand alone. Start with the area where you're currently under the most attack, or work through them in sequence."}}, {"@type": "Question", "name": "Is it a subscription?", "acceptedAnswer": {"@type": "Answer", "text": "No — one-time payment of $39. Full access to all 26 weapons permanently. No recurring charges, ever."}}, {"@type": "Question", "name": "What is Under Attack?", "acceptedAnswer": {"@type": "Answer", "text": "A button on the home screen for the moment an attack hits. Choose what you are facing — fear, temptation, shame, hopelessness and more — and it takes you straight to the right weapon: a verse to stand on, the enemy's tactics, a declaration, a prayer, and one move to make right now."}}, {"@type": "Question", "name": "Can I use my Anchored Steps account?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. One Elora Radiance account works across Armed & Anchored and Anchored Steps Year 1 and Year 2. Each app unlocks with its own purchase."}}, {"@type": "Question", "name": "What devices does it work on?", "acceptedAnswer": {"@type": "Answer", "text": "Any device with a browser — iPhone, Android, iPad, tablet, or desktop. No app store download needed. Works like a native app in your mobile browser."}}]}</script>
   
   <!-- Home Screen / PWA icons -->
@@ -223,6 +243,40 @@
       <div><span class="stat-num">$39</span><span class="stat-lbl">One-Time</span></div>
     </div>
   </section>
+
+  <!-- Inside the App: real screens with a sample account (2026-11-15) -->
+  <section class="section alt shots-band" id="inside" aria-labelledby="inside-title">
+    <div class="section-inner">
+      <p class="eyebrow reveal">Inside the App</p>
+      <h2 class="s-title reveal" id="inside-title">Take a Look Inside</h2>
+      <p class="s-body reveal">A daily drill to keep you ready, 26 weapons to study, and help in the moment you need it.</p>
+      <ul class="shots" tabindex="0" aria-label="Armed & Anchored screenshots">
+        <li class="shot reveal">
+          <div class="shot-frame"><img src="assets/screens/aa-1-arsenal.webp" width="780" height="1328" loading="lazy" decoding="async" alt="Armed & Anchored app screen: Your Arsenal. Today’s drill, your streak and all 26 weapons."/></div>
+          <span class="shot-name">Your Arsenal</span>
+          <span class="shot-desc">Today’s drill, your streak and all 26 weapons.</span>
+        </li>
+        <li class="shot reveal d1">
+          <div class="shot-frame"><img src="assets/screens/aa-2-drill.webp" width="780" height="1328" loading="lazy" decoding="async" alt="Armed & Anchored app screen: Daily Drill. Five minutes to load one weapon into memory."/></div>
+          <span class="shot-name">Daily Drill</span>
+          <span class="shot-desc">Five minutes to load one weapon into memory.</span>
+        </li>
+        <li class="shot reveal d2">
+          <div class="shot-frame"><img src="assets/screens/aa-3-weapon.webp" width="780" height="1328" loading="lazy" decoding="async" alt="Armed & Anchored app screen: Every Weapon. Scripture, teaching, enemy tactics and a declaration, on seven tabs."/></div>
+          <span class="shot-name">Every Weapon</span>
+          <span class="shot-desc">Scripture, teaching, enemy tactics and a declaration, on seven tabs.</span>
+        </li>
+        <li class="shot reveal d3">
+          <div class="shot-frame"><img src="assets/screens/aa-4-under-attack.webp" width="780" height="1328" loading="lazy" decoding="async" alt="Armed & Anchored app screen: Under Attack. Pick what you’re facing. Get the right weapon in a minute."/></div>
+          <span class="shot-name">Under Attack</span>
+          <span class="shot-desc">Pick what you’re facing. Get the right weapon in a minute.</span>
+        </li>
+      </ul>
+      <p class="shots-hint">Swipe to see more →</p>
+      <p class="shots-note">Real screens from the app, shown with a sample account.</p>
+    </div>
+  </section>
+
 
   <section class="section" id="weapons">
     <div class="section-inner">
