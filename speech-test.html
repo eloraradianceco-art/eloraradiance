@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Read-Aloud Check · Elora Radiance Co.</title>
+<!-- Temporary support page (2026-11-15): finds which way of reading aloud makes sound on a given phone or
+     browser, for the Listen / hear buttons in Anchored Steps, Armed & Anchored and Red Letters. Not linked
+     anywhere and not in the sitemap; remove once the read-aloud question is settled. -->
+<style>
+  :root{--bg:#0F1A24;--card:#16232F;--ink:#F5F1E8;--muted:#AEB8C2;--gold:#C9A96E;--ok:#7FB77E;--bad:#D9776B;--line:rgba(201,169,110,.25)}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Georgia,"EB Garamond",serif;padding:calc(16px + env(safe-area-inset-top)) 16px calc(40px + env(safe-area-inset-bottom))}
+  main{max-width:640px;margin:0 auto}
+  h1{font-size:24px;margin:4px 0 6px;letter-spacing:.02em}
+  .kicker{font:600 12px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+  p{margin:8px 0;color:var(--muted)}
+  ol{margin:8px 0 16px;padding-left:22px;color:var(--ink)}
+  li{margin:4px 0}
+  .row{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+  .row h2{font-size:18px;margin:0 0 2px}
+  .row small{display:block;color:var(--muted);font:14px/1.4 system-ui,sans-serif}
+  .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  button{font:600 16px system-ui,sans-serif;border-radius:999px;border:1px solid var(--line);background:#0B141C;color:var(--ink);padding:10px 16px;min-height:44px;cursor:pointer}
+  button.play{background:var(--gold);color:#0F1A24;border-color:var(--gold)}
+  button[aria-pressed="true"].yes{background:var(--ok);color:#0F1A24;border-color:var(--ok)}
+  button[aria-pressed="true"].no{background:var(--bad);color:#0F1A24;border-color:var(--bad)}
+  .status{font:14px/1.4 ui-monospace,Menlo,monospace;color:var(--muted);margin-top:8px;min-height:1.4em;word-break:break-word}
+  .info{font:13px/1.5 ui-monospace,Menlo,monospace;color:var(--muted);background:#0B141C;border-radius:10px;padding:10px;word-break:break-word;white-space:pre-wrap}
+  .bar{position:sticky;bottom:calc(8px + env(safe-area-inset-bottom));display:flex;gap:8px;margin-top:18px}
+  .bar button{flex:1}
+  #copied{color:var(--ok);font:600 15px system-ui,sans-serif;text-align:center;min-height:1.5em;margin-top:8px}
+</style>
+</head>
+<body>
+<main>
+  <div class="kicker">Elora Radiance Co. · Support</div>
+  <h1>Read-Aloud Check</h1>
+  <p>Find out which way of reading aloud works on this phone or browser. It takes about a minute.</p>
+  <ol>
+    <li>Turn the volume up.</li>
+    <li>Turn on <b>Silent Mode</b>. iPhone: use the switch on the side or the Action button. iPad: Control Center → the bell.</li>
+    <li>Tap each <b>Play</b> button below, one at a time. After each one, tap <b>Heard it</b> or <b>No sound</b>.</li>
+    <li>Turn Silent Mode off and go through the buttons again.</li>
+    <li>Tap <b>Copy results</b> and paste them into the chat.</li>
+  </ol>
+
+  <div id="rows"></div>
+
+  <div class="row">
+    <h2>This device</h2>
+    <div class="info" id="info"></div>
+  </div>
+
+  <div class="bar">
+    <button id="stop">Stop</button>
+    <button id="copy" class="play">Copy results</button>
+  </div>
+  <div id="copied" role="status"></div>
+  <textarea id="fallback" aria-label="Results" style="display:none;width:100%;height:220px;margin-top:10px;font:13px ui-monospace,monospace"></textarea>
+</main>
+
+<script type="module">
+import { speak as appSpeak, stopSpeaking } from './speech-test/speech.js'
+
+const TEXT = 'Be still, and know that I am God. Psalm forty-six, verse ten.'
+const synth = window.speechSynthesis
+const has = !!(synth && window.SpeechSynthesisUtterance)
+const SILENT = 'data:audio/wav;base64,UklGRrQBAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YZABAACA' + 'gICA'.repeat(133)
+const setSession = (t) => { try { if (navigator.audioSession) navigator.audioSession.type = t } catch (e) {} }
+const clip = () => { try { const a = new Audio(SILENT); a.setAttribute('playsinline', ''); const p = a.play(); if (p && p.catch) p.catch(() => {}) } catch (e) {} }
+const utter = (o = {}) => { const u = new SpeechSynthesisUtterance(TEXT); if (o.lang) u.lang = o.lang; if (o.rate) u.rate = o.rate; return u }
+
+// Each way of reading aloud. `run(track)` starts it inside the tap and reports events through track.
+const WAYS = [
+  { id: 'A', name: 'Plain', note: 'Read aloud with no extras.',
+    run: (t) => { setSession('auto'); t.watch(utter()) } },
+  { id: 'B', name: 'Old app way', note: 'Stop first, then read (how the apps worked before Nov 15).',
+    run: (t) => { setSession('auto'); synth.cancel(); t.watch(utter({ rate: 0.9 })) } },
+  { id: 'C', name: 'Playback mode', note: 'Ask iOS to treat it as media, like a podcast.',
+    run: (t) => { setSession('playback'); t.watch(utter({ lang: 'en-US', rate: 0.9 })) } },
+  { id: 'D', name: 'Silent clip', note: 'Play a tiny silent sound first, then read.',
+    run: (t) => { setSession('auto'); clip(); t.watch(utter({ lang: 'en-US', rate: 0.9 })) } },
+  { id: 'E', name: 'Current app way', note: 'Exactly what the apps do now (playback mode + silent clip + fixes).',
+    run: (t) => { t.app() } },
+]
+
+const results = {} // id → { events, heard: { silentOn: '', silentOff: '' } }
+let pass = 'silentOn'
+const rows = document.getElementById('rows')
+for (const w of WAYS) {
+  results[w.id] = { log: [], heard: { silentOn: '', silentOff: '' } }
+  const row = document.createElement('div')
+  row.className = 'row'
+  row.innerHTML = `<h2>${w.id} · ${w.name}</h2><small>${w.note}</small>
+    <div class="btns"><button class="play">Play</button><button class="yes" aria-pressed="false">Heard it</button><button class="no" aria-pressed="false">No sound</button></div>
+    <div class="status" aria-live="polite"></div>`
+  const [play, yes, no] = row.querySelectorAll('button')
+  const status = row.querySelector('.status')
+  const r = results[w.id]
+  const note = (s) => { r.log.push(s); status.textContent = r.log.slice(-4).join(' · ') }
+  play.onclick = () => {
+    if (!has) { note('no read-aloud in this browser'); return }
+    const t0 = performance.now()
+    const ms = () => Math.round(performance.now() - t0) + 'ms'
+    r.log = []
+    note(`play (${pass === 'silentOn' ? 'Silent on' : 'Silent off'}) busy=${synth.speaking || synth.pending}`)
+    const track = {
+      watch(u) {
+        u.onstart = () => note('start ' + ms())
+        u.onend = () => note('end ' + ms())
+        u.onerror = (e) => note('error ' + (e && e.error) + ' ' + ms())
+        synth.speak(u)
+        setTimeout(() => note('@1.5s speaking=' + synth.speaking + ' pending=' + synth.pending), 1500)
+      },
+      app() {
+        const ok = appSpeak(TEXT, { rate: 0.9, onStart: () => note('start ' + ms()), onEnd: () => note('end ' + ms()), onError: (e) => note('error ' + e + ' ' + ms()) })
+        if (!ok) note('helper says unsupported')
+        setTimeout(() => note('@1.5s speaking=' + synth.speaking + ' pending=' + synth.pending + ' session=' + (navigator.audioSession ? navigator.audioSession.type : 'n/a')), 1500)
+      },
+    }
+    w.run(track)
+    note('session=' + (navigator.audioSession ? navigator.audioSession.type : 'n/a'))
+    yes.setAttribute('aria-pressed', 'false'); no.setAttribute('aria-pressed', 'false')
+  }
+  const mark = (v) => {
+    r.heard[pass] = v
+    yes.setAttribute('aria-pressed', String(v === 'heard')); no.setAttribute('aria-pressed', String(v === 'silent'))
+    // When every way has an answer with Silent on, the next answers count as Silent off.
+    if (pass === 'silentOn' && WAYS.every((x) => results[x.id].heard.silentOn)) setTimeout(() => {
+      pass = 'silentOff'
+      document.querySelectorAll('button.yes,button.no').forEach((b) => b.setAttribute('aria-pressed', 'false'))
+      document.getElementById('copied').textContent = 'Now turn Silent Mode off and play each one again.'
+    }, 400)
+  }
+  yes.onclick = () => mark('heard')
+  no.onclick = () => mark('silent')
+  rows.appendChild(row)
+}
+
+const n = navigator
+const voices = () => { try { return synth ? synth.getVoices() : [] } catch (e) { return [] } }
+const infoText = () => {
+  const v = voices()
+  const en = v.filter((x) => /^en/i.test(x.lang))
+  const def = v.find((x) => x.default)
+  return [
+    'Browser: ' + n.userAgent,
+    'Home Screen app: ' + ((window.matchMedia && matchMedia('(display-mode: standalone)').matches) || n.standalone === true),
+    'Read-aloud available: ' + has,
+    'Audio session control: ' + ('audioSession' in n ? 'yes (' + n.audioSession.type + ')' : 'no'),
+    'Voices: ' + v.length + ' total, ' + en.length + ' English' + (def ? ', default ' + def.name + ' ' + def.lang : ''),
+    'Language: ' + (n.language || ''),
+  ].join('\n')
+}
+const info = document.getElementById('info')
+info.textContent = infoText()
+if (synth && synth.addEventListener) synth.addEventListener('voiceschanged', () => { info.textContent = infoText() })
+
+document.getElementById('stop').onclick = () => { stopSpeaking(); try { synth && synth.cancel() } catch (e) {} }
+document.getElementById('copy').onclick = async () => {
+  const lines = ['READ-ALOUD CHECK ' + new Date().toISOString(), infoText(), '']
+  for (const w of WAYS) {
+    const r = results[w.id]
+    lines.push(`${w.id} ${w.name}: Silent on=${r.heard.silentOn || '?'} · Silent off=${r.heard.silentOff || '?'}`)
+    if (r.log.length) lines.push('   last run: ' + r.log.join(' · '))
+  }
+  const text = lines.join('\n')
+  const out = document.getElementById('copied')
+  try { await navigator.clipboard.writeText(text); out.textContent = 'Copied. Paste it into the chat.' }
+  catch (e) { const f = document.getElementById('fallback'); f.style.display = 'block'; f.value = text; f.select(); out.textContent = 'Select the text below, copy it, and paste it into the chat.' }
+}
+</script>
+</body>
+</html>
