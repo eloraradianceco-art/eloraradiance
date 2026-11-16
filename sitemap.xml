@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://eloraradiance.com/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://eloraradiance.com/red-letters.html</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -39,7 +39,7 @@
   </url>
   <url>
     <loc>https://eloraradiance.com/anchored-steps.html</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -65,7 +65,7 @@
   </url>
   <url>
     <loc>https://eloraradiance.com/anchored-steps-2.html</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -117,7 +117,7 @@
   </url>
   <url>
     <loc>https://eloraradiance.com/anchored-verse.html</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -160,6 +160,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://eloraradiance.com/anchored-library.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/anchored-steps-1.png</image:loc>
+      <image:title>The Anchored Library</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://eloraradiance.com/privacy.html</loc>
     <lastmod>2026-11-16</lastmod>
     <changefreq>yearly</changefreq>
@@ -167,7 +177,7 @@
   </url>
   <url>
     <loc>https://eloraradiance.com/terms.html</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

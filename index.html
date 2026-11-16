@@ -269,6 +269,20 @@
       border-color: rgba(176,138,78,0.52);
     }
 
+
+    /* ANCHORED LIBRARY BAND (2026-11-16) */
+    .lib-band{margin:30px 0 0;background:var(--navy);border:1px solid rgba(176,138,78,0.3);border-radius:20px;padding:30px 32px;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+    .lib-band-icons{display:flex;flex-shrink:0}
+    .lib-band-icons img{width:58px;height:58px;border-radius:15px;border:2px solid var(--navy);box-shadow:0 6px 18px rgba(0,0,0,0.35)}
+    .lib-band-icons img+img{margin-left:-14px}
+    .lib-band-text{flex:1;min-width:240px}
+    .lib-band-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.22em;color:rgba(176,138,78,0.75);text-transform:uppercase;margin-bottom:6px}
+    .lib-band-title{font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:#EDE6D6;letter-spacing:0.04em;margin-bottom:6px}
+    .lib-band-desc{font-family:'EB Garamond',serif;font-size:16px;color:rgba(200,190,170,0.88);line-height:1.6}
+    .lib-band-desc s{opacity:.7}
+    .lib-band-btns{display:flex;flex-direction:column;gap:10px;min-width:210px}
+    @media(max-width:640px){.lib-band{padding:26px 22px}.lib-band-btns{width:100%}}
+
     /* SCRIPTURE BAND */
     .scripture-band {
       background: var(--parchment-d);
@@ -480,6 +494,7 @@
       <li><a href="anchored-steps.html">Anchored Steps Y1</a></li>
       <li><a href="anchored-steps-2.html">Anchored Steps Y2</a></li>
       <li><a href="red-letters.html">The Red Letters</a></li>
+      <li><a href="anchored-library.html">Library · $79</a></li>
       <li><a href="#about">About</a></li>
     </ul>
     <button class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -492,6 +507,7 @@
       <a href="anchored-steps.html">⚓ Anchored Steps Year 1</a>
       <a href="anchored-steps-2.html">⚓ Anchored Steps Year 2</a>
       <a href="red-letters.html">✦ The Red Letters</a>
+      <a href="anchored-library.html">📚 Anchored Library · All 3</a>
     </nav>
   </nav>
 
@@ -652,6 +668,20 @@
             <a href="red-letters.html" class="card-btn" style="background:linear-gradient(135deg,rgba(139,26,26,0.38),rgba(139,26,26,0.16));border:1px solid rgba(139,26,26,0.5);color:#EDE6D6;">✦ Learn More — Free</a>
             <a href="https://redletters.eloraradiance.com" class="card-signin">Already a member? Sign in</a>
           </div>
+        </div>
+      </div>
+
+      <!-- Anchored Library: all three paid apps (2026-11-16) -->
+      <div class="lib-band reveal">
+        <div class="lib-band-icons" aria-hidden="true"><img src="assets/anchored-steps-1.png" alt=""/><img src="assets/anchored-steps-2.png" alt=""/><img src="assets/armed-anchored-icon.png" alt=""/></div>
+        <div class="lib-band-text">
+          <div class="lib-band-label">Best Value · All Three Paid Apps</div>
+          <div class="lib-band-title">The Anchored Library</div>
+          <p class="lib-band-desc">Anchored Steps Year 1, Year 2 and Armed &amp; Anchored on one account, for life. <strong style="color:#EDE6D6">$79 one-time</strong> · <s>$117</s> separately.</p>
+        </div>
+        <div class="lib-band-btns">
+          <a href="https://buy.stripe.com/28EfZg0IYalM6yzeIb57W0b" target="_blank" rel="noopener" class="card-btn card-btn-gold">⚓ Get All 3 · $79</a>
+          <a href="anchored-library.html" class="card-signin" style="margin-top:0">What's included →</a>
         </div>
       </div>
 
