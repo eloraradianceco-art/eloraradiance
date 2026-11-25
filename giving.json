@@ -1,15 +1,15 @@
 {
- "_note": "Shown on the Anchored apps' purchase pages and on eloraradiance.com. Update once a month: total_cents is everything given so far, through is the last month included.",
- "ministry": "Children's Cup",
- "ministry_url": "https://www.childrenscup.org",
- "percent": 10,
- "applies_to": [
-  "Anchored Steps Year 1",
-  "Anchored Steps Year 2",
-  "Armed & Anchored",
-  "Anchored Library"
- ],
- "total_cents": 0,
- "through": null,
- "updated": "2026-11-19"
+  "total_cents": 0,
+  "through": "",
+  "updated": "2026-11-24",
+  "cadence": "quarterly",
+  "recipients": [
+    {
+      "name": "Children's Cup",
+      "url": "https://childrenscup.org",
+      "total_cents": 0,
+      "primary": true,
+      "named_publicly": false
+    }
+  ]
 }
