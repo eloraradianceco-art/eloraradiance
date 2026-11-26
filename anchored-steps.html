@@ -532,12 +532,13 @@
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   </script>
   <!-- Giving line: wording and total come from /giving.json. Gifts go out quarterly; the total is updated monthly.
-       The main recipient is named only when that file marks it named_publicly. -->
+       The main recipient is named here on the website when that file marks it named_on_website. The apps read
+       named_publicly instead, which stays false: they show the plain sentence (Anthony, 2026-11-25). -->
   <script>
     fetch('/giving.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (g) {
       if (!g) return;
       var main = (Array.isArray(g.recipients) ? g.recipients : []).filter(function (r) { return r && r.primary === true; })[0];
-      var name = main && main.named_publicly === true && typeof main.name === 'string' ? main.name.trim() : '';
+      var name = main && main.named_on_website === true && typeof main.name === 'string' ? main.name.trim() : '';
       if (name) {
         document.querySelectorAll('[data-giving-line]').forEach(function (el) {
           el.textContent = '10% of net sales is given to ministry, with the largest share going to ';

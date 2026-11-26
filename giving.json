@@ -9,7 +9,8 @@
       "url": "https://childrenscup.org",
       "total_cents": 0,
       "primary": true,
-      "named_publicly": true
+      "named_publicly": false,
+      "named_on_website": true
     }
   ]
 }
