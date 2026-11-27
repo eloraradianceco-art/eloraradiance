@@ -160,6 +160,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://eloraradiance.com/all-access.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://eloraradiance.com/assets/all-access-share.jpg</image:loc>
+      <image:title>Anchored All-Access</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://eloraradiance.com/anchored-library.html</loc>
     <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>

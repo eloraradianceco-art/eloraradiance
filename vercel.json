@@ -59,6 +59,16 @@
       "source": "/scripture-credits",
       "destination": "/scripture-credits.html",
       "permanent": true
+    },
+    {
+      "source": "/all-access",
+      "destination": "/all-access.html",
+      "permanent": true
+    },
+    {
+      "source": "/membership",
+      "destination": "/all-access.html",
+      "permanent": true
     }
   ],
   "headers": [
